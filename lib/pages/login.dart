@@ -21,7 +21,20 @@ class _LoginPageState extends State<LoginPage> {
             color: Colors.grey[200],
             width: 350.w,
             height: 600.h,
-            child: Column()),
+            child: Column(
+              children: [
+                Center(
+                    child: Text(
+                  "تسجيل دخول",
+                  style: TextStyle(
+                    
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Color.fromARGB(255, 25, 124, 101,
+                      )),
+                ))
+              ],
+            )),
       ),
     );
   }
