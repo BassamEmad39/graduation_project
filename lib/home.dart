@@ -12,6 +12,8 @@ class HomeView extends StatelessWidget {
       body: Column(
         children: [
           Center(child: Text("Setting")),
+          Center(child: Text("Options")),
+          Center(child: Text("Reboot"))
         ],
       ),
     );
