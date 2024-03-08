@@ -27,9 +27,11 @@ class _LoginPageState extends State<LoginPage> {
                     child: Text(
                   "تسجيل دخول",
                   style: TextStyle(
+                    
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
-                      color: Color.fromARGB(255, 25, 124, 101)),
+                      color: Color.fromARGB(255, 25, 124, 101,
+                      )),
                 ))
               ],
             )),
