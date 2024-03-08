@@ -13,7 +13,11 @@ class HomeView extends StatelessWidget {
         children: [
           Center(child: Text("Setting")),
           Center(child: Text("Options")),
-          Center(child: Text("Reboot"))
+          Center(child: Text("Reboot")),
+          Center(child: Text("Bassant")),
+          Center(child: Text("Esraa")),
+          Center(child: Text("Player")),
+
         ],
       ),
     );
