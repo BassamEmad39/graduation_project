@@ -11,8 +11,7 @@ class HomeView extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Center(child: Text("Home Page")),
-          Center(child: Text("Home Page")),
+          Center(child: Text("Setting")),
         ],
       ),
     );
