@@ -26,7 +26,10 @@ class _LoginPageState extends State<LoginPage> {
                 Center(
                     child: Text(
                   "تسجيل دخول",
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Color.fromARGB(255, 25, 124, 101)),
                 ))
               ],
             )),
