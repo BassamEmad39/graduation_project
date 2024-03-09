@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MyTextField extends StatelessWidget {
-  MyTextField({super.key});
+  const MyTextField({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-        child: TextFormField(
-          decoration:  InputDecoration(
-              border: OutlineInputBorder(borderSide: BorderSide.none),
-              filled: true,
-              fillColor: Color.fromRGBO(255, 253, 253, 1)),
-        ),
-      
+      width: 300.w,
+      height: 30.h,
+      child: TextFormField(
+        decoration: const InputDecoration(
+            border: OutlineInputBorder(borderSide: BorderSide.none),
+            filled: true,
+            fillColor: Color.fromRGBO(255, 253, 253, 1)),
+      ),
     );
   }
 }

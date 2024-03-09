@@ -3,22 +3,22 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:graduation_project/custom/appbar.dart';
 import 'package:graduation_project/custom/buttons.dart';
 import 'package:graduation_project/custom/textField.dart';
-import 'package:graduation_project/pages/signup4.dart';
+import 'package:graduation_project/pages/signup3.dart';
 
-class SignUpPage3 extends StatefulWidget {
-  const SignUpPage3({super.key});
+class SignUpPage2 extends StatefulWidget {
+  const SignUpPage2({super.key});
 
   @override
-  State<SignUpPage3> createState() => _SignUpPage3State();
+  State<SignUpPage2> createState() => _SignUpPage2State();
 }
 
-class _SignUpPage3State extends State<SignUpPage3> {
+class _SignUpPage2State extends State<SignUpPage2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: MyAppBar(),
       body: ListView(
-        padding: EdgeInsets.only(top: 125.h),
+        padding: EdgeInsets.only(top: 50.h),
         children: [
           Column(mainAxisAlignment: MainAxisAlignment.center, children: [
             Center(
@@ -38,7 +38,7 @@ class _SignUpPage3State extends State<SignUpPage3> {
                       color: Colors.grey[300],
                     ),
                     width: 290.w,
-                    height: 440.h,
+                    height: 520.h,
                     child: Column(
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
@@ -54,7 +54,7 @@ class _SignUpPage3State extends State<SignUpPage3> {
                                       color: Colors.grey,
                                       spreadRadius: 0,
                                       blurRadius: 4,
-                                      offset: Offset(0, 2),
+                                      offset: Offset(0, 1),
                                     )
                                   ]),
                             ),
@@ -62,7 +62,7 @@ class _SignUpPage3State extends State<SignUpPage3> {
                           const SizedBox(
                             height: 25,
                           ),
-                          const Text("الكلية",
+                          const Text("الاسم",
                               style: TextStyle(
                                   color: Color.fromRGBO(26, 86, 83, 1),
                                   fontWeight: FontWeight.w500,
@@ -74,7 +74,7 @@ class _SignUpPage3State extends State<SignUpPage3> {
                           const SizedBox(
                             height: 31,
                           ),
-                          const Text("القسم",
+                          const Text("الاسم باللغة الانجليزية",
                               style: TextStyle(
                                   color: Color.fromRGBO(26, 86, 83, 1),
                                   fontWeight: FontWeight.w500,
@@ -86,7 +86,7 @@ class _SignUpPage3State extends State<SignUpPage3> {
                           const SizedBox(
                             height: 31,
                           ),
-                          const Text("الدرجة العلمية",
+                          const Text("العنوان",
                               style: TextStyle(
                                   color: Color.fromRGBO(26, 86, 83, 1),
                                   fontWeight: FontWeight.w500,
@@ -97,6 +97,18 @@ class _SignUpPage3State extends State<SignUpPage3> {
                           MyTextField(),
                           const SizedBox(
                             height: 31,
+                          ),
+                          const Text("الهاتف",
+                              style: TextStyle(
+                                  color: Color.fromRGBO(26, 86, 83, 1),
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 13)),
+                          const SizedBox(
+                            height: 5,
+                          ),
+                          MyTextField(),
+                          const SizedBox(
+                            height: 25,
                           ),
                           Center(
                             child: CustomButton(
@@ -104,7 +116,7 @@ class _SignUpPage3State extends State<SignUpPage3> {
                               onPressed: () {
                                 Navigator.of(context).push(MaterialPageRoute(
                                   builder: (BuildContext context) =>
-                                      const SignUpPage4(),
+                                      const SignUpPage3(),
                                 ));
                               },
                             ),
@@ -125,23 +137,23 @@ class _SignUpPage3State extends State<SignUpPage3> {
                     width: 68,
                     height: 6,
                     decoration: BoxDecoration(
-                        shape: BoxShape.rectangle, color: Colors.grey[200]),
-                  ),
-                  Container(
-                    width: 68,
-                    height: 6,
-                    decoration: BoxDecoration(
                         boxShadow: [
                           BoxShadow(
                             color: Colors.grey.withOpacity(0.9),
                             spreadRadius: 0,
                             blurRadius: 4,
                             offset: const Offset(
-                                0, 3), // changes position of shadow
+                                0, 2), // changes position of shadow
                           ),
                         ],
                         shape: BoxShape.rectangle,
                         color: const Color.fromRGBO(16, 120, 105, 1)),
+                  ),
+                  Container(
+                    width: 68,
+                    height: 6,
+                    decoration: BoxDecoration(
+                        shape: BoxShape.rectangle, color: Colors.grey[200]),
                   ),
                   Container(
                     width: 68,

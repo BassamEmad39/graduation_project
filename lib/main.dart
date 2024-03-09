@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:graduation_project/pages/homepage.dart';
 import 'package:graduation_project/pages/login.dart';
 
 void main() {
@@ -18,13 +17,13 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-        designSize: Size(441, 886),
+        designSize: const Size(441, 886),
         splitScreenMode: true,
         minTextAdapt: true,
         builder: (context, child) => MaterialApp(
               debugShowCheckedModeBanner: false,
               home: child,
             ),
-        child: HomePage());
+        child: LoginPage());
   }
 }
