@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:graduation_project/pages/login.dart';
+import 'package:graduation_project/pages/signup1.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,13 +17,13 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-        designSize: Size(441, 886),
+        designSize: const Size(441, 886),
         splitScreenMode: true,
         minTextAdapt: true,
         builder: (context, child) => MaterialApp(
               debugShowCheckedModeBanner: false,
               home: child,
             ),
-        child: LoginPage());
+        child: const SignUpPage1());
   }
 }

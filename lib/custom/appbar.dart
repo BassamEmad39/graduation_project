@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 
 class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   final VoidCallback? onBack;
-
-  const MyAppBar({Key? key, this.onBack}) : super(key: key);
+  MyAppBar({super.key, this.onBack});
 
   @override
   Widget build(BuildContext context) {
