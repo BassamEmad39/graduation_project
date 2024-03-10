@@ -8,7 +8,7 @@ class MyTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 300.w,
-      height: 30.h,
+      height: 35.h,
       child: TextFormField(
         decoration: const InputDecoration(
             border: OutlineInputBorder(borderSide: BorderSide.none),
