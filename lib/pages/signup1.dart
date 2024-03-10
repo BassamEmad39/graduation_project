@@ -39,7 +39,7 @@ class _SignUpPage1State extends State<SignUpPage1> {
                   color: Colors.grey[300],
                 ),
                 width: 290.w,
-                height: 352.h,
+                height: 372.h,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
@@ -102,7 +102,8 @@ class _SignUpPage1State extends State<SignUpPage1> {
                 ),
               )),
               Padding(
-                padding: const EdgeInsets.symmetric(vertical: 65, horizontal: 10),
+                padding:
+                    const EdgeInsets.symmetric(vertical: 65, horizontal: 10),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
@@ -115,8 +116,8 @@ class _SignUpPage1State extends State<SignUpPage1> {
                               color: Colors.grey.withOpacity(0.9),
                               spreadRadius: 0,
                               blurRadius: 4,
-                              offset:
-                                  const Offset(0, 3), // changes position of shadow
+                              offset: const Offset(
+                                  0, 3), // changes position of shadow
                             ),
                           ],
                           shape: BoxShape.rectangle,

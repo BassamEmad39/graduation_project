@@ -1,3 +1,4 @@
+import 'package:auto_direction/auto_direction.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:graduation_project/custom/appbar.dart';
@@ -10,6 +11,15 @@ class SignUpPage4 extends StatefulWidget {
   @override
   State<SignUpPage4> createState() => _SignUpPage4State();
 }
+
+bool isPasswordVisible = false;
+
+bool states = false;
+
+bool isPasswordVisible2 = false;
+
+bool states2 = false;
+String text = '';
 
 class _SignUpPage4State extends State<SignUpPage4> {
   @override
@@ -32,7 +42,8 @@ class _SignUpPage4State extends State<SignUpPage4> {
                         color: Colors.grey.withOpacity(0.9),
                         spreadRadius: 0,
                         blurRadius: 4,
-                        offset: const Offset(0, 3), // changes position of shadow
+                        offset:
+                            const Offset(0, 3), // changes position of shadow
                       ),
                     ],
                     color: Colors.grey[300],
@@ -73,17 +84,32 @@ class _SignUpPage4State extends State<SignUpPage4> {
                       Container(
                         width: 300.w,
                         height: 35.h,
-                        child: TextFormField(
-                          obscureText: true,
-                          decoration: InputDecoration(
-                              prefixIcon: IconButton(
-                                  onPressed: () {},
-                                  icon: const Icon(Icons.visibility_off_sharp,
-                                      color: Color.fromRGBO(26, 86, 83, 1))),
-                              border: const OutlineInputBorder(
-                                  borderSide: BorderSide.none),
-                              filled: true,
-                              fillColor: const Color.fromRGBO(255, 253, 253, 1)),
+                        child: AutoDirection(
+                          text: text,
+                          child: TextFormField(
+                            onChanged: (value) {
+                              setState(() {
+                                text = value;
+                              });
+                            },
+                            obscureText: !isPasswordVisible,
+                            decoration: InputDecoration(
+                                prefixIcon: IconButton(
+                                  icon: isPasswordVisible
+                                      ? Icon(Icons.visibility)
+                                      : Icon(Icons.visibility_off),
+                                  onPressed: () {
+                                    setState(() {
+                                      isPasswordVisible = !isPasswordVisible;
+                                    });
+                                  },
+                                ),
+                                border: const OutlineInputBorder(
+                                    borderSide: BorderSide.none),
+                                filled: true,
+                                fillColor:
+                                    const Color.fromRGBO(255, 253, 253, 1)),
+                          ),
                         ),
                       ),
                       const SizedBox(
@@ -100,17 +126,32 @@ class _SignUpPage4State extends State<SignUpPage4> {
                       Container(
                         width: 300.w,
                         height: 35.h,
-                        child: TextFormField(
-                          obscureText: true,
-                          decoration: InputDecoration(
-                              prefixIcon: IconButton(
-                                  onPressed: () {},
-                                  icon: const Icon(Icons.visibility_off_sharp,
-                                      color: Color.fromRGBO(26, 86, 83, 1))),
-                              border: const OutlineInputBorder(
-                                  borderSide: BorderSide.none),
-                              filled: true,
-                              fillColor: const Color.fromRGBO(255, 253, 253, 1)),
+                        child: AutoDirection(
+                          text: text,
+                          child: TextFormField(
+                            onChanged: (value) {
+                              setState(() {
+                                text = value;
+                              });
+                            },
+                            obscureText: !isPasswordVisible2,
+                            decoration: InputDecoration(
+                                prefixIcon: IconButton(
+                                  icon: isPasswordVisible2
+                                      ? Icon(Icons.visibility)
+                                      : Icon(Icons.visibility_off),
+                                  onPressed: () {
+                                    setState(() {
+                                      isPasswordVisible2 = !isPasswordVisible2;
+                                    });
+                                  },
+                                ),
+                                border: const OutlineInputBorder(
+                                    borderSide: BorderSide.none),
+                                filled: true,
+                                fillColor:
+                                    const Color.fromRGBO(255, 253, 253, 1)),
+                          ),
                         ),
                       ),
                       const SizedBox(
@@ -134,7 +175,8 @@ class _SignUpPage4State extends State<SignUpPage4> {
                   ),
                 )),
                 Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 90, horizontal: 10),
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 90, horizontal: 10),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
@@ -165,8 +207,8 @@ class _SignUpPage4State extends State<SignUpPage4> {
                                 color: Colors.grey.withOpacity(0.9),
                                 spreadRadius: 0,
                                 blurRadius: 4,
-                                offset:
-                                    const Offset(0, 3), // changes position of shadow
+                                offset: const Offset(
+                                    0, 3), // changes position of shadow
                               ),
                             ],
                             shape: BoxShape.rectangle,
