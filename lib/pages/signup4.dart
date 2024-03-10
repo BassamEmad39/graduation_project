@@ -1,9 +1,9 @@
-import 'package:auto_direction/auto_direction.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:graduation_project/custom/appbar.dart';
 import 'package:graduation_project/custom/buttons.dart';
 import 'package:graduation_project/custom/dialog.dart';
+import 'package:graduation_project/custom/textField.dart';
 
 class SignUpPage4 extends StatefulWidget {
   const SignUpPage4({super.key});
@@ -48,8 +48,8 @@ class _SignUpPage4State extends State<SignUpPage4> {
                     ],
                     color: Colors.grey[300],
                   ),
-                  width: 290.w,
-                  height: 295.h,
+                  width: 335.h,
+                  height: 335.h,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
@@ -81,37 +81,7 @@ class _SignUpPage4State extends State<SignUpPage4> {
                       const SizedBox(
                         height: 5,
                       ),
-                      Container(
-                        width: 300.w,
-                        height: 35.h,
-                        child: AutoDirection(
-                          text: text,
-                          child: TextFormField(
-                            onChanged: (value) {
-                              setState(() {
-                                text = value;
-                              });
-                            },
-                            obscureText: !isPasswordVisible,
-                            decoration: InputDecoration(
-                                prefixIcon: IconButton(
-                                  icon: isPasswordVisible
-                                      ? Icon(Icons.visibility)
-                                      : Icon(Icons.visibility_off),
-                                  onPressed: () {
-                                    setState(() {
-                                      isPasswordVisible = !isPasswordVisible;
-                                    });
-                                  },
-                                ),
-                                border: const OutlineInputBorder(
-                                    borderSide: BorderSide.none),
-                                filled: true,
-                                fillColor:
-                                    const Color.fromRGBO(255, 253, 253, 1)),
-                          ),
-                        ),
-                      ),
+                      MyTextField(isPassword: true), 
                       const SizedBox(
                         height: 15,
                       ),
@@ -123,39 +93,9 @@ class _SignUpPage4State extends State<SignUpPage4> {
                       const SizedBox(
                         height: 5,
                       ),
-                      Container(
-                        width: 300.w,
-                        height: 35.h,
-                        child: AutoDirection(
-                          text: text,
-                          child: TextFormField(
-                            onChanged: (value) {
-                              setState(() {
-                                text = value;
-                              });
-                            },
-                            obscureText: !isPasswordVisible2,
-                            decoration: InputDecoration(
-                                prefixIcon: IconButton(
-                                  icon: isPasswordVisible2
-                                      ? Icon(Icons.visibility)
-                                      : Icon(Icons.visibility_off),
-                                  onPressed: () {
-                                    setState(() {
-                                      isPasswordVisible2 = !isPasswordVisible2;
-                                    });
-                                  },
-                                ),
-                                border: const OutlineInputBorder(
-                                    borderSide: BorderSide.none),
-                                filled: true,
-                                fillColor:
-                                    const Color.fromRGBO(255, 253, 253, 1)),
-                          ),
-                        ),
-                      ),
+                      MyTextField(isPassword: true), 
                       const SizedBox(
-                        height: 13,
+                        height: 15,
                       ),
                       Center(
                         child: CustomButton(

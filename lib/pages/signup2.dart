@@ -37,8 +37,8 @@ class _SignUpPage2State extends State<SignUpPage2> {
                       ],
                       color: Colors.grey[300],
                     ),
-                    width: 290.w,
-                    height: 560.h,
+                    width: 340.w,
+                    height: 620.h,
                     child: Column(
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
@@ -70,7 +70,7 @@ class _SignUpPage2State extends State<SignUpPage2> {
                           const SizedBox(
                             height: 5,
                           ),
-                          MyTextField(),
+                          MyTextField(isPassword: false,),
                           const SizedBox(
                             height: 31,
                           ),
@@ -82,7 +82,7 @@ class _SignUpPage2State extends State<SignUpPage2> {
                           const SizedBox(
                             height: 5,
                           ),
-                          MyTextField(),
+                          MyTextField(isPassword: false,),
                           const SizedBox(
                             height: 31,
                           ),
@@ -94,7 +94,7 @@ class _SignUpPage2State extends State<SignUpPage2> {
                           const SizedBox(
                             height: 5,
                           ),
-                          MyTextField(),
+                          MyTextField(isPassword: false,),
                           const SizedBox(
                             height: 31,
                           ),
@@ -106,7 +106,7 @@ class _SignUpPage2State extends State<SignUpPage2> {
                           const SizedBox(
                             height: 5,
                           ),
-                          MyTextField(),
+                          MyTextField(isPassword: false,),
                           const SizedBox(
                             height: 25,
                           ),

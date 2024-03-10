@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:graduation_project/custom/appbar.dart';
 import 'package:graduation_project/custom/buttons.dart';
-import 'package:graduation_project/custom/textField.dart';
 import 'package:graduation_project/pages/newpassword.dart';
 
 class ChangePassword extends StatelessWidget {

@@ -39,7 +39,7 @@ class _SignUpPage1State extends State<SignUpPage1> {
                   color: Colors.grey[300],
                 ),
                 width: 290.w,
-                height: 372.h,
+                height: 400.h,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
@@ -71,7 +71,7 @@ class _SignUpPage1State extends State<SignUpPage1> {
                     const SizedBox(
                       height: 5,
                     ),
-                    MyTextField(),
+                    MyTextField(isPassword: false,),
                     const SizedBox(
                       height: 31,
                     ),
@@ -83,7 +83,7 @@ class _SignUpPage1State extends State<SignUpPage1> {
                     const SizedBox(
                       height: 5,
                     ),
-                    MyTextField(),
+                    MyTextField(isPassword: false,),
                     const SizedBox(
                       height: 25,
                     ),

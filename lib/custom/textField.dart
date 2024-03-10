@@ -1,9 +1,9 @@
 import 'package:auto_direction/auto_direction.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MyTextField extends StatefulWidget {
-  const MyTextField({super.key});
+  final bool isPassword;
+  const MyTextField({super.key,required this.isPassword});
 
   @override
   State<MyTextField> createState() => _MyTextFieldState();
@@ -12,24 +12,34 @@ class MyTextField extends StatefulWidget {
 String text = '';
 
 class _MyTextFieldState extends State<MyTextField> {
+  bool isPasswordHidden = true;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 300.w,
-      height: 40.h,
-      child: AutoDirection(
-        text: text,
-        child: TextFormField(
-          onChanged: (value) {
-            setState(() {
-              text = value;
-            });
+    return AutoDirection(
+      text: text,
+      child: TextFormField(
+        
+        onChanged: (value) {
+          setState(() {
+            text = value;
+          });
+        },
+        obscureText: isPasswordHidden &&widget.isPassword,
+        decoration:  InputDecoration(
+          isDense: true,
+            border: OutlineInputBorder(borderSide: BorderSide.none),
+            prefixIcon: widget.isPassword?IconButton(
+          icon: Icon(
+              isPasswordHidden? Icons.visibility_off : Icons.visibility),
+          onPressed: () {
+            isPasswordHidden = !isPasswordHidden;
+            setState(() {});
           },
-          decoration: const InputDecoration(
-              border: OutlineInputBorder(borderSide: BorderSide.none),
-              filled: true,
-              fillColor: Color.fromRGBO(255, 253, 253, 1)),
-        ),
+        ):null,
+              
+         
+            filled: true,
+            fillColor: Color.fromRGBO(255, 253, 253, 1)),
       ),
     );
   }
