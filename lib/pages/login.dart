@@ -1,8 +1,11 @@
+import 'package:auto_direction/auto_direction.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:graduation_project/custom/appbar.dart';
 import 'package:graduation_project/custom/buttons.dart';
 import 'package:graduation_project/custom/textField.dart';
+import 'package:graduation_project/pages/forgetpassword.dart';
+import 'package:graduation_project/pages/signup1.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -10,6 +13,8 @@ class LoginPage extends StatefulWidget {
   @override
   State<LoginPage> createState() => _LoginPageState();
 }
+
+String text = '';
 
 class _LoginPageState extends State<LoginPage> {
   bool isPasswordVisible = false;
@@ -39,8 +44,8 @@ class _LoginPageState extends State<LoginPage> {
                       ],
                       color: Colors.grey[300],
                     ),
-                    width: 290.w,
-                    height: 420.h,
+                    width: 340.w,
+                    height: 480.h,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
@@ -95,23 +100,31 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                         Container(
                           width: 300.w,
-                          height: 35.h,
-                          child: TextField(
-                            obscureText: !isPasswordVisible,
-                            decoration: InputDecoration(
-                              filled: true,
-                              fillColor: Color.fromRGBO(255, 253, 253, 1),
-                              border: OutlineInputBorder(
-                                  borderSide: BorderSide.none),
-                              prefixIcon: IconButton(
-                                icon: isPasswordVisible
-                                    ? Icon(Icons.visibility)
-                                    : Icon(Icons.visibility_off),
-                                onPressed: () {
-                                  setState(() {
-                                    isPasswordVisible = !isPasswordVisible;
-                                  });
-                                },
+                          height: 40.h,
+                          child: AutoDirection(
+                            text: text,
+                            child: TextFormField(
+                              onChanged: (value) {
+                                setState(() {
+                                  text = value;
+                                });
+                              },
+                              obscureText: !isPasswordVisible,
+                              decoration: InputDecoration(
+                                filled: true,
+                                fillColor: Color.fromRGBO(255, 253, 253, 1),
+                                border: OutlineInputBorder(
+                                    borderSide: BorderSide.none),
+                                prefixIcon: IconButton(
+                                  icon: isPasswordVisible
+                                      ? Icon(Icons.visibility)
+                                      : Icon(Icons.visibility_off),
+                                  onPressed: () {
+                                    setState(() {
+                                      isPasswordVisible = !isPasswordVisible;
+                                    });
+                                  },
+                                ),
                               ),
                             ),
                           ),
@@ -124,12 +137,30 @@ class _LoginPageState extends State<LoginPage> {
                           title: "تسجيل الدخول",
                           onPressed: () {},
                         )),
+                        Center(
+                          child: MaterialButton(
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                builder: (BuildContext context) =>
+                                    const ForgetPssword(),
+                              ));
+                            },
+                            child: Text("هل نسيت كلمة السر؟",
+                                style: TextStyle(
+                                    fontSize: 18, color: Colors.grey[600])),
+                          ),
+                        ),
                         SizedBox(
-                          height: 10,
+                          height: 5,
                         ),
                         Center(
                           child: MaterialButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                builder: (BuildContext context) =>
+                                    const SignUpPage1(),
+                              ));
+                            },
                             child: Text(" ليس لديك حساب؟",
                                 style: TextStyle(
                                     fontSize: 18, color: Colors.grey[600])),

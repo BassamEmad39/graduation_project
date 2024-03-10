@@ -38,7 +38,7 @@ class _SignUpPage2State extends State<SignUpPage2> {
                       color: Colors.grey[300],
                     ),
                     width: 290.w,
-                    height: 520.h,
+                    height: 560.h,
                     child: Column(
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
