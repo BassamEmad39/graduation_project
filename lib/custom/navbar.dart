@@ -72,6 +72,7 @@ class NavBar extends StatelessWidget {
               style: TextStyle(color: Colors.white),
             ),
             ListTile(
+              leading: Image.asset('images/logout.png',height: 20.h,width: 20.h,),
               title: Text(
                 'تسجيل الخروج',
                 style: TextStyle(color: Colors.white),

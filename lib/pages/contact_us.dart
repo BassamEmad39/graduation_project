@@ -246,7 +246,7 @@ class _ContactUsPageState extends State<ContactUsPage> {
                             width: 20,
                           ),
                           SizedBox(
-                            height: 10,
+                            height: 5,
                           ),
                           Text(
                             "العنوان",
@@ -256,13 +256,17 @@ class _ContactUsPageState extends State<ContactUsPage> {
                                 fontSize: 16),
                           ),
                           SizedBox(
-                            height: 15,
+                            height: 5,
                           ),
-                          Text(
-                            "جامعة كفر الشيخ مصر، كفر الشيخ",
-                            style: TextStyle(
-                                fontSize: 8, color: Color(0xff696969)),
+                          Center(
+                            child: Text(
+                              " ، جامعة كفر الشيخ مصر ",
+                              style: TextStyle(
+                                  fontSize: 8, color: Color(0xff696969)),
+                            ),
                           ),
+                          Text('كفر الشيخ',style: TextStyle(
+                                  fontSize: 8, color: Color(0xff696969)),),
                         ],
                       )),
                     ),
