@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:graduation_project/pages/homepage.dart';
 import 'package:graduation_project/pages/login.dart';
 
 void main() {
@@ -24,6 +25,6 @@ class _MyAppState extends State<MyApp> {
               debugShowCheckedModeBanner: false,
               home: child,
             ),
-        child: LoginPage());
+        child: HomePage());
   }
 }

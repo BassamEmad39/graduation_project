@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:graduation_project/custom/navbar.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -11,6 +12,7 @@ class HomePage extends StatelessWidget {
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
+        drawer: NavBar(),
         appBar: MainAppBar(),
         body: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -172,56 +174,32 @@ class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Container(
-        padding: EdgeInsets.only(left: 8, right: 8),
-        height: 70.h,
-        child: Row(
-          children: [
-            InkWell(
-              onTap: () {},
-              child: Ink(
-                height: 45.h,
-                width: 45.h,
-                color: Color(0xff1A5653),
-                child: Center(
-                    child: Text(
-                  'EN',
-                  style: TextStyle(color: Colors.white),
-                )),
-              ),
-            ),
-            IconButton(
-                onPressed: () {},
-                icon: Icon(
-                  Icons.menu,
-                  color: Color(0xff1A5653),
-                  size: 30.0,
-                )),
-            Expanded(
-              child: Center(
-                child: Text(
-                  'جوائز النشر العلمي',
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Color(0xff1A5653),
-                      fontSize: 18.sp),
-                ),
-              ),
-            ),
-            Container(
-              child: Image.asset(
-                'images/logo (1).png',
-                height: 36.h,
-                width: 90.w,
-              ),
-            ),
-          ],
-        ),
+      return AppBar(
+      title: Row(
+        children: [
+          Text('جوائز النشر العلمي',style: TextStyle(fontWeight: FontWeight.bold,color: Color(0xff1A5653)),),
+          Expanded(child: Image.asset('images/logo (1).png',height: 32,width: 80,)),
+        ],
       ),
+      actions: [
+        InkWell(
+          onTap: (){
+
+          },
+          child: Ink(
+            height: 40.h,
+            width: 40.h,
+            color:Color(0xff1A5653),
+            child: Center(child: Text('EN',style: TextStyle(color: Colors.white),)),),
+        )
+      ],
     );
   }
 
   @override
   Size get preferredSize => Size.fromHeight(60.h);
 }
+  
+
+  
+

@@ -18,7 +18,6 @@ class _MyTextFieldState extends State<MyTextField> {
     return AutoDirection(
       text: text,
       child: TextFormField(
-        
         onChanged: (value) {
           setState(() {
             text = value;
@@ -27,14 +26,15 @@ class _MyTextFieldState extends State<MyTextField> {
         obscureText: isPasswordHidden &&widget.isPassword,
         decoration:  InputDecoration(
           isDense: true,
+          contentPadding: EdgeInsets.all(10),
             border: OutlineInputBorder(borderSide: BorderSide.none),
             prefixIcon: widget.isPassword?IconButton(
-          icon: Icon(
-              isPasswordHidden? Icons.visibility_off : Icons.visibility),
+        icon: Icon(size: null,
+              isPasswordHidden? Icons.visibility_off : Icons.visibility,),
           onPressed: () {
             isPasswordHidden = !isPasswordHidden;
             setState(() {});
-          },
+         },
         ):null,
               
          
