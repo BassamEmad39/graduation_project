@@ -73,7 +73,9 @@ class HomePage extends StatelessWidget {
                       ],
                     ),
                   ),
-                  SizedBox(height: 5,),
+                  SizedBox(
+                    height: 5,
+                  ),
                   Row(
                     children: [
                       Column(
@@ -85,19 +87,28 @@ class HomePage extends StatelessWidget {
                               backgroundColor: Color(0xff1A5653),
                               foregroundColor: Colors.white,
                               child: Container(
-                                child: Image.asset('images/group.png',color: Colors.white,height: 20,width: 20,),
+                                child: Image.asset(
+                                  'images/group.png',
+                                  color: Colors.white,
+                                  height: 20,
+                                  width: 20,
+                                ),
                               ),
                             ),
                           ),
-
                           Container(
                             padding: EdgeInsets.only(top: 6),
                             height: 55.h,
                             width: 90.w,
                             color: Color(0xff999999),
                             child: Column(
-                              children: [Text('100'),
-                                Text('دكتور',style: TextStyle(fontSize: 10),),],
+                              children: [
+                                Text('100'),
+                                Text(
+                                  'دكتور',
+                                  style: TextStyle(fontSize: 10),
+                                ),
+                              ],
                             ),
                           ),
                         ],
@@ -112,19 +123,26 @@ class HomePage extends StatelessWidget {
                                 backgroundColor: Color(0xff1A5653),
                                 foregroundColor: Colors.white,
                                 child: Container(
-                                  child: Image.asset('images/contact.png',color: Colors.white,),
+                                  child: Image.asset(
+                                    'images/contact.png',
+                                    color: Colors.white,
+                                  ),
                                 ),
                               ),
                             ),
-                        
                             Container(
                               padding: EdgeInsets.only(top: 6),
                               height: 55.h,
                               width: 90.w,
                               color: Color(0xff999999),
                               child: Column(
-                                children: [Text('1700'),
-                                  Text('نشر',style: TextStyle(fontSize: 10),),],
+                                children: [
+                                  Text('1700'),
+                                  Text(
+                                    'نشر',
+                                    style: TextStyle(fontSize: 10),
+                                  ),
+                                ],
                               ),
                             ),
                           ],
@@ -139,26 +157,35 @@ class HomePage extends StatelessWidget {
                               backgroundColor: Color(0xff1A5653),
                               foregroundColor: Colors.white,
                               child: Container(
-                                child: Image.asset('images/dollar.png',color: Colors.white,),
+                                child: Image.asset(
+                                  'images/dollar.png',
+                                  color: Colors.white,
+                                ),
                               ),
                             ),
                           ),
-
                           Container(
                             padding: EdgeInsets.only(top: 6),
                             height: 55.h,
                             width: 90.w,
                             color: Color(0xff999999),
                             child: Column(
-                              children: [Text('2000000'),
-                                Text('قيمة الجوائز المدفوعة',style: TextStyle(fontSize: 10),),],
+                              children: [
+                                Text('2000000'),
+                                Text(
+                                  'قيمة الجوائز المدفوعة',
+                                  style: TextStyle(fontSize: 10),
+                                ),
+                              ],
                             ),
                           ),
                         ],
                       ),
                     ],
                   ),
-                  SizedBox(height: 50,)
+                  SizedBox(
+                    height: 50,
+                  )
                 ],
               ),
             ],
@@ -174,23 +201,35 @@ class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-      return AppBar(
+    return AppBar(
       title: Row(
         children: [
-          Text('جوائز النشر العلمي',style: TextStyle(fontWeight: FontWeight.bold,color: Color(0xff1A5653)),),
-          Expanded(child: Image.asset('images/logo (1).png',height: 32,width: 80,)),
+          Text(
+            'جوائز النشر العلمي',
+            style: TextStyle(
+                fontWeight: FontWeight.bold, color: Color(0xff1A5653)),
+          ),
+          Expanded(
+              child: Image.asset(
+            'images/logo (1).png',
+            height: 32,
+            width: 80,
+          )),
         ],
       ),
       actions: [
         InkWell(
-          onTap: (){
-
-          },
+          onTap: () {},
           child: Ink(
             height: 40.h,
             width: 40.h,
-            color:Color(0xff1A5653),
-            child: Center(child: Text('EN',style: TextStyle(color: Colors.white),)),),
+            color: Color(0xff1A5653),
+            child: Center(
+                child: Text(
+              'EN',
+              style: TextStyle(color: Colors.white),
+            )),
+          ),
         )
       ],
     );
@@ -199,7 +238,3 @@ class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Size get preferredSize => Size.fromHeight(60.h);
 }
-  
-
-  
-

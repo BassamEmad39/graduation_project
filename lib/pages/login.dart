@@ -79,7 +79,7 @@ class _LoginPageState extends State<LoginPage> {
                         SizedBox(
                           height: 10,
                         ),
-                        MyTextField(isPassword: false,),
+                        MyTextField(isPassword: false,maxLiness: 1),
                         SizedBox(
                           height: 10,
                         ),
@@ -97,7 +97,7 @@ class _LoginPageState extends State<LoginPage> {
                         SizedBox(
                           height: 10,
                         ),
-                        MyTextField(isPassword: true),
+                        MyTextField(isPassword: true,maxLiness: 1,),
                         SizedBox(
                           height: 15,
                         ),

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:graduation_project/pages/contact_us.dart';
+import 'package:graduation_project/pages/login.dart';
+import 'package:graduation_project/pages/signup1.dart';
 
 class NavBar extends StatelessWidget {
   const NavBar({super.key});
@@ -20,35 +23,49 @@ class NavBar extends StatelessWidget {
                 'الرئيسية',
                 style: TextStyle(color: Colors.white),
               ),
-              onTap: (){},
+              onTap: () {
+                Navigator.of(context).pop(context);
+              },
             ),
             ListTile(
               title: Text(
                 'للتقديم',
                 style: TextStyle(color: Colors.white),
               ),
-              onTap: (){},
+              onTap: () {},
             ),
             ListTile(
               title: Text(
                 'إتصل بنا',
                 style: TextStyle(color: Colors.white),
               ),
-              onTap: (){},
+              onTap: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (BuildContext context) => const ContactUsPage(),
+                ));
+              },
             ),
             ListTile(
               title: Text(
                 'إنشاء حساب',
                 style: TextStyle(color: Colors.white),
               ),
-              onTap: (){},
+              onTap: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (BuildContext context) => const SignUpPage1(),
+                ));
+              },
             ),
             ListTile(
               title: Text(
                 'تسجيل الدخول',
                 style: TextStyle(color: Colors.white),
               ),
-              onTap: (){},
+              onTap: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (BuildContext context) => const LoginPage(),
+                ));
+              },
             ),
             Text(
               '_______________________',
@@ -59,12 +76,11 @@ class NavBar extends StatelessWidget {
                 'تسجيل الخروج',
                 style: TextStyle(color: Colors.white),
               ),
-              onTap: (){},
+              onTap: () {},
             ),
           ],
         ),
       ),
     );
-
   }
 }

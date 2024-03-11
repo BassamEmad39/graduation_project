@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 
 class MyTextField extends StatefulWidget {
   final bool isPassword;
-  const MyTextField({super.key,required this.isPassword});
+  final int maxLiness;
+
+  const MyTextField({super.key,required this.isPassword, required this.maxLiness});
 
   @override
   State<MyTextField> createState() => _MyTextFieldState();
@@ -18,6 +20,7 @@ class _MyTextFieldState extends State<MyTextField> {
     return AutoDirection(
       text: text,
       child: TextFormField(
+        maxLines: widget.maxLiness,
         onChanged: (value) {
           setState(() {
             text = value;

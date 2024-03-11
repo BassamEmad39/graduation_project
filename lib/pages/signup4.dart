@@ -49,7 +49,7 @@ class _SignUpPage4State extends State<SignUpPage4> {
                     color: Colors.grey[300],
                   ),
                   width: 335.h,
-                  height: 335.h,
+                  height: 365.h,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
@@ -81,7 +81,7 @@ class _SignUpPage4State extends State<SignUpPage4> {
                       const SizedBox(
                         height: 5,
                       ),
-                      MyTextField(isPassword: true), 
+                      MyTextField(isPassword: true,maxLiness: 1), 
                       const SizedBox(
                         height: 15,
                       ),
@@ -93,9 +93,9 @@ class _SignUpPage4State extends State<SignUpPage4> {
                       const SizedBox(
                         height: 5,
                       ),
-                      MyTextField(isPassword: true), 
+                      MyTextField(isPassword: true,maxLiness: 1), 
                       const SizedBox(
-                        height: 15,
+                        height: 20,
                       ),
                       Center(
                         child: CustomButton(

@@ -18,7 +18,7 @@ class _SignUpPage1State extends State<SignUpPage1> {
     return Scaffold(
       appBar: MyAppBar(),
       body: ListView(
-        padding: EdgeInsets.only(top: 150.h),
+        padding: EdgeInsets.only(top: 100.h),
         children: [
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -39,7 +39,7 @@ class _SignUpPage1State extends State<SignUpPage1> {
                   color: Colors.grey[300],
                 ),
                 width: 290.w,
-                height: 400.h,
+                height: 430.h,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
@@ -71,7 +71,7 @@ class _SignUpPage1State extends State<SignUpPage1> {
                     const SizedBox(
                       height: 5,
                     ),
-                    MyTextField(isPassword: false,),
+                    MyTextField(isPassword: false,maxLiness: 1),
                     const SizedBox(
                       height: 31,
                     ),
@@ -83,7 +83,7 @@ class _SignUpPage1State extends State<SignUpPage1> {
                     const SizedBox(
                       height: 5,
                     ),
-                    MyTextField(isPassword: false,),
+                    MyTextField(isPassword: false,maxLiness: 1),
                     const SizedBox(
                       height: 25,
                     ),
@@ -117,7 +117,7 @@ class _SignUpPage1State extends State<SignUpPage1> {
                               spreadRadius: 0,
                               blurRadius: 4,
                               offset: const Offset(
-                                  0, 3), // changes position of shadow
+                                  0, 3), 
                             ),
                           ],
                           shape: BoxShape.rectangle,

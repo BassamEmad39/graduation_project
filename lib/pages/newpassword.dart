@@ -83,7 +83,7 @@ class _NewPasswordState extends State<NewPassword> {
                         height: 10,
                       ),
                       
-                      MyTextField(isPassword: true), 
+                      MyTextField(isPassword: true,maxLiness: 1), 
                       
                       const SizedBox(
                         height: 20,
@@ -102,7 +102,7 @@ class _NewPasswordState extends State<NewPassword> {
                       const SizedBox(
                         height: 10,
                       ),
-                      MyTextField(isPassword: true), 
+                      MyTextField(isPassword: true,maxLiness: 1), 
                       const SizedBox(
                         height: 20,
                       ),

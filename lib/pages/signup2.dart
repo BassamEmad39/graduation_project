@@ -38,7 +38,7 @@ class _SignUpPage2State extends State<SignUpPage2> {
                       color: Colors.grey[300],
                     ),
                     width: 340.w,
-                    height: 620.h,
+                    height: 660.h,
                     child: Column(
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
@@ -70,7 +70,7 @@ class _SignUpPage2State extends State<SignUpPage2> {
                           const SizedBox(
                             height: 5,
                           ),
-                          MyTextField(isPassword: false,),
+                          MyTextField(isPassword: false,maxLiness: 1),
                           const SizedBox(
                             height: 31,
                           ),
@@ -82,7 +82,7 @@ class _SignUpPage2State extends State<SignUpPage2> {
                           const SizedBox(
                             height: 5,
                           ),
-                          MyTextField(isPassword: false,),
+                          MyTextField(isPassword: false,maxLiness: 1),
                           const SizedBox(
                             height: 31,
                           ),
@@ -94,7 +94,7 @@ class _SignUpPage2State extends State<SignUpPage2> {
                           const SizedBox(
                             height: 5,
                           ),
-                          MyTextField(isPassword: false,),
+                          MyTextField(isPassword: false,maxLiness: 1),
                           const SizedBox(
                             height: 31,
                           ),
@@ -106,7 +106,7 @@ class _SignUpPage2State extends State<SignUpPage2> {
                           const SizedBox(
                             height: 5,
                           ),
-                          MyTextField(isPassword: false,),
+                          MyTextField(isPassword: false,maxLiness: 1),
                           const SizedBox(
                             height: 25,
                           ),

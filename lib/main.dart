@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:graduation_project/pages/changepassword.dart';
+import 'package:graduation_project/pages/contact_us.dart';
+import 'package:graduation_project/pages/forgetpassword.dart';
 import 'package:graduation_project/pages/homepage.dart';
 import 'package:graduation_project/pages/login.dart';
+import 'package:graduation_project/pages/signup1.dart';
+import 'package:graduation_project/pages/signup2.dart';
+import 'package:graduation_project/pages/signup3.dart';
+import 'package:graduation_project/pages/signup4.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +25,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-        designSize: const Size(441, 886),
+        designSize: Size(441, 886),
         splitScreenMode: true,
         minTextAdapt: true,
         builder: (context, child) => MaterialApp(
