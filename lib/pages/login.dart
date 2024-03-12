@@ -44,7 +44,7 @@ class _LoginPageState extends State<LoginPage> {
                       color: Colors.grey[300],
                     ),
                     width: 340.w,
-                    height: 500.h,
+                    height: 458.h,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
@@ -52,54 +52,52 @@ class _LoginPageState extends State<LoginPage> {
                           child: Text(
                             "تسجيل دخول",
                             style: TextStyle(
-                                fontSize: 25,
-                                fontWeight: FontWeight.bold,
-                                color: Color.fromARGB(
-                                  255,
-                                  25,
-                                  124,
-                                  101,
-                                )),
+                                fontWeight: FontWeight.w700,
+                                fontSize: 20,
+                                color: Color.fromRGBO(26, 86, 83, 1),
+                                shadows: [
+                                  BoxShadow(
+                                    color: Colors.grey,
+                                    spreadRadius: 0,
+                                    blurRadius: 4,
+                                    offset: Offset(0, 2),
+                                  )
+                                ]),
                           ),
                         ),
                         SizedBox(
-                          height: 20,
+                          height: 17.h,
                         ),
                         Text(
                           "الايميل",
                           style: TextStyle(
-                              fontSize: 20,
-                              color: Color.fromARGB(
-                                255,
-                                25,
-                                124,
-                                101,
-                              )),
+                              color: Color.fromRGBO(26, 86, 83, 1),
+                              fontWeight: FontWeight.w500,
+                              fontSize: 13),
                         ),
                         SizedBox(
-                          height: 10,
+                          height: 5.h,
                         ),
-                        MyTextField(isPassword: false,maxLiness: 1),
+                        MyTextField(isPassword: false, maxLiness: 1),
                         SizedBox(
-                          height: 10,
+                          height: 20.h,
                         ),
                         Text(
                           "كلمة السر",
                           style: TextStyle(
-                              fontSize: 20,
-                              color: Color.fromARGB(
-                                255,
-                                25,
-                                124,
-                                101,
-                              )),
+                              color: Color.fromRGBO(26, 86, 83, 1),
+                              fontWeight: FontWeight.w500,
+                              fontSize: 13),
                         ),
                         SizedBox(
-                          height: 10,
+                          height: 5.h,
                         ),
-                        MyTextField(isPassword: true,maxLiness: 1,),
+                        MyTextField(
+                          isPassword: true,
+                          maxLiness: 1,
+                        ),
                         SizedBox(
-                          height: 15,
+                          height: 25.h,
                         ),
                         Center(
                             child: CustomButton(
@@ -119,7 +117,6 @@ class _LoginPageState extends State<LoginPage> {
                                     fontSize: 18, color: Colors.grey[600])),
                           ),
                         ),
-                        
                         Center(
                           child: MaterialButton(
                             onPressed: () {

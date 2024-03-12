@@ -47,7 +47,7 @@ class _NewPasswordState extends State<NewPassword> {
                     color: Colors.grey[300],
                   ),
                   width: 340.w,
-                  height: 420.h,
+                  height: 390.h,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
@@ -55,54 +55,43 @@ class _NewPasswordState extends State<NewPassword> {
                         child: Text(
                           " تغير كلمة السر",
                           style: TextStyle(
-                              fontSize: 25,
-                              fontWeight: FontWeight.bold,
-                              color: Color.fromARGB(
-                                255,
-                                25,
-                                124,
-                                101,
-                              )),
+                              fontWeight: FontWeight.w700,
+                              fontSize: 20,
+                              color: Color.fromRGBO(26, 86, 83, 1),
+                              shadows: [
+                                BoxShadow(
+                                  color: Colors.grey,
+                                  spreadRadius: 0,
+                                  blurRadius: 4,
+                                  offset: Offset(0, 2),
+                                )
+                              ]),
                         ),
                       ),
                       const SizedBox(
                         height: 20,
                       ),
-                      const Text(
-                        " كلمة السر الجديدة",
-                        style: TextStyle(
-                            fontSize: 20,
-                            color: Color.fromARGB(
-                              255,
-                              25,
-                              124,
-                              101,
-                            )),
-                      ),
+                      const Text(" كلمة السر الجديدة",
+                          style: TextStyle(
+                              color: Color.fromRGBO(26, 86, 83, 1),
+                              fontWeight: FontWeight.w500,
+                              fontSize: 13)),
                       const SizedBox(
                         height: 10,
                       ),
-                      
-                      MyTextField(isPassword: true,maxLiness: 1), 
-                      
+                      MyTextField(isPassword: true, maxLiness: 1),
                       const SizedBox(
                         height: 20,
                       ),
-                      const Text(
-                        " تأكيد كلمة السر",
-                        style: TextStyle(
-                            fontSize: 20,
-                            color: Color.fromARGB(
-                              255,
-                              25,
-                              124,
-                              101,
-                            )),
-                      ),
+                      const Text(" تأكيد كلمة السر",
+                          style: TextStyle(
+                              color: Color.fromRGBO(26, 86, 83, 1),
+                              fontWeight: FontWeight.w500,
+                              fontSize: 13)),
                       const SizedBox(
                         height: 10,
                       ),
-                      MyTextField(isPassword: true,maxLiness: 1), 
+                      MyTextField(isPassword: true, maxLiness: 1),
                       const SizedBox(
                         height: 20,
                       ),
