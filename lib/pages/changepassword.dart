@@ -42,14 +42,17 @@ class ChangePassword extends StatelessWidget {
                         child: Text(
                           "تغير كلمة السر",
                           style: TextStyle(
-                              fontSize: 25,
-                              fontWeight: FontWeight.bold,
-                              color: Color.fromARGB(
-                                255,
-                                25,
-                                124,
-                                101,
-                              )),
+                              fontWeight: FontWeight.w700,
+                              fontSize: 20,
+                              color: Color.fromRGBO(26, 86, 83, 1),
+                              shadows: [
+                                BoxShadow(
+                                  color: Colors.grey,
+                                  spreadRadius: 0,
+                                  blurRadius: 4,
+                                  offset: Offset(0, 2),
+                                )
+                              ]),
                         ),
                       ),
                       SizedBox(

@@ -18,7 +18,7 @@ class _SignUpPage1State extends State<SignUpPage1> {
     return Scaffold(
       appBar: MyAppBar(),
       body: ListView(
-        padding: EdgeInsets.only(top: 100.h),
+        padding: EdgeInsets.only(top: 150.h),
         children: [
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -39,7 +39,7 @@ class _SignUpPage1State extends State<SignUpPage1> {
                   color: Colors.grey[300],
                 ),
                 width: 290.w,
-                height: 430.h,
+                height: 380.h,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
@@ -60,32 +60,32 @@ class _SignUpPage1State extends State<SignUpPage1> {
                             ]),
                       ),
                     ),
-                    const SizedBox(
-                      height: 25,
+                    SizedBox(
+                      height: 25.h,
                     ),
                     const Text("الايميل",
                         style: TextStyle(
                             color: Color.fromRGBO(26, 86, 83, 1),
                             fontWeight: FontWeight.w500,
                             fontSize: 13)),
-                    const SizedBox(
-                      height: 5,
+                    SizedBox(
+                      height: 5.h,
                     ),
-                    MyTextField(isPassword: false,maxLiness: 1),
-                    const SizedBox(
-                      height: 31,
+                    MyTextField(isPassword: false, maxLiness: 1),
+                    SizedBox(
+                      height: 31.h,
                     ),
                     const Text("الرقم القومي",
                         style: TextStyle(
                             color: Color.fromRGBO(26, 86, 83, 1),
                             fontWeight: FontWeight.w500,
                             fontSize: 13)),
-                    const SizedBox(
-                      height: 5,
+                    SizedBox(
+                      height: 5.h,
                     ),
-                    MyTextField(isPassword: false,maxLiness: 1),
-                    const SizedBox(
-                      height: 25,
+                    MyTextField(isPassword: false, maxLiness: 1),
+                    SizedBox(
+                      height: 25.h,
                     ),
                     Center(
                       child: CustomButton(
@@ -108,36 +108,35 @@ class _SignUpPage1State extends State<SignUpPage1> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Container(
-                      width: 68,
-                      height: 6,
+                      width: 68.w,
+                      height: 6.h,
                       decoration: BoxDecoration(
                           boxShadow: [
                             BoxShadow(
                               color: Colors.grey.withOpacity(0.9),
                               spreadRadius: 0,
                               blurRadius: 4,
-                              offset: const Offset(
-                                  0, 3), 
+                              offset: const Offset(0, 3),
                             ),
                           ],
                           shape: BoxShape.rectangle,
                           color: const Color.fromRGBO(16, 120, 105, 1)),
                     ),
                     Container(
-                      width: 68,
-                      height: 6,
+                      width: 68.w,
+                      height: 6.h,
                       decoration: BoxDecoration(
                           shape: BoxShape.rectangle, color: Colors.grey[200]),
                     ),
                     Container(
-                      width: 68,
-                      height: 6,
+                      width: 68.w,
+                      height: 6.h,
                       decoration: BoxDecoration(
                           shape: BoxShape.rectangle, color: Colors.grey[200]),
                     ),
                     Container(
-                      width: 68,
-                      height: 6,
+                      width: 68.w,
+                      height: 6.h,
                       decoration: BoxDecoration(
                           shape: BoxShape.rectangle, color: Colors.grey[200]),
                     ),

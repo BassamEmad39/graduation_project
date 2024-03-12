@@ -38,7 +38,7 @@ class _SignUpPage3State extends State<SignUpPage3> {
                       color: Colors.grey[300],
                     ),
                     width: 320.w,
-                    height: 555.h,
+                    height: 490.h,
                     child: Column(
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
@@ -59,44 +59,44 @@ class _SignUpPage3State extends State<SignUpPage3> {
                                   ]),
                             ),
                           ),
-                          const SizedBox(
-                            height: 25,
+                          SizedBox(
+                            height: 25.h,
                           ),
                           const Text("الكلية",
                               style: TextStyle(
                                   color: Color.fromRGBO(26, 86, 83, 1),
                                   fontWeight: FontWeight.w500,
                                   fontSize: 13)),
-                          const SizedBox(
-                            height: 5,
+                          SizedBox(
+                            height: 5.h,
                           ),
-                          MyTextField(isPassword: false,maxLiness: 1),
-                          const SizedBox(
-                            height: 31,
+                          MyTextField(isPassword: false, maxLiness: 1),
+                          SizedBox(
+                            height: 31.h,
                           ),
                           const Text("القسم",
                               style: TextStyle(
                                   color: Color.fromRGBO(26, 86, 83, 1),
                                   fontWeight: FontWeight.w500,
                                   fontSize: 13)),
-                          const SizedBox(
-                            height: 5,
+                          SizedBox(
+                            height: 5.h,
                           ),
-                          MyTextField(isPassword: false,maxLiness: 1),
-                          const SizedBox(
-                            height: 31,
+                          MyTextField(isPassword: false, maxLiness: 1),
+                          SizedBox(
+                            height: 31.h,
                           ),
                           const Text("الدرجة العلمية",
                               style: TextStyle(
                                   color: Color.fromRGBO(26, 86, 83, 1),
                                   fontWeight: FontWeight.w500,
                                   fontSize: 13)),
-                          const SizedBox(
-                            height: 5,
+                          SizedBox(
+                            height: 5.h,
                           ),
-                          MyTextField(isPassword: false,maxLiness: 1),
-                          const SizedBox(
-                            height: 31,
+                          MyTextField(isPassword: false, maxLiness: 1),
+                          SizedBox(
+                            height: 31.h,
                           ),
                           Center(
                             child: CustomButton(
@@ -116,20 +116,20 @@ class _SignUpPage3State extends State<SignUpPage3> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Container(
-                    width: 68,
-                    height: 6,
+                    width: 68.w,
+                    height: 6.h,
                     decoration: BoxDecoration(
                         shape: BoxShape.rectangle, color: Colors.grey[200]),
                   ),
                   Container(
-                    width: 68,
-                    height: 6,
+                    width: 68.w,
+                    height: 6.h,
                     decoration: BoxDecoration(
                         shape: BoxShape.rectangle, color: Colors.grey[200]),
                   ),
                   Container(
-                    width: 68,
-                    height: 6,
+                    width: 68.w,
+                    height: 6.h,
                     decoration: BoxDecoration(
                         boxShadow: [
                           BoxShadow(
@@ -144,8 +144,8 @@ class _SignUpPage3State extends State<SignUpPage3> {
                         color: const Color.fromRGBO(16, 120, 105, 1)),
                   ),
                   Container(
-                    width: 68,
-                    height: 6,
+                    width: 68.w,
+                    height: 6.h,
                     decoration: BoxDecoration(
                         shape: BoxShape.rectangle, color: Colors.grey[200]),
                   ),

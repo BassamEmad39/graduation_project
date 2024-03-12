@@ -49,7 +49,7 @@ class _SignUpPage4State extends State<SignUpPage4> {
                     color: Colors.grey[300],
                   ),
                   width: 335.h,
-                  height: 365.h,
+                  height: 345.h,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
@@ -70,32 +70,32 @@ class _SignUpPage4State extends State<SignUpPage4> {
                               ]),
                         ),
                       ),
-                      const SizedBox(
-                        height: 7,
+                      SizedBox(
+                        height: 7.h,
                       ),
                       const Text("كلمة السر",
                           style: TextStyle(
                               color: Color.fromRGBO(26, 86, 83, 1),
                               fontWeight: FontWeight.w500,
                               fontSize: 13)),
-                      const SizedBox(
-                        height: 5,
+                      SizedBox(
+                        height: 5.h,
                       ),
-                      MyTextField(isPassword: true,maxLiness: 1), 
-                      const SizedBox(
-                        height: 15,
+                      MyTextField(isPassword: true, maxLiness: 1),
+                      SizedBox(
+                        height: 15.h,
                       ),
                       const Text("تأكيد كلمة السر",
                           style: TextStyle(
                               color: Color.fromRGBO(26, 86, 83, 1),
                               fontWeight: FontWeight.w500,
                               fontSize: 13)),
-                      const SizedBox(
-                        height: 5,
+                      SizedBox(
+                        height: 5.h,
                       ),
-                      MyTextField(isPassword: true,maxLiness: 1), 
-                      const SizedBox(
-                        height: 20,
+                      MyTextField(isPassword: true, maxLiness: 1),
+                      SizedBox(
+                        height: 20.h,
                       ),
                       Center(
                         child: CustomButton(
@@ -121,26 +121,26 @@ class _SignUpPage4State extends State<SignUpPage4> {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Container(
-                        width: 68,
-                        height: 6,
+                        width: 68.w,
+                        height: 6.h,
                         decoration: BoxDecoration(
                             shape: BoxShape.rectangle, color: Colors.grey[200]),
                       ),
                       Container(
-                        width: 68,
-                        height: 6,
+                        width: 68.w,
+                        height: 6.h,
                         decoration: BoxDecoration(
                             shape: BoxShape.rectangle, color: Colors.grey[200]),
                       ),
                       Container(
-                        width: 68,
-                        height: 6,
+                        width: 68.w,
+                        height: 6.h,
                         decoration: BoxDecoration(
                             shape: BoxShape.rectangle, color: Colors.grey[200]),
                       ),
                       Container(
-                        width: 68,
-                        height: 6,
+                        width: 68.w,
+                        height: 6.h,
                         decoration: BoxDecoration(
                             boxShadow: [
                               BoxShadow(

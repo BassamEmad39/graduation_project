@@ -13,7 +13,7 @@ class ForgetPssword extends StatelessWidget {
     return Scaffold(
       appBar: MyAppBar(),
       body: ListView(
-        padding: EdgeInsets.only(top: 150.h),
+        padding: EdgeInsets.only(top: 180.h),
         children: [
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -21,7 +21,7 @@ class ForgetPssword extends StatelessWidget {
               Center(
                 child: Container(
                   padding:
-                      const EdgeInsets.symmetric(horizontal: 13, vertical: 37),
+                      EdgeInsets.symmetric(horizontal: 13.h, vertical: 37.w),
                   decoration: BoxDecoration(
                     boxShadow: [
                       BoxShadow(
@@ -35,7 +35,7 @@ class ForgetPssword extends StatelessWidget {
                     color: Colors.grey[300],
                   ),
                   width: 340.w,
-                  height: 300.h,
+                  height: 270.h,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
@@ -43,34 +43,34 @@ class ForgetPssword extends StatelessWidget {
                         child: Text(
                           " تغير كلمة السر",
                           style: TextStyle(
-                              fontSize: 25,
-                              fontWeight: FontWeight.bold,
-                              color: Color.fromARGB(
-                                255,
-                                25,
-                                124,
-                                101,
-                              )),
+                              fontWeight: FontWeight.w700,
+                              fontSize: 20,
+                              color: Color.fromRGBO(26, 86, 83, 1),
+                              shadows: [
+                                BoxShadow(
+                                  color: Colors.grey,
+                                  spreadRadius: 0,
+                                  blurRadius: 4,
+                                  offset: Offset(0, 2),
+                                )
+                              ]),
                         ),
                       ),
                       SizedBox(
                         height: 20,
                       ),
-                      Text(
-                        "الايميل",
-                        style: TextStyle(
-                            fontSize: 20,
-                            color: Color.fromARGB(
-                              255,
-                              25,
-                              124,
-                              101,
-                            )),
-                      ),
+                      Text("الايميل",
+                          style: TextStyle(
+                              color: Color.fromRGBO(26, 86, 83, 1),
+                              fontWeight: FontWeight.w500,
+                              fontSize: 13)),
                       SizedBox(
-                        height: 10,
+                        height: 5.h,
                       ),
-                      MyTextField(isPassword: false,maxLiness: 1,),
+                      MyTextField(
+                        isPassword: false,
+                        maxLiness: 1,
+                      ),
                       SizedBox(
                         height: 20,
                       ),
