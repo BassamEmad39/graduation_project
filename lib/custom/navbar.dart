@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:graduation_project/pages/contact_us.dart';
 import 'package:graduation_project/pages/login.dart';
+import 'package:graduation_project/pages/profilepage_1.dart';
 import 'package:graduation_project/pages/signup1.dart';
 
 class NavBar extends StatelessWidget {
@@ -15,8 +16,13 @@ class NavBar extends StatelessWidget {
         padding: const EdgeInsets.all(8.0),
         child: ListView(
           children: [
-            CircleAvatar(
-              radius: 50.r,
+            InkWell(
+              onTap: (){
+                 Navigator.push(context, MaterialPageRoute(builder: (context) => ProfilePage1(),));
+              },
+              child: CircleAvatar(
+                radius: 50.r,
+              ),
             ),
             ListTile(
               title: Text(
