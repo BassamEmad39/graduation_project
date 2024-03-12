@@ -21,6 +21,8 @@ class NavBar extends StatelessWidget {
                  Navigator.push(context, MaterialPageRoute(builder: (context) => ProfilePage1(),));
               },
               child: CircleAvatar(
+                child: Icon(Icons.person,size: 70,color: Colors.white,),
+                backgroundColor: Color(0xffE0E0E0),
                 radius: 50.r,
               ),
             ),

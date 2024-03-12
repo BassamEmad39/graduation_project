@@ -18,6 +18,8 @@ class ProfilePage1 extends StatelessWidget {
               SizedBox(
                 height: 150,
                 child: CircleAvatar(
+                  child: Icon(Icons.person,size: 100,color: Colors.white,),
+                backgroundColor: Color(0xffE0E0E0),
                   radius: 100.r,
                 ),
               ),
