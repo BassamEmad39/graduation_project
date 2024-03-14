@@ -44,7 +44,7 @@ class _LoginPageState extends State<LoginPage> {
                       color: Colors.grey[300],
                     ),
                     width: 340.w,
-                    height: 500.h,
+                    height: 450.h,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
@@ -79,7 +79,7 @@ class _LoginPageState extends State<LoginPage> {
                         SizedBox(
                           height: 10,
                         ),
-                        MyTextField(isPassword: false,maxLiness: 1),
+                        MyTextField(isPassword: false, maxLiness: 1),
                         SizedBox(
                           height: 10,
                         ),
@@ -97,7 +97,10 @@ class _LoginPageState extends State<LoginPage> {
                         SizedBox(
                           height: 10,
                         ),
-                        MyTextField(isPassword: true,maxLiness: 1,),
+                        MyTextField(
+                          isPassword: true,
+                          maxLiness: 1,
+                        ),
                         SizedBox(
                           height: 15,
                         ),
@@ -106,20 +109,6 @@ class _LoginPageState extends State<LoginPage> {
                           title: "تسجيل الدخول",
                           onPressed: () {},
                         )),
-                        Center(
-                          child: MaterialButton(
-                            onPressed: () {
-                              Navigator.of(context).push(MaterialPageRoute(
-                                builder: (BuildContext context) =>
-                                    const ForgetPssword(),
-                              ));
-                            },
-                            child: Text("هل نسيت كلمة السر؟",
-                                style: TextStyle(
-                                    fontSize: 18, color: Colors.grey[600])),
-                          ),
-                        ),
-                        
                         Center(
                           child: MaterialButton(
                             onPressed: () {

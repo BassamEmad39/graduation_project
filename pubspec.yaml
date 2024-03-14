@@ -37,6 +37,10 @@ dependencies:
   cupertino_icons: ^1.0.6
   flutter_screenutil: ^5.9.0
   auto_direction: ^0.0.7
+  pin_code_text_field: ^1.8.0
+  pinput: ^4.0.0
+  pin_code_fields:
+  flutter_otp_text_field: ^1.1.1
 
 dev_dependencies:
   flutter_test:

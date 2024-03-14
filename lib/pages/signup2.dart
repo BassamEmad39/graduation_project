@@ -70,7 +70,7 @@ class _SignUpPage2State extends State<SignUpPage2> {
                           const SizedBox(
                             height: 5,
                           ),
-                          MyTextField(isPassword: false,maxLiness: 1),
+                          MyTextField(isPassword: false, maxLiness: 1),
                           const SizedBox(
                             height: 31,
                           ),
@@ -82,7 +82,7 @@ class _SignUpPage2State extends State<SignUpPage2> {
                           const SizedBox(
                             height: 5,
                           ),
-                          MyTextField(isPassword: false,maxLiness: 1),
+                          MyTextField(isPassword: false, maxLiness: 1),
                           const SizedBox(
                             height: 31,
                           ),
@@ -94,7 +94,7 @@ class _SignUpPage2State extends State<SignUpPage2> {
                           const SizedBox(
                             height: 5,
                           ),
-                          MyTextField(isPassword: false,maxLiness: 1),
+                          MyTextField(isPassword: false, maxLiness: 1),
                           const SizedBox(
                             height: 31,
                           ),
@@ -106,7 +106,7 @@ class _SignUpPage2State extends State<SignUpPage2> {
                           const SizedBox(
                             height: 5,
                           ),
-                          MyTextField(isPassword: false,maxLiness: 1),
+                          MyTextField(isPassword: false, maxLiness: 1),
                           const SizedBox(
                             height: 25,
                           ),

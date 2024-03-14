@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:graduation_project/custom/appbar.dart';
 import 'package:graduation_project/custom/buttons.dart';
 import 'package:graduation_project/custom/textField.dart';
-import 'package:graduation_project/pages/changepassword.dart';
+import 'package:graduation_project/pages/verfication.dart';
 
 class ForgetPssword extends StatelessWidget {
   const ForgetPssword({super.key});
@@ -80,7 +80,7 @@ class ForgetPssword extends StatelessWidget {
                           onPressed: () {
                             Navigator.of(context).push(MaterialPageRoute(
                               builder: (BuildContext context) =>
-                                  const ChangePassword(),
+                                  const Verificationn(),
                             ));
                           },
                         ),

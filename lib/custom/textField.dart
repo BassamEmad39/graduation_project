@@ -5,7 +5,8 @@ class MyTextField extends StatefulWidget {
   final bool isPassword;
   final int maxLiness;
 
-  const MyTextField({super.key,required this.isPassword, required this.maxLiness});
+  const MyTextField(
+      {super.key, required this.isPassword, required this.maxLiness});
 
   @override
   State<MyTextField> createState() => _MyTextFieldState();
@@ -26,21 +27,25 @@ class _MyTextFieldState extends State<MyTextField> {
             text = value;
           });
         },
-        obscureText: isPasswordHidden &&widget.isPassword,
-        decoration:  InputDecoration(
-          isDense: true,
-          contentPadding: EdgeInsets.all(10),
+        obscureText: isPasswordHidden && widget.isPassword,
+        decoration: InputDecoration(
+            isDense: true,
+            contentPadding: EdgeInsets.all(10),
             border: OutlineInputBorder(borderSide: BorderSide.none),
-            prefixIcon: widget.isPassword?IconButton(
-        icon: Icon(size: null,
-              isPasswordHidden? Icons.visibility_off : Icons.visibility,),
-          onPressed: () {
-            isPasswordHidden = !isPasswordHidden;
-            setState(() {});
-         },
-        ):null,
-              
-         
+            prefixIcon: widget.isPassword
+                ? IconButton(
+                    icon: Icon(
+                      size: null,
+                      isPasswordHidden
+                          ? Icons.visibility_off
+                          : Icons.visibility,
+                    ),
+                    onPressed: () {
+                      isPasswordHidden = !isPasswordHidden;
+                      setState(() {});
+                    },
+                  )
+                : null,
             filled: true,
             fillColor: Color.fromRGBO(255, 253, 253, 1)),
       ),

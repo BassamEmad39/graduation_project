@@ -8,8 +8,8 @@ class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 115,
-      height: 35,
+      width: 135,
+      height: 40,
       child: MaterialButton(
         elevation: 4,
         color: Color.fromARGB(255, 25, 124, 101),
@@ -17,7 +17,7 @@ class CustomButton extends StatelessWidget {
         child: Text(title,
             style: TextStyle(
                 color: Colors.white,
-                fontSize: 14,
+                fontSize: 18,
                 fontWeight: FontWeight.bold)),
       ),
     );

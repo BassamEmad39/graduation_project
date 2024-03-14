@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:graduation_project/pages/changepassword.dart';
+import 'package:graduation_project/pages/confirminfo.dart';
+import 'package:graduation_project/pages/searchinfo.dart';
+import 'package:graduation_project/pages/verfication.dart';
 import 'package:graduation_project/pages/contact_us.dart';
 import 'package:graduation_project/pages/forgetpassword.dart';
 import 'package:graduation_project/pages/homepage.dart';
@@ -32,6 +34,6 @@ class _MyAppState extends State<MyApp> {
               debugShowCheckedModeBanner: false,
               home: child,
             ),
-        child: HomePage());
+        child: SearchInfo());
   }
 }
