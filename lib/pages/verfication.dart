@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:graduation_project/custom/appbar.dart';
 import 'package:graduation_project/custom/buttons.dart';
 import 'package:graduation_project/pages/newpassword.dart';
 
-class ChangePassword extends StatelessWidget {
-  const ChangePassword({super.key});
+class Verificationn extends StatelessWidget {
+  const Verificationn({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -38,12 +39,12 @@ class ChangePassword extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
-                      Center(
+                      const Center(
                         child: Text(
                           "تغير كلمة السر",
                           style: TextStyle(
                               fontWeight: FontWeight.w700,
-                              fontSize: 20,
+                              fontSize: 24,
                               color: Color.fromRGBO(26, 86, 83, 1),
                               shadows: [
                                 BoxShadow(
@@ -55,7 +56,7 @@ class ChangePassword extends StatelessWidget {
                               ]),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 6,
                       ),
                       Center(
@@ -63,59 +64,24 @@ class ChangePassword extends StatelessWidget {
                         "ادخل الكود الذي ارسل الي",
                         style: TextStyle(fontSize: 15, color: Colors.grey[600]),
                       )),
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Container(
-                            width: 50.w,
-                            height: 50.h,
-                            child: TextFormField(
-                              decoration: const InputDecoration(
-                                  border: OutlineInputBorder(
-                                      borderSide: BorderSide.none),
-                                  filled: true,
-                                  fillColor: Color.fromRGBO(255, 253, 253, 1)),
-                            ),
-                          ),
-                          Container(
-                            width: 50.w,
-                            height: 50.h,
-                            child: TextFormField(
-                              decoration: const InputDecoration(
-                                  border: OutlineInputBorder(
-                                      borderSide: BorderSide.none),
-                                  filled: true,
-                                  fillColor: Color.fromRGBO(255, 253, 253, 1)),
-                            ),
-                          ),
-                          Container(
-                            width: 50.w,
-                            height: 50.h,
-                            child: TextFormField(
-                              decoration: const InputDecoration(
-                                  border: OutlineInputBorder(
-                                      borderSide: BorderSide.none),
-                                  filled: true,
-                                  fillColor: Color.fromRGBO(255, 253, 253, 1)),
-                            ),
-                          ),
-                          Container(
-                            width: 50.w,
-                            height: 50.h,
-                            child: TextFormField(
-                              decoration: const InputDecoration(
-                                  border: OutlineInputBorder(
-                                      borderSide: BorderSide.none),
-                                  filled: true,
-                                  fillColor: Color.fromRGBO(255, 253, 253, 1)),
-                            ),
-                          ),
-                        ],
+                      OtpTextField(
+                        numberOfFields: 4,
+                        borderColor: Colors.black,
+                        fieldWidth: 50,
+                        keyboardType: TextInputType.number,
+                      
+                        enabled: true,
+                        fillColor: Colors.white,
+                        cursorColor: const Color.fromRGBO(26, 86, 83, 1),
+                        autoFocus: false,
+                        showFieldAsBox: false,
+                        hasCustomInputDecoration: false,
+                        filled: true,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
                       Center(
@@ -129,13 +95,13 @@ class ChangePassword extends StatelessWidget {
                           },
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 15,
                       ),
                       Center(
                         child: MaterialButton(
                           onPressed: () {},
-                          child: Text("ارسل الكود مرة اخري",
+                          child: const Text("ارسل الكود مرة اخري",
                               style: TextStyle(
                                   fontSize: 18,
                                   color: Color.fromARGB(

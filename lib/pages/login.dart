@@ -44,7 +44,7 @@ class _LoginPageState extends State<LoginPage> {
                       color: Colors.grey[300],
                     ),
                     width: 340.w,
-                    height: 458.h,
+                    height: 500.h,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
@@ -52,70 +52,65 @@ class _LoginPageState extends State<LoginPage> {
                           child: Text(
                             "تسجيل دخول",
                             style: TextStyle(
-                                fontWeight: FontWeight.w700,
-                                fontSize: 20,
-                                color: Color.fromRGBO(26, 86, 83, 1),
-                                shadows: [
-                                  BoxShadow(
-                                    color: Colors.grey,
-                                    spreadRadius: 0,
-                                    blurRadius: 4,
-                                    offset: Offset(0, 2),
-                                  )
-                                ]),
+                                fontSize: 25,
+                                fontWeight: FontWeight.bold,
+                                color: Color.fromARGB(
+                                  255,
+                                  25,
+                                  124,
+                                  101,
+                                )),
                           ),
                         ),
                         SizedBox(
-                          height: 17.h,
+                          height: 20,
                         ),
                         Text(
                           "الايميل",
                           style: TextStyle(
-                              color: Color.fromRGBO(26, 86, 83, 1),
-                              fontWeight: FontWeight.w500,
-                              fontSize: 13),
+                              fontSize: 20,
+                              color: Color.fromARGB(
+                                255,
+                                25,
+                                124,
+                                101,
+                              )),
                         ),
                         SizedBox(
-                          height: 5.h,
+                          height: 10,
                         ),
                         MyTextField(isPassword: false, maxLiness: 1),
                         SizedBox(
-                          height: 20.h,
+                          height: 10,
                         ),
                         Text(
                           "كلمة السر",
                           style: TextStyle(
-                              color: Color.fromRGBO(26, 86, 83, 1),
-                              fontWeight: FontWeight.w500,
-                              fontSize: 13),
+                              fontSize: 20,
+                              color: Color.fromARGB(
+                                255,
+                                25,
+                                124,
+                                101,
+                              )),
                         ),
                         SizedBox(
-                          height: 5.h,
+                          height: 10,
                         ),
                         MyTextField(
                           isPassword: true,
                           maxLiness: 1,
                         ),
                         SizedBox(
-                          height: 25.h,
+                          height: 15,
                         ),
                         Center(
                             child: CustomButton(
                           title: "تسجيل الدخول",
                           onPressed: () {},
                         )),
-                        Center(
-                          child: MaterialButton(
-                            onPressed: () {
-                              Navigator.of(context).push(MaterialPageRoute(
-                                builder: (BuildContext context) =>
-                                    const ForgetPssword(),
-                              ));
-                            },
-                            child: Text("هل نسيت كلمة السر؟",
-                                style: TextStyle(
-                                    fontSize: 18, color: Colors.grey[600])),
-                          ),
+                        SizedBox(
+                          height: 5,
                         ),
                         Center(
                           child: MaterialButton(
@@ -129,7 +124,20 @@ class _LoginPageState extends State<LoginPage> {
                                 style: TextStyle(
                                     fontSize: 18, color: Colors.grey[600])),
                           ),
-                        )
+                        ),
+                        Center(
+                          child: MaterialButton(
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                builder: (BuildContext context) =>
+                                    const ForgetPssword(),
+                              ));
+                            },
+                            child: Text("هل نسيت كلمة السر؟",
+                                style: TextStyle(
+                                    fontSize: 15, color: Colors.grey[600])),
+                          ),
+                        ),
                       ],
                     )),
               ),

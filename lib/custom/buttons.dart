@@ -9,9 +9,9 @@ class CustomButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 115,
-      height: 35,
+      height: 40,
       child: MaterialButton(
-        elevation: 5,
+        elevation: 4,
         color: Color.fromARGB(255, 25, 124, 101),
         onPressed: onPressed,
         child: Text(title,
