@@ -42,6 +42,7 @@ dependencies:
   pinput: ^4.0.0
   pin_code_fields:
   flutter_otp_text_field: ^1.1.1
+  dropdown_button2: ^2.3.9
 
 
 dev_dependencies:
