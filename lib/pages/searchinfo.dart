@@ -88,7 +88,7 @@ class _SearchInfoState extends State<SearchInfo> {
                       ),
                     ),
                     const SizedBox(height: 5),
-                    const MyTextField(isPassword: false, maxLiness: 1),
+                    const MyTextField(isPassword: false, maxLiness: 1,isPhone: false,),
                     const SizedBox(height: 10),
                     const Text(
                       "تاريخ نشر البحث",
@@ -99,7 +99,7 @@ class _SearchInfoState extends State<SearchInfo> {
                       ),
                     ),
                     const SizedBox(height: 5),
-                    const MyTextField(isPassword: false, maxLiness: 1),
+                    const MyTextField(isPassword: false, maxLiness: 1,isPhone: false,),
                     const SizedBox(height: 10),
                     const Text(
                       "مكان إجراء البحث",
@@ -110,7 +110,7 @@ class _SearchInfoState extends State<SearchInfo> {
                       ),
                     ),
                     const SizedBox(height: 5),
-                    const MyTextField(isPassword: false, maxLiness: 1),
+                    const MyTextField(isPassword: false, maxLiness: 1,isPhone: false,),
                     const SizedBox(height: 10),
                     const Text(
                       "الرابط الخاص للبحث",
@@ -121,7 +121,7 @@ class _SearchInfoState extends State<SearchInfo> {
                       ),
                     ),
                     const SizedBox(height: 5),
-                    const MyTextField(isPassword: false, maxLiness: 1),
+                    const MyTextField(isPassword: false, maxLiness: 1,isPhone: false,),
                     const SizedBox(height: 10),
                     const Text(
                       "اســـم المجلـــة",
@@ -132,7 +132,7 @@ class _SearchInfoState extends State<SearchInfo> {
                       ),
                     ),
                     const SizedBox(height: 5),
-                    const MyTextField(isPassword: false, maxLiness: 1),
+                    const MyTextField(isPassword: false, maxLiness: 1,isPhone: false,),
                     const SizedBox(height: 10),
                     const Text(
                       "المعامل التأثيري لمجلة النشر",
@@ -143,7 +143,7 @@ class _SearchInfoState extends State<SearchInfo> {
                       ),
                     ),
                     const SizedBox(height: 5),
-                    const MyTextField(isPassword: false, maxLiness: 1),
+                    const MyTextField(isPassword: false, maxLiness: 1,isPhone: false,),
                     const SizedBox(height: 10),
                     const Text(
                       "الرقم المعياري التسلسلي للمجلة",
@@ -154,7 +154,7 @@ class _SearchInfoState extends State<SearchInfo> {
                       ),
                     ),
                     const SizedBox(height: 5),
-                    const MyTextField(isPassword: false, maxLiness: 1),
+                    const MyTextField(isPassword: false, maxLiness: 1,isPhone: false,),
                     const SizedBox(height: 10),
                     const Text(
                       "الربع الواقع به المجلة (Q) بالنسبة للأبحاث المنشورة على SCOUPS",
@@ -165,7 +165,7 @@ class _SearchInfoState extends State<SearchInfo> {
                       ),
                     ),
                     const SizedBox(height: 5),
-                    const MyTextField(isPassword: false, maxLiness: 1),
+                    const MyTextField(isPassword: false, maxLiness: 1,isPhone: false,),
                     const SizedBox(height: 10),
                     const Text(
                       "هل يوجد مشاركون في البحث من أعضاء هيئة التدريس بجامعة  ",

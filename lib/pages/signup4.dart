@@ -81,7 +81,7 @@ class _SignUpPage4State extends State<SignUpPage4> {
                       SizedBox(
                         height: 5.h,
                       ),
-                      MyTextField(isPassword: true, maxLiness: 1),
+                      MyTextField(isPassword: true, maxLiness: 1,isPhone: false,),
                       SizedBox(
                         height: 15.h,
                       ),
@@ -93,7 +93,7 @@ class _SignUpPage4State extends State<SignUpPage4> {
                       SizedBox(
                         height: 5.h,
                       ),
-                      MyTextField(isPassword: true, maxLiness: 1),
+                      MyTextField(isPassword: true, maxLiness: 1,isPhone: false,),
                       SizedBox(
                         height: 20.h,
                       ),

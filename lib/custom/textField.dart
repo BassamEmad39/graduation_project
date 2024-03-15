@@ -2,10 +2,10 @@ import 'package:auto_direction/auto_direction.dart';
 import 'package:flutter/material.dart';
 
 class MyTextField extends StatefulWidget {
-  final bool isPassword;
+  final bool isPassword,isPhone;
   final int maxLiness;
 
-  const MyTextField({super.key,required this.isPassword, required this.maxLiness});
+  const MyTextField({super.key,required this.isPassword, required this.maxLiness,required this.isPhone});
 
   @override
   State<MyTextField> createState() => _MyTextFieldState();
@@ -20,6 +20,7 @@ class _MyTextFieldState extends State<MyTextField> {
     return AutoDirection(
       text: text,
       child: TextFormField(
+        keyboardType: widget.isPhone?TextInputType.phone:TextInputType.text,
         maxLines: widget.maxLiness,
         onChanged: (value) {
           setState(() {

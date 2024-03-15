@@ -44,7 +44,7 @@ class _LoginPageState extends State<LoginPage> {
                       color: Colors.grey[300],
                     ),
                     width: 340.w,
-                    height: 500.h,
+                    height: 510.h,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
@@ -79,7 +79,7 @@ class _LoginPageState extends State<LoginPage> {
                         SizedBox(
                           height: 10,
                         ),
-                        MyTextField(isPassword: false, maxLiness: 1),
+                        MyTextField(isPassword: false, maxLiness: 1,isPhone: false,),
                         SizedBox(
                           height: 10,
                         ),
@@ -100,6 +100,7 @@ class _LoginPageState extends State<LoginPage> {
                         MyTextField(
                           isPassword: true,
                           maxLiness: 1,
+                          isPhone: false,
                         ),
                         SizedBox(
                           height: 15,

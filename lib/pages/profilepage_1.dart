@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:graduation_project/custom/appbar.dart';
+import 'package:graduation_project/pages/profilepage_2.dart';
 
 class ProfilePage1 extends StatelessWidget {
   const ProfilePage1({super.key});
@@ -28,9 +29,15 @@ class ProfilePage1 extends StatelessWidget {
               ),
               Container(
                 child: MaterialButton(
-                  onPressed: () {},
+                  onPressed: () {
+                     Navigator.of(context).push(MaterialPageRoute(
+                            builder: (BuildContext context) =>
+                                const ProfilePage2(),
+                          ));
+                  },
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.min,
                     children: [
                       Text(
                         'د/محمد أحمد',

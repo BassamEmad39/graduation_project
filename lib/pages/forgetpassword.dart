@@ -69,7 +69,7 @@ class ForgetPssword extends StatelessWidget {
                       ),
                       MyTextField(
                         isPassword: false,
-                        maxLiness: 1,
+                        maxLiness: 1,isPhone: false,
                       ),
                       SizedBox(
                         height: 20,

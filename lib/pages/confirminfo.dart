@@ -70,7 +70,7 @@ class _ConfirmInformationState extends State<ConfirmInformation> {
                     SizedBox(
                       height: 5,
                     ),
-                    MyTextField(isPassword: false, maxLiness: 1),
+                    MyTextField(isPassword: false, maxLiness: 1,isPhone: false,),
                     SizedBox(
                       height: 10,
                     ),
@@ -82,7 +82,7 @@ class _ConfirmInformationState extends State<ConfirmInformation> {
                     SizedBox(
                       height: 5,
                     ),
-                    MyTextField(isPassword: false, maxLiness: 1),
+                    MyTextField(isPassword: false, maxLiness: 1,isPhone: true,),
                     SizedBox(
                       height: 10,
                     ),
@@ -94,7 +94,7 @@ class _ConfirmInformationState extends State<ConfirmInformation> {
                     SizedBox(
                       height: 5,
                     ),
-                    MyTextField(isPassword: false, maxLiness: 1),
+                    MyTextField(isPassword: false, maxLiness: 1,isPhone: true,),
                     SizedBox(
                       height: 10,
                     ),
@@ -106,7 +106,7 @@ class _ConfirmInformationState extends State<ConfirmInformation> {
                     SizedBox(
                       height: 5,
                     ),
-                    MyTextField(isPassword: false, maxLiness: 1),
+                    MyTextField(isPassword: false, maxLiness: 1,isPhone: false,),
                     SizedBox(
                       height: 10,
                     ),
@@ -118,7 +118,7 @@ class _ConfirmInformationState extends State<ConfirmInformation> {
                     SizedBox(
                       height: 5,
                     ),
-                    MyTextField(isPassword: false, maxLiness: 1),
+                    MyTextField(isPassword: false, maxLiness: 1,isPhone: false,),
                     SizedBox(
                       height: 10,
                     ),
@@ -130,7 +130,7 @@ class _ConfirmInformationState extends State<ConfirmInformation> {
                     SizedBox(
                       height: 5,
                     ),
-                    MyTextField(isPassword: false, maxLiness: 1),
+                    MyTextField(isPassword: false, maxLiness: 1,isPhone: false,),
                     SizedBox(
                       height: 10,
                     ),
@@ -142,7 +142,7 @@ class _ConfirmInformationState extends State<ConfirmInformation> {
                     SizedBox(
                       height: 5,
                     ),
-                    MyTextField(isPassword: false, maxLiness: 1),
+                    MyTextField(isPassword: false, maxLiness: 1,isPhone: false,),
                     SizedBox(
                       height: 10,
                     ),
@@ -154,7 +154,7 @@ class _ConfirmInformationState extends State<ConfirmInformation> {
                     SizedBox(
                       height: 5,
                     ),
-                    MyTextField(isPassword: false, maxLiness: 1),
+                    MyTextField(isPassword: false, maxLiness: 1,isPhone: true,),
                     SizedBox(
                       height: 10,
                     ),
@@ -184,7 +184,7 @@ class _ConfirmInformationState extends State<ConfirmInformation> {
                   height: 5,
                 ),
                 const Text(
-                  "قم برفع صورةالبطاقةهنا",
+                  "قم برفع صورة البطاقة هنا",
                   style: TextStyle(
                       fontWeight: FontWeight.w700,
                       fontSize: 13,

@@ -120,6 +120,7 @@ class _ContactUsPageState extends State<ContactUsPage> {
                                                     MyTextField(
                                                       isPassword: false,
                                                       maxLiness: 1,
+                                                      isPhone: false,
                                                     )
                                                   ],
                                                 ),
@@ -143,6 +144,7 @@ class _ContactUsPageState extends State<ContactUsPage> {
                                                       height: 11,
                                                     ),
                                                     MyTextField(
+                                                      isPhone: false,
                                                       isPassword: false,
                                                       maxLiness: 1,
                                                     )
@@ -168,6 +170,7 @@ class _ContactUsPageState extends State<ContactUsPage> {
                                                       height: 11,
                                                     ),
                                                     MyTextField(
+                                                      isPhone: false,
                                                       isPassword: false,
                                                       maxLiness: 5,
                                                     ),
