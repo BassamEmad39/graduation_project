@@ -272,7 +272,7 @@ class _SearchInfoState extends State<SearchInfo> {
             ),
             const SizedBox(height: 15),
             if (choosse == 'يوجد') const DropdownButton2Section(),
-            if (choosse == 'لا يوجد') Second(),
+            if (choosse == 'لا يوجد') const Second(),
             const SizedBox(height: 30),
             Center(
               child: CustomButton(
@@ -318,7 +318,7 @@ class _SecondState extends State<Second> {
           height: 110.h,
           alignment: Alignment.center,
           child: Column(children: [
-            SizedBox(
+            const SizedBox(
               height: 15,
             ),
             const Text(
@@ -336,7 +336,7 @@ class _SecondState extends State<Second> {
                     )
                   ]),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             CustomButton(
@@ -363,7 +363,7 @@ class _SecondState extends State<Second> {
                   elevation: 4,
                   color: Colors.grey,
                   onPressed: () {},
-                  child: Text("تعديل",
+                  child: const Text("تعديل",
                       style: TextStyle(
                           color: Colors.white,
                           fontSize: 14,
@@ -394,7 +394,7 @@ class _DropdownButton2SectionState extends State<DropdownButton2Section> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Row(
+        const Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
             Expanded(
@@ -421,7 +421,7 @@ class _DropdownButton2SectionState extends State<DropdownButton2Section> {
             ),
           ],
         ),
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
         DropdownButtonHideUnderline(
