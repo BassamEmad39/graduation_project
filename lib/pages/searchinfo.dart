@@ -88,7 +88,11 @@ class _SearchInfoState extends State<SearchInfo> {
                       ),
                     ),
                     const SizedBox(height: 5),
-                    const MyTextField(isPassword: false, maxLiness: 1,isPhone: false,),
+                    const MyTextField(
+                      isPassword: false,
+                      maxLiness: 1,
+                      isPhone: false,
+                    ),
                     const SizedBox(height: 10),
                     const Text(
                       "تاريخ نشر البحث",
@@ -99,7 +103,11 @@ class _SearchInfoState extends State<SearchInfo> {
                       ),
                     ),
                     const SizedBox(height: 5),
-                    const MyTextField(isPassword: false, maxLiness: 1,isPhone: false,),
+                    const MyTextField(
+                      isPassword: false,
+                      maxLiness: 1,
+                      isPhone: false,
+                    ),
                     const SizedBox(height: 10),
                     const Text(
                       "مكان إجراء البحث",
@@ -110,7 +118,11 @@ class _SearchInfoState extends State<SearchInfo> {
                       ),
                     ),
                     const SizedBox(height: 5),
-                    const MyTextField(isPassword: false, maxLiness: 1,isPhone: false,),
+                    const MyTextField(
+                      isPassword: false,
+                      maxLiness: 1,
+                      isPhone: false,
+                    ),
                     const SizedBox(height: 10),
                     const Text(
                       "الرابط الخاص للبحث",
@@ -121,7 +133,11 @@ class _SearchInfoState extends State<SearchInfo> {
                       ),
                     ),
                     const SizedBox(height: 5),
-                    const MyTextField(isPassword: false, maxLiness: 1,isPhone: false,),
+                    const MyTextField(
+                      isPassword: false,
+                      maxLiness: 1,
+                      isPhone: false,
+                    ),
                     const SizedBox(height: 10),
                     const Text(
                       "اســـم المجلـــة",
@@ -132,7 +148,11 @@ class _SearchInfoState extends State<SearchInfo> {
                       ),
                     ),
                     const SizedBox(height: 5),
-                    const MyTextField(isPassword: false, maxLiness: 1,isPhone: false,),
+                    const MyTextField(
+                      isPassword: false,
+                      maxLiness: 1,
+                      isPhone: false,
+                    ),
                     const SizedBox(height: 10),
                     const Text(
                       "المعامل التأثيري لمجلة النشر",
@@ -143,7 +163,11 @@ class _SearchInfoState extends State<SearchInfo> {
                       ),
                     ),
                     const SizedBox(height: 5),
-                    const MyTextField(isPassword: false, maxLiness: 1,isPhone: false,),
+                    const MyTextField(
+                      isPassword: false,
+                      maxLiness: 1,
+                      isPhone: false,
+                    ),
                     const SizedBox(height: 10),
                     const Text(
                       "الرقم المعياري التسلسلي للمجلة",
@@ -154,7 +178,11 @@ class _SearchInfoState extends State<SearchInfo> {
                       ),
                     ),
                     const SizedBox(height: 5),
-                    const MyTextField(isPassword: false, maxLiness: 1,isPhone: false,),
+                    const MyTextField(
+                      isPassword: false,
+                      maxLiness: 1,
+                      isPhone: false,
+                    ),
                     const SizedBox(height: 10),
                     const Text(
                       "الربع الواقع به المجلة (Q) بالنسبة للأبحاث المنشورة على SCOUPS",
@@ -165,7 +193,11 @@ class _SearchInfoState extends State<SearchInfo> {
                       ),
                     ),
                     const SizedBox(height: 5),
-                    const MyTextField(isPassword: false, maxLiness: 1,isPhone: false,),
+                    const MyTextField(
+                      isPassword: false,
+                      maxLiness: 1,
+                      isPhone: false,
+                    ),
                     const SizedBox(height: 10),
                     const Text(
                       "هل يوجد مشاركون في البحث من أعضاء هيئة التدريس بجامعة  ",
@@ -200,10 +232,10 @@ class _SearchInfoState extends State<SearchInfo> {
                                 horizontal: 0,
                                 vertical: -4), // تعديل حجم الدائرة
                             value: "يوجد",
-                            groupValue: choosse2,
+                            groupValue: choosse,
                             onChanged: (String? val) {
                               setState(() {
-                                choosse2 = val;
+                                choosse = val;
                               });
                             },
                             contentPadding: EdgeInsets
@@ -225,7 +257,7 @@ class _SearchInfoState extends State<SearchInfo> {
                             groupValue: choosse,
                             onChanged: (String? val) {
                               setState(() {
-                                choosse2 = val;
+                                choosse = val;
                               });
                             },
                             contentPadding: EdgeInsets.zero,
@@ -239,83 +271,8 @@ class _SearchInfoState extends State<SearchInfo> {
               ),
             ),
             const SizedBox(height: 15),
-            if (choosse2 == 'يوجد') const DropdownButton2Section(),
-            if (choosse == 'لا يوجد')
-              const SizedBox(
-                height: 30,
-              ),
-            Container(
-              decoration: BoxDecoration(
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.9),
-                    spreadRadius: 0,
-                    blurRadius: 0,
-                  ),
-                ],
-                color: Colors.grey[300],
-              ),
-              width: 180.w,
-              height: 110.h,
-              alignment: Alignment.center,
-              child: Column(
-                children: [
-                  SizedBox(
-                    height: 15,
-                  ),
-                  const Text(
-                    "الاستمارة",
-                    style: TextStyle(
-                        fontWeight: FontWeight.w700,
-                        fontSize: 13,
-                        color: Color.fromRGBO(26, 86, 83, 1),
-                        shadows: [
-                          BoxShadow(
-                            color: Colors.grey,
-                            spreadRadius: 0,
-                            blurRadius: 4,
-                            offset: Offset(0, 1),
-                          )
-                        ]),
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  CustomButton(
-                    title: "طباعة",
-                    onPressed: () {},
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              width: 260.w,
-              height: 110.h,
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  CustomButton(
-                    title: "رجوع",
-                    onPressed: () {},
-                  ),
-                  Container(
-                    width: 115,
-                    height: 40,
-                    child: MaterialButton(
-                      elevation: 4,
-                      color: Colors.grey,
-                      onPressed: () {},
-                      child: Text("تعديل",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 14,
-                              fontWeight: FontWeight.bold)),
-                    ),
-                  ),
-                ],
-              ),
-            ),
+            if (choosse == 'يوجد') const DropdownButton2Section(),
+            if (choosse == 'لا يوجد') Second(),
             const SizedBox(height: 30),
             Center(
               child: CustomButton(
@@ -331,6 +288,92 @@ class _SearchInfoState extends State<SearchInfo> {
           ],
         ),
       ),
+    );
+  }
+}
+
+class Second extends StatefulWidget {
+  const Second({super.key});
+
+  @override
+  State<Second> createState() => _SecondState();
+}
+
+class _SecondState extends State<Second> {
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Container(
+          decoration: BoxDecoration(
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey.withOpacity(0.9),
+                spreadRadius: 0,
+                blurRadius: 0,
+              ),
+            ],
+            color: Colors.grey[300],
+          ),
+          width: 180.w,
+          height: 110.h,
+          alignment: Alignment.center,
+          child: Column(children: [
+            SizedBox(
+              height: 15,
+            ),
+            const Text(
+              "الاستمارة",
+              style: TextStyle(
+                  fontWeight: FontWeight.w700,
+                  fontSize: 13,
+                  color: Color.fromRGBO(26, 86, 83, 1),
+                  shadows: [
+                    BoxShadow(
+                      color: Colors.grey,
+                      spreadRadius: 0,
+                      blurRadius: 4,
+                      offset: Offset(0, 1),
+                    )
+                  ]),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            CustomButton(
+              title: "طباعة",
+              onPressed: () {},
+            ),
+          ]),
+        ),
+        Container(
+          width: 260.w,
+          height: 110.h,
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              CustomButton(
+                title: "رجوع",
+                onPressed: () {},
+              ),
+              Container(
+                width: 115,
+                height: 40,
+                child: MaterialButton(
+                  elevation: 4,
+                  color: Colors.grey,
+                  onPressed: () {},
+                  child: Text("تعديل",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold)),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ],
     );
   }
 }
