@@ -35,7 +35,7 @@ class ProfilePage3 extends StatelessWidget {
             width: 450,
             color: Color(0xffE0E0E0),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text('الإيميل'),
                 SizedBox(
@@ -74,13 +74,16 @@ class ProfilePage3 extends StatelessWidget {
                 color: Color(0xff107869),
                 child: MaterialButton(
                   onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                            builder: (BuildContext context) =>
-                                const ProfilePage2(),
-                          ));
+                    showDialog(
+                        context: context,
+                        builder: (context) {
+                          return const MyDialog(
+                            title: "تم تعديل البيانات بنجاح",
+                          );
+                        });
                   },
                   child: Text(
-                    'رجوع',
+                    'تعديل',
                     style: TextStyle(color: Colors.white),
                   ),
                 ),
@@ -92,16 +95,12 @@ class ProfilePage3 extends StatelessWidget {
                 color: Color(0xff107869),
                 child: MaterialButton(
                   onPressed: () {
-                    showDialog(
-                        context: context,
-                        builder: (context) {
-                          return const MyDialog(
-                            title: "تم تعديل البيانات بنجاح",
-                          );
-                        });
+                    Navigator.of(context).push(MaterialPageRoute(
+                      builder: (BuildContext context) => const ProfilePage2(),
+                    ));
                   },
                   child: Text(
-                    'تعديل',
+                    'رجوع',
                     style: TextStyle(color: Colors.white),
                   ),
                 ),

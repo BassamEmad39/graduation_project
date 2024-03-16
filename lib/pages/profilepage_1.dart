@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:graduation_project/custom/appbar.dart';
+import 'package:graduation_project/pages/manage_profile.dart';
 import 'package:graduation_project/pages/profilepage_2.dart';
 
 class ProfilePage1 extends StatelessWidget {
@@ -72,19 +73,21 @@ class ProfilePage1 extends StatelessWidget {
                     child: MaterialButton(
                       onPressed: () {},
                       child: Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
+                        mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          Text(
-                            'إضافة بحث جديد',
-                            style: TextStyle(color: Colors.white),
-                          ),
-                          SizedBox(
-                            width: 5,
-                          ),
                           Icon(
                             Icons.add,
                             color: Colors.white,
                           ),
+                          SizedBox(
+                            width: 5,
+                          ),
+                          Text(
+                            'إضافة بحث جديد',
+                            style: TextStyle(color: Colors.white),
+                          ),
+                          
+                          
                         ],
                       ),
                     ),
@@ -95,7 +98,12 @@ class ProfilePage1 extends StatelessWidget {
                 height: 20,
               ),
               TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                     Navigator.of(context).push(MaterialPageRoute(
+                            builder: (BuildContext context) =>
+                                const ManageProfile(),
+                          ));
+                  },
                   child: Text(
                     'الشروط والأحكام',
                     style: TextStyle(

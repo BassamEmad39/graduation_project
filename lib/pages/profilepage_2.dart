@@ -45,6 +45,14 @@ class ProfilePage2 extends StatelessWidget {
                       mainAxisSize: MainAxisSize.min,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
+                        Image.asset(
+                          'images/settings.png',
+                          width: 16.h,
+                          height: 16.h,
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
                         Text(
                           'الخصوصية',
                           style: TextStyle(
@@ -52,14 +60,8 @@ class ProfilePage2 extends StatelessWidget {
                               fontSize: 16,
                               fontWeight: FontWeight.bold),
                         ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Image.asset(
-                          'images/settings.png',
-                          width: 16.h,
-                          height: 16.h,
-                        ),
+                        
+                        
                       ],
                     ),
                   ),
@@ -73,7 +75,7 @@ class ProfilePage2 extends StatelessWidget {
                   width: 450,
                   color: Color(0xffE0E0E0),
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text('الإسم'),
                       SizedBox(
@@ -176,25 +178,7 @@ class ProfilePage2 extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Container(
-                            color: Color(0xff107869),
-                            child: MaterialButton(
-                              onPressed: () {
-                                Navigator.of(context).push(MaterialPageRoute(
-                            builder: (BuildContext context) =>
-                                const ProfilePage1(),
-                          ));
-                              },
-                              child: Text(
-                                'رجوع',
-                                style: TextStyle(color: Colors.white),
-                              ),
-                            ),
-                          ),
-                          SizedBox(
-                            width: 7,
-                          ),
-                          Container(
+                           Container(
                             color: Color(0xff107869),
                             child: MaterialButton(
                               onPressed: () {
@@ -212,6 +196,26 @@ class ProfilePage2 extends StatelessWidget {
                               ),
                             ),
                           ),
+                          SizedBox(
+                            width: 7,
+                          ),
+                          Container(
+                            color: Color(0xff107869),
+                            child: MaterialButton(
+                              onPressed: () {
+                                Navigator.of(context).push(MaterialPageRoute(
+                            builder: (BuildContext context) =>
+                                const ProfilePage1(),
+                          ));
+                              },
+                              child: Text(
+                                'رجوع',
+                                style: TextStyle(color: Colors.white),
+                              ),
+                            ),
+                          ),
+                          
+                         
                         ],
                       )
                     ],
