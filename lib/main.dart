@@ -41,6 +41,6 @@ class _MyAppState extends State<MyApp> {
               debugShowCheckedModeBanner: false,
               home: child,
             ),
-child: const ConfirmInformation());
+child: const SearchInfo());
   }
 }

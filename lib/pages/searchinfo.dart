@@ -80,7 +80,7 @@ class _SearchInfoState extends State<SearchInfo> {
                     ),
                     const SizedBox(height: 25),
                     const Text(
-                      "عنـــوان البحث باللغــة الانجليـة",
+                      "عنـــوان البحث باللغــة الانجليزيـة",
                       style: TextStyle(
                         color: Color.fromRGBO(26, 86, 83, 1),
                         fontWeight: FontWeight.bold,
