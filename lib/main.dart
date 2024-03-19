@@ -35,14 +35,15 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+   String language = 'ar';
   @override
   Widget build(BuildContext context) {
-    return ScreenUtilInit(
+    return ScreenUtilInit( 
         designSize: const Size(441, 886),
         splitScreenMode: true,
         minTextAdapt: true,
         builder: (context, child) => MaterialApp(
-          locale: Locale('ar'),
+          locale: Locale(language),
           localizationsDelegates: [
                 S.delegate,
                 GlobalMaterialLocalizations.delegate,
@@ -53,6 +54,6 @@ class _MyAppState extends State<MyApp> {
               debugShowCheckedModeBanner: false,
               home: child,
             ),
-child: const ManageProfile());
+child: const LoadingPage());
   }
 }
