@@ -1,10 +1,16 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:graduation_project/custom/navbar.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -191,16 +197,26 @@ class HomePage extends StatelessWidget {
   }
 }
 
-class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
+class MainAppBar extends StatefulWidget implements PreferredSizeWidget {
   const MainAppBar({super.key});
 
+  @override
+  State<MainAppBar> createState() => _MainAppBarState();
+  
+  @override
+    Size get preferredSize => Size.fromHeight(60.h);
+
+}
+
+class _MainAppBarState extends State<MainAppBar> {
+  String buttonText = 'EN';
   @override
   Widget build(BuildContext context) {
     return AppBar(
       title: Row(
         children: [
           Text(
-            'جوائز النشر العلمي',
+            'title'.tr(),
             style: TextStyle(
                 fontWeight: FontWeight.bold, color: Color(0xff1A5653)),
           ),
@@ -214,14 +230,17 @@ class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
       ),
       actions: [
         InkWell(
-          onTap: () {},
+          onTap: () {
+            String currentLang = context.locale.languageCode; 
+            context.setLocale(Locale(currentLang=='en'?'ar':'en'));
+          },
           child: Ink(
             height: 40.h,
             width: 40.h,
             color: Color(0xff1A5653),
             child: Center(
                 child: Text(
-              'EN',
+              "buttonText".tr(),
               style: TextStyle(color: Colors.white),
             )),
           ),
@@ -230,6 +249,5 @@ class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
     );
   }
 
-  @override
-  Size get preferredSize => Size.fromHeight(60.h);
+  
 }
