@@ -229,20 +229,23 @@ class _MainAppBarState extends State<MainAppBar> {
         ],
       ),
       actions: [
-        InkWell(
-          onTap: () {
-            String currentLang = context.locale.languageCode; 
-            context.setLocale(Locale(currentLang=='en'?'ar':'en'));
-          },
-          child: Ink(
-            height: 40.h,
-            width: 40.h,
-            color: Color(0xff1A5653),
-            child: Center(
-                child: Text(
-              "buttonText".tr(),
-              style: TextStyle(color: Colors.white),
-            )),
+        Container(
+          padding: EdgeInsets.all(5),
+          child: InkWell(
+            onTap: () {
+              String currentLang = context.locale.languageCode; 
+              context.setLocale(Locale(currentLang=='en'?'ar':'en'));
+            },
+            child: Ink(
+              height: 40.h,
+              width: 40.h,
+              color: Color(0xff1A5653),
+              child: Center(
+                  child: Text(
+                "buttonText".tr(),
+                style: TextStyle(color: Colors.white),
+              )),
+            ),
           ),
         )
       ],
