@@ -1,6 +1,15 @@
 {
     "title": "Scientific Publish Awards",
     "messageUs":"Email Us",
-    "buttonText":"ع"
+    "buttonText":"ع",
+    "scientific1":"Publishing scientific research is one of the most important tasks that faculty members and researchers at Kafrelsheikh University are supposed to undertake.",
+    "login":"Login",
+    "email":"Email",
+    "password":"Password",
+    "noacc":"Don't have an Account?",
+    "nopassword":"Forgot your Password?"
+
+
+
 
 }

@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:graduation_project/custom/appbar.dart';
@@ -46,11 +47,11 @@ class _LoginPageState extends State<LoginPage> {
                     width: 340.w,
                     height: 510.h,
                     child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.end,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Center(
                           child: Text(
-                            "تسجيل دخول",
+                          "login".tr(),
                             style: TextStyle(
                                 fontSize: 25,
                                 fontWeight: FontWeight.bold,
@@ -66,7 +67,7 @@ class _LoginPageState extends State<LoginPage> {
                           height: 20,
                         ),
                         Text(
-                          "الايميل",
+                      "email".tr(),
                           style: TextStyle(
                               fontSize: 20,
                               color: Color.fromARGB(
@@ -84,7 +85,7 @@ class _LoginPageState extends State<LoginPage> {
                           height: 10,
                         ),
                         Text(
-                          "كلمة السر",
+                          "password".tr(),
                           style: TextStyle(
                               fontSize: 20,
                               color: Color.fromARGB(
@@ -107,7 +108,7 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                         Center(
                             child: CustomButton(
-                          title: "تسجيل الدخول",
+                          title: "login".tr(),
                           onPressed: () {},
                         )),
                         SizedBox(
@@ -121,7 +122,7 @@ class _LoginPageState extends State<LoginPage> {
                                     const SignUpPage1(),
                               ));
                             },
-                            child: Text(" ليس لديك حساب؟",
+                            child: Text("noacc".tr(),
                                 style: TextStyle(
                                     fontSize: 18, color: Colors.grey[600])),
                           ),
@@ -134,7 +135,7 @@ class _LoginPageState extends State<LoginPage> {
                                     const ForgetPssword(),
                               ));
                             },
-                            child: Text("هل نسيت كلمة السر؟",
+                            child: Text("nopassword".tr(),
                                 style: TextStyle(
                                     fontSize: 15, color: Colors.grey[600])),
                           ),

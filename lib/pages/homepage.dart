@@ -35,8 +35,7 @@ class _HomePageState extends State<HomePage> {
                 SizedBox(
                   height: 10,
                 ),
-                Text(
-                    'يعد نشر البحث العلمي من المهام الأكثر الأهمية التي من المفترض أن يضطلع بها أعضاء هيئة التدريس والباحثون لدى جامعة كفر الشيخ .'),
+                Text("scientific1".tr()),
                 Text(
                     'لذا وُضِع برنامج الجوائز البحثية بغية الإشادة بالجهود المبذولة من جانب الباحثين المتميزين في جامعة كفر الشيخ وتحفيزهم على بذل المزيد من أجل الارتقاء بمجال البحوث الأكاديمية وإجراء المزيد من البحوث ورفع المستوى الأكاديمي للجامعة بحيث تكون في مصاف الجامعات العالمية.'),
                 SizedBox(
@@ -202,10 +201,9 @@ class MainAppBar extends StatefulWidget implements PreferredSizeWidget {
 
   @override
   State<MainAppBar> createState() => _MainAppBarState();
-  
-  @override
-    Size get preferredSize => Size.fromHeight(60.h);
 
+  @override
+  Size get preferredSize => Size.fromHeight(60.h);
 }
 
 class _MainAppBarState extends State<MainAppBar> {
@@ -233,8 +231,8 @@ class _MainAppBarState extends State<MainAppBar> {
           padding: EdgeInsets.all(5),
           child: InkWell(
             onTap: () {
-              String currentLang = context.locale.languageCode; 
-              context.setLocale(Locale(currentLang=='en'?'ar':'en'));
+              String currentLang = context.locale.languageCode;
+              context.setLocale(Locale(currentLang == 'en' ? 'ar' : 'en'));
             },
             child: Ink(
               height: 40.h,
@@ -247,10 +245,8 @@ class _MainAppBarState extends State<MainAppBar> {
               )),
             ),
           ),
-        )
+        ),
       ],
     );
   }
-
-  
 }
