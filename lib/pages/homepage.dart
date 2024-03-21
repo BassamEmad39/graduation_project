@@ -11,11 +11,18 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  void onPress() {
+    String currentLang = context.locale.languageCode;
+    context.setLocale(Locale(currentLang == 'en' ? 'ar' : 'en'));
+    setState(() {});
+  }
+  
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: NavBar(),
-      appBar: MainAppBar(),
+      appBar: MainAppBar(onPressed:onPress),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: ListView(
@@ -36,7 +43,7 @@ class _HomePageState extends State<HomePage> {
                   height: 10,
                 ),
                 Text("scientific1".tr()),
-                Text(
+                 Text(
                     'لذا وُضِع برنامج الجوائز البحثية بغية الإشادة بالجهود المبذولة من جانب الباحثين المتميزين في جامعة كفر الشيخ وتحفيزهم على بذل المزيد من أجل الارتقاء بمجال البحوث الأكاديمية وإجراء المزيد من البحوث ورفع المستوى الأكاديمي للجامعة بحيث تكون في مصاف الجامعات العالمية.'),
                 SizedBox(
                   height: 6.h,
@@ -196,18 +203,13 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-class MainAppBar extends StatefulWidget implements PreferredSizeWidget {
-  const MainAppBar({super.key});
+class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
+   MainAppBar({super.key, required this.onPressed});
 
-  @override
-  State<MainAppBar> createState() => _MainAppBarState();
-
-  @override
-  Size get preferredSize => Size.fromHeight(60.h);
-}
-
-class _MainAppBarState extends State<MainAppBar> {
   String buttonText = 'EN';
+
+  final VoidCallback onPressed;
+
   @override
   Widget build(BuildContext context) {
     return AppBar(
@@ -231,8 +233,7 @@ class _MainAppBarState extends State<MainAppBar> {
           padding: EdgeInsets.all(5),
           child: InkWell(
             onTap: () {
-              String currentLang = context.locale.languageCode;
-              context.setLocale(Locale(currentLang == 'en' ? 'ar' : 'en'));
+              onPressed();
             },
             child: Ink(
               height: 40.h,
@@ -248,5 +249,18 @@ class _MainAppBarState extends State<MainAppBar> {
         ),
       ],
     );
+  }
+
+  @override
+  Size get preferredSize => Size.fromHeight(60.h);
+  
+}
+
+class LanguageButton extends StatelessWidget {
+  const LanguageButton({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Placeholder();
   }
 }
