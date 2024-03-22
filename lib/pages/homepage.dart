@@ -44,7 +44,8 @@ class _HomePageState extends State<HomePage> {
                 ),
                 Text("scientific1".tr()),
                  Text(
-                    'لذا وُضِع برنامج الجوائز البحثية بغية الإشادة بالجهود المبذولة من جانب الباحثين المتميزين في جامعة كفر الشيخ وتحفيزهم على بذل المزيد من أجل الارتقاء بمجال البحوث الأكاديمية وإجراء المزيد من البحوث ورفع المستوى الأكاديمي للجامعة بحيث تكون في مصاف الجامعات العالمية.'),
+                  "scientific2".tr()
+                   ),
                 SizedBox(
                   height: 6.h,
                 ),
@@ -53,31 +54,36 @@ class _HomePageState extends State<HomePage> {
                   height: 6.h,
                 ),
                 Text(
-                  'تعليمات هامة:',
+                  "importantinstructions".tr(),
                   style: TextStyle(
                       fontWeight: FontWeight.bold, color: Color(0xff1A5653)),
                 ),
                 Text(
-                  'علي السادة المتقدمين لجوائز النشر الدولي تقديم:',
+                "instructionline".tr(),
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
                 SizedBox(
                   height: 5.h,
                 ),
                 Text(
-                    'صورة من صفحة جوجل سكولار (Google Scholar) من الموقع الإلكتروني scholar.google.com الخاص بالمتقدم'),
+                  "instruction1".tr()
+                   ),
                 Text(
-                    'ان يكون الانتماء الأكاديمي (Affiliation) يحتوي علي أسم جامعة كفر الشيخ  كالتالي “Kafrelsheikh University” '),
+                  "instruction2".tr()
+                   ),
                 Text(
-                    'ان يكون البريد الالكتروني (Verified Email) يحتوي على نطاق جامعة كفر الشيخ على الانترنت وهو “kfs.edu.eg”'),
+                  "instruction3".tr()
+                   ),
                 SizedBox(
                   height: 40.h,
                 ),
                 Center(
                   child: Column(
                     children: [
-                      Text('جوائز النشر العلمي في ارقام'),
-                      Text('إحصائيات تظهر حجم الجوائز في جامعة كفر الشيخ'),
+                      Text(
+                        "homepageline1".tr()
+                      ),
+                      Text("homepageline2".tr()),
                     ],
                   ),
                 ),
@@ -113,7 +119,7 @@ class _HomePageState extends State<HomePage> {
                             children: [
                               Text('100'),
                               Text(
-                                'دكتور',
+                                 "homepagebottom1".tr(),
                                 style: TextStyle(fontSize: 10),
                               ),
                             ],
@@ -147,7 +153,7 @@ class _HomePageState extends State<HomePage> {
                               children: [
                                 Text('1700'),
                                 Text(
-                                  'نشر',
+                                  "homepagebottom2".tr(),
                                   style: TextStyle(fontSize: 10),
                                 ),
                               ],
@@ -181,7 +187,7 @@ class _HomePageState extends State<HomePage> {
                             children: [
                               Text('2000000'),
                               Text(
-                                'قيمة الجوائز المدفوعة',
+                                "homepagebottom3".tr(),
                                 style: TextStyle(fontSize: 10),
                               ),
                             ],
