@@ -31,7 +31,12 @@
     "degree":"Degree",
     "confirmpassword":"Confirm Password",
     "create":"Create",
-    "accountcreated":"Account Successfully Created."
+    "accountcreated":"Account Successfully Created.",
+    "main":"Main",
+    "apply":"Apply",
+    "contactus":"Contact Us"
+
+
 
 
 

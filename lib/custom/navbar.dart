@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:graduation_project/pages/contact_us.dart';
@@ -28,7 +29,7 @@ class NavBar extends StatelessWidget {
             ),
             ListTile(
               title: Text(
-                'الرئيسية',
+                "main".tr(),
                 style: TextStyle(color: Colors.white),
               ),
               onTap: () {
@@ -37,14 +38,14 @@ class NavBar extends StatelessWidget {
             ),
             ListTile(
               title: Text(
-                'للتقديم',
+                "apply".tr(),
                 style: TextStyle(color: Colors.white),
               ),
               onTap: () {},
             ),
             ListTile(
               title: Text(
-                'إتصل بنا',
+               "contactus".tr(),
                 style: TextStyle(color: Colors.white),
               ),
               onTap: () {

@@ -57,6 +57,6 @@ class _MyAppState extends State<MyApp> {
               debugShowCheckedModeBanner: false,
               home: child,
             ),
-        child:  HomePage());
+        child: const ResearchConditions());
   }
 }

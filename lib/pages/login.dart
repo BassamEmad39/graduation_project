@@ -39,7 +39,7 @@ class _LoginPageState extends State<LoginPage> {
                           spreadRadius: 0,
                           blurRadius: 4,
                           offset:
-                              const Offset(0, 3), // changes position of shadow
+                              const Offset(0, 3), 
                         ),
                       ],
                       color: Colors.grey[300],
