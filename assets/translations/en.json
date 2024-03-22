@@ -18,7 +18,26 @@
     "email":"Email",
     "password":"Password",
     "noacc":"Don't have an Account?",
-    "nopassword":"Forgot your Password?"
+    "nopassword":"Forgot your Password?",
+    "createaccount":"Create Account",
+    "nationalid":"National ID",
+    "next":"Next",
+    "name":"Name",
+    "namediff":"Name in Arabic",
+    "address":"Address",
+    "phone":"Phone",
+    "college":"College",
+    "section":"Section",
+    "degree":"Degree",
+    "confirmpassword":"Confirm Password",
+    "create":"Create",
+    "accountcreated":"Account Successfully Created."
+
+
+
+
+
+
 
 
 

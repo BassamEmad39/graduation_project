@@ -188,7 +188,7 @@ class _HomePageState extends State<HomePage> {
                               Text('2000000'),
                               Text(
                                 "homepagebottom3".tr(),
-                                style: TextStyle(fontSize: 10),
+                                style: TextStyle(fontSize: 9),
                               ),
                             ],
                           ),
@@ -209,6 +209,7 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
+// ignore: must_be_immutable
 class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
    MainAppBar({super.key, required this.onPressed});
 

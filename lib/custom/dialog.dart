@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:graduation_project/custom/buttons.dart';
@@ -57,7 +58,7 @@ class _MyDialogState extends State<MyDialog> {
             ),
             Center(
               child: CustomButton(
-                title: "التالي",
+                title: "next".tr(),
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(
                     builder: (BuildContext context) => const LoginPage(),

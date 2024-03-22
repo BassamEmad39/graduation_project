@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:graduation_project/custom/appbar.dart';
@@ -51,11 +52,11 @@ class _SignUpPage4State extends State<SignUpPage4> {
                   width: 335.h,
                   height: 345.h,
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Center(
+                       Center(
                         child: Text(
-                          "انشاء حساب",
+                          "createaccount".tr(),
                           style: TextStyle(
                               fontWeight: FontWeight.w700,
                               fontSize: 20,
@@ -73,7 +74,7 @@ class _SignUpPage4State extends State<SignUpPage4> {
                       SizedBox(
                         height: 7.h,
                       ),
-                      const Text("كلمة السر",
+                       Text("password".tr(),
                           style: TextStyle(
                               color: Color.fromRGBO(26, 86, 83, 1),
                               fontWeight: FontWeight.w500,
@@ -85,7 +86,7 @@ class _SignUpPage4State extends State<SignUpPage4> {
                       SizedBox(
                         height: 15.h,
                       ),
-                      const Text("تأكيد كلمة السر",
+                       Text("confirmpassword".tr(),
                           style: TextStyle(
                               color: Color.fromRGBO(26, 86, 83, 1),
                               fontWeight: FontWeight.w500,
@@ -99,13 +100,13 @@ class _SignUpPage4State extends State<SignUpPage4> {
                       ),
                       Center(
                         child: CustomButton(
-                          title: "انشاء",
+                          title: "create".tr(),
                           onPressed: () {
                             showDialog(
                                 context: context,
                                 builder: (context) {
-                                  return const MyDialog(
-                                    title: "تم انشاء الحساب بنجاح",
+                                  return  MyDialog(
+                                    title: "accountcreated".tr(),
                                   );
                                 });
                           },

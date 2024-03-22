@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:graduation_project/custom/appbar.dart';
@@ -40,11 +41,11 @@ class _SignUpPage3State extends State<SignUpPage3> {
                     width: 320.w,
                     height: 490.h,
                     child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.end,
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const Center(
+                           Center(
                             child: Text(
-                              "انشاء حساب",
+                              "createaccount".tr(),
                               style: TextStyle(
                                   fontWeight: FontWeight.w700,
                                   fontSize: 20,
@@ -62,7 +63,7 @@ class _SignUpPage3State extends State<SignUpPage3> {
                           SizedBox(
                             height: 25.h,
                           ),
-                          const Text("الكلية",
+                           Text("college".tr(),
                               style: TextStyle(
                                   color: Color.fromRGBO(26, 86, 83, 1),
                                   fontWeight: FontWeight.w500,
@@ -74,7 +75,7 @@ class _SignUpPage3State extends State<SignUpPage3> {
                           SizedBox(
                             height: 31.h,
                           ),
-                          const Text("القسم",
+                           Text("section".tr(),
                               style: TextStyle(
                                   color: Color.fromRGBO(26, 86, 83, 1),
                                   fontWeight: FontWeight.w500,
@@ -86,7 +87,7 @@ class _SignUpPage3State extends State<SignUpPage3> {
                           SizedBox(
                             height: 31.h,
                           ),
-                          const Text("الدرجة العلمية",
+                           Text("degree".tr(),
                               style: TextStyle(
                                   color: Color.fromRGBO(26, 86, 83, 1),
                                   fontWeight: FontWeight.w500,
@@ -100,7 +101,7 @@ class _SignUpPage3State extends State<SignUpPage3> {
                           ),
                           Center(
                             child: CustomButton(
-                              title: "التالي",
+                              title: "next".tr(),
                               onPressed: () {
                                 Navigator.of(context).push(MaterialPageRoute(
                                   builder: (BuildContext context) =>

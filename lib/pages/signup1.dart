@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:graduation_project/custom/appbar.dart';
@@ -41,11 +42,11 @@ class _SignUpPage1State extends State<SignUpPage1> {
                 width: 290.w,
                 height: 380.h,
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Center(
+                     Center(
                       child: Text(
-                        "انشاء حساب",
+                        "createaccount".tr(),
                         style: TextStyle(
                             fontWeight: FontWeight.w700,
                             fontSize: 20,
@@ -63,7 +64,7 @@ class _SignUpPage1State extends State<SignUpPage1> {
                     SizedBox(
                       height: 25.h,
                     ),
-                    const Text("الايميل",
+                     Text("email".tr(),
                         style: TextStyle(
                             color: Color.fromRGBO(26, 86, 83, 1),
                             fontWeight: FontWeight.w500,
@@ -75,7 +76,7 @@ class _SignUpPage1State extends State<SignUpPage1> {
                     SizedBox(
                       height: 31.h,
                     ),
-                    const Text("الرقم القومي",
+                     Text("nationalid".tr(),
                         style: TextStyle(
                             color: Color.fromRGBO(26, 86, 83, 1),
                             fontWeight: FontWeight.w500,
@@ -89,7 +90,7 @@ class _SignUpPage1State extends State<SignUpPage1> {
                     ),
                     Center(
                       child: CustomButton(
-                        title: "التالي",
+                        title: "next".tr(),
                         onPressed: () {
                           Navigator.of(context).push(MaterialPageRoute(
                             builder: (BuildContext context) =>

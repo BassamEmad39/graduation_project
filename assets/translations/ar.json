@@ -18,6 +18,23 @@
     "email":"الإيميل",
     "password":"كلمة السر",
     "noacc":"ليس لديك حساب؟",
-    "nopassword":"نسيت كلمة السر؟"
+    "nopassword":"نسيت كلمة السر؟",
+    "createaccount":"إنشاء حساب",
+    "nationalid":"الرقم القومي",
+    "next":"التالي",
+    "name":"الإسم",
+    "namediff":"الإسم باللغة الإنجليزية",
+    "address":"العنوان",
+    "phone":"الهاتف",
+    "college":"الكلية",
+    "section":"القسم",
+    "degree":"الدرجة العلمية",
+    "confirmpassword":"تأكيد كلمة السر",
+    "create":"إنشاء",
+    "accountcreated":"تم إنشاء الحساب بنجاح"
+
+
+
+
 
 }
