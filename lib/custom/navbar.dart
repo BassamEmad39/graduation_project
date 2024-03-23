@@ -56,7 +56,7 @@ class NavBar extends StatelessWidget {
             ),
             ListTile(
               title: Text(
-                'إنشاء حساب',
+                "createaccount".tr() ,
                 style: TextStyle(color: Colors.white),
               ),
               onTap: () {
@@ -67,7 +67,7 @@ class NavBar extends StatelessWidget {
             ),
             ListTile(
               title: Text(
-                'تسجيل الدخول',
+                "login".tr(),
                 style: TextStyle(color: Colors.white),
               ),
               onTap: () {
@@ -83,7 +83,7 @@ class NavBar extends StatelessWidget {
             ListTile(
               leading: Image.asset('images/logout.png',height: 20.h,width: 20.h,),
               title: Text(
-                'تسجيل الخروج',
+                "logout".tr(),
                 style: TextStyle(color: Colors.white),
               ),
               onTap: () {},
