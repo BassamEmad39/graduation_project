@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:graduation_project/custom/appbar.dart';
 import 'package:graduation_project/custom/buttons.dart';
 import 'package:graduation_project/custom/textField.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 void main() {
   runApp(const MyApp());
@@ -59,9 +60,9 @@ class _SearchInfoState extends State<SearchInfo> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Center(
+                    Center(
                       child: Text(
-                        "بيانات خاصة بالبحث",
+                        "research data".tr(),
                         style: TextStyle(
                             fontWeight: FontWeight.w700,
                             fontSize: 25,
@@ -77,8 +78,8 @@ class _SearchInfoState extends State<SearchInfo> {
                       ),
                     ),
                     const SizedBox(height: 25),
-                    const Text(
-                      "عنـــوان البحث باللغــة الانجليزيـة",
+                    Text(
+                      "research title in English".tr(),
                       style: TextStyle(
                         color: Color.fromRGBO(26, 86, 83, 1),
                         fontWeight: FontWeight.bold,
@@ -92,8 +93,8 @@ class _SearchInfoState extends State<SearchInfo> {
                       isPhone: false,
                     ),
                     const SizedBox(height: 10),
-                    const Text(
-                      "تاريخ نشر البحث",
+                    Text(
+                      "date of publication of the research".tr(),
                       style: TextStyle(
                         color: Color.fromRGBO(26, 86, 83, 1),
                         fontWeight: FontWeight.bold,
@@ -107,8 +108,8 @@ class _SearchInfoState extends State<SearchInfo> {
                       isPhone: false,
                     ),
                     const SizedBox(height: 10),
-                    const Text(
-                      "مكان إجراء البحث",
+                    Text(
+                      "where to conduct the search in Arabic".tr(),
                       style: TextStyle(
                         color: Color.fromRGBO(26, 86, 83, 1),
                         fontWeight: FontWeight.bold,
@@ -122,8 +123,8 @@ class _SearchInfoState extends State<SearchInfo> {
                       isPhone: false,
                     ),
                     const SizedBox(height: 10),
-                    const Text(
-                      "الرابط الخاص للبحث",
+                    Text(
+                      "your search link".tr(),
                       style: TextStyle(
                         color: Color.fromRGBO(26, 86, 83, 1),
                         fontWeight: FontWeight.bold,
@@ -137,8 +138,8 @@ class _SearchInfoState extends State<SearchInfo> {
                       isPhone: false,
                     ),
                     const SizedBox(height: 10),
-                    const Text(
-                      "اســـم المجلـــة",
+                    Text(
+                      "name of magazine in Arabic".tr(),
                       style: TextStyle(
                         color: Color.fromRGBO(26, 86, 83, 1),
                         fontWeight: FontWeight.bold,
@@ -152,8 +153,8 @@ class _SearchInfoState extends State<SearchInfo> {
                       isPhone: false,
                     ),
                     const SizedBox(height: 10),
-                    const Text(
-                      "المعامل التأثيري لمجلة النشر",
+                    Text(
+                      "the impact factor of a publishing journal".tr(),
                       style: TextStyle(
                         color: Color.fromRGBO(26, 86, 83, 1),
                         fontWeight: FontWeight.bold,
@@ -167,8 +168,8 @@ class _SearchInfoState extends State<SearchInfo> {
                       isPhone: false,
                     ),
                     const SizedBox(height: 10),
-                    const Text(
-                      "الرقم المعياري التسلسلي للمجلة",
+                    Text(
+                      "the standard serial number of the journal".tr(),
                       style: TextStyle(
                         color: Color.fromRGBO(26, 86, 83, 1),
                         fontWeight: FontWeight.bold,
@@ -182,8 +183,9 @@ class _SearchInfoState extends State<SearchInfo> {
                       isPhone: false,
                     ),
                     const SizedBox(height: 10),
-                    const Text(
-                      "الربع الواقع به المجلة (Q) بالنسبة للأبحاث المنشورة على SCOUPS",
+                    Text(
+                      "the quadrant in which the journal is located (Q) for papers published on SCOUPS"
+                          .tr(),
                       style: TextStyle(
                         color: Color.fromRGBO(26, 86, 83, 1),
                         fontWeight: FontWeight.bold,
@@ -197,18 +199,9 @@ class _SearchInfoState extends State<SearchInfo> {
                       isPhone: false,
                     ),
                     const SizedBox(height: 10),
-                    const Text(
-                      "هل يوجد مشاركون في البحث من أعضاء هيئة التدريس بجامعة  ",
-                      textDirection: TextDirection.ltr,
-                      style: TextStyle(
-                        color: Color.fromRGBO(26, 86, 83, 1),
-                        fontWeight: FontWeight.bold,
-                        fontSize: 13,
-                      ),
-                    ),
-                    const Text(
-                      "كفر الشيخ؟",
-                      textDirection: TextDirection.ltr,
+                    Text(
+                      "are there faculty members at Kafrelsheikh University participating in the research?"
+                          .tr(),
                       style: TextStyle(
                         color: Color.fromRGBO(26, 86, 83, 1),
                         fontWeight: FontWeight.bold,
@@ -216,19 +209,17 @@ class _SearchInfoState extends State<SearchInfo> {
                       ),
                     ),
                     Column(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        Directionality(
-                          textDirection: TextDirection.rtl,
-                          child: RadioListTile(
-                            title: const Text(
-                              "يوجد",
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          RadioListTile(
+                            title: Text(
+                              "yes".tr(),
                             ),
                             activeColor: const Color.fromRGBO(26, 86, 83, 1),
                             visualDensity: const VisualDensity(
                                 horizontal: 0, vertical: -4),
-                            value: "يوجد",
+                            value: "yes".tr(),
                             groupValue: choosse,
                             onChanged: (String? val) {
                               setState(() {
@@ -237,18 +228,15 @@ class _SearchInfoState extends State<SearchInfo> {
                             },
                             contentPadding: EdgeInsets.zero,
                           ),
-                        ),
-                        Directionality(
-                          textDirection: TextDirection.rtl,
-                          child: RadioListTile(
+                          RadioListTile(
                             dense: false,
-                            title: const Text(
-                              "لا يوجد",
+                            title: Text(
+                              "no".tr(),
                             ),
                             activeColor: const Color.fromRGBO(26, 86, 83, 1),
                             visualDensity: const VisualDensity(
                                 horizontal: 0, vertical: -4),
-                            value: "لا يوجد",
+                            value: "no".tr(),
                             groupValue: choosse,
                             onChanged: (String? val) {
                               setState(() {
@@ -257,19 +245,17 @@ class _SearchInfoState extends State<SearchInfo> {
                             },
                             contentPadding: EdgeInsets.zero,
                           ),
-                        ),
-                      ],
-                    ),
+                        ]),
                   ],
                 ),
               ),
             ),
             const SizedBox(height: 15),
-            if (choosse == 'يوجد') const DropdownButton2Section(),
+            if (choosse == "yes".tr()) const DropdownButton2Section(),
             const SizedBox(height: 30),
             Center(
               child: CustomButton(
-                title: "التالي",
+                title: "next".tr(),
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(
                     builder: (BuildContext context) => const SearchInfo(),
@@ -301,18 +287,17 @@ class _DropdownButton2SectionState extends State<DropdownButton2Section> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const Row(
-          mainAxisAlignment: MainAxisAlignment.end,
+        Row(
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Expanded(
               child: Padding(
-                padding: EdgeInsets.only(right: 0, left: 183, top: 5),
+                padding: const EdgeInsets.only(right: 35, left: 35),
                 child: Text(
-                  " اختر عدد المشاركين في البحث",
-                  textAlign: TextAlign.center,
+                  "choose the number of research participants".tr(),
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: 13,
+                    fontSize: 15,
                     color: Color.fromRGBO(26, 86, 83, 1),
                     shadows: [
                       BoxShadow(
@@ -418,31 +403,30 @@ class _DropdownButton2SectionState extends State<DropdownButton2Section> {
     for (int i = 0; i < index; i++) {
       participants.addAll([
         Row(
-          mainAxisAlignment: MainAxisAlignment.end,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Expanded(
-              child: Padding(
-                padding: const EdgeInsets.only(right: 0, left: 210, top: 5),
-                child: Text(
-                  'المشارك ال${_translateIndexToArabic(i + 1)}',
-                  textAlign: TextAlign.center,
-                  style: const TextStyle(
-                    fontWeight: FontWeight.w700,
-                    fontSize: 25,
-                    color: Color.fromRGBO(26, 86, 83, 1),
-                    shadows: [
-                      BoxShadow(
-                        color: Colors.grey,
-                        spreadRadius: 0,
-                        blurRadius: 4,
-                        offset: Offset(0, 1),
-                      ),
-                    ],
-                  ),
+              child: Text(
+                '       ${_translateIndexToArabic(i + 1)}',
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                  color: Color.fromRGBO(26, 86, 83, 1),
+                  shadows: [
+                    BoxShadow(
+                      color: Colors.grey,
+                      spreadRadius: 0,
+                      blurRadius: 4,
+                      offset: Offset(0, 1),
+                    ),
+                  ],
                 ),
               ),
             ),
           ],
+        ),
+        SizedBox(
+          height: 10,
         ),
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 13, vertical: 37),
@@ -459,10 +443,10 @@ class _DropdownButton2SectionState extends State<DropdownButton2Section> {
           ),
           width: 340,
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
-                "الاسم العلمي المدون على البحث",
+              Text(
+                "the scientific name written on the search in Arabic".tr(),
                 style: TextStyle(
                   color: Color.fromRGBO(26, 86, 83, 1),
                   fontWeight: FontWeight.bold,
@@ -484,8 +468,8 @@ class _DropdownButton2SectionState extends State<DropdownButton2Section> {
               const SizedBox(
                 height: 10,
               ),
-              const Text(
-                "الاسم الثلاثي باللغة العربية",
+              Text(
+                "the triple name in Arabic".tr(),
                 style: TextStyle(
                   color: Color.fromRGBO(26, 86, 83, 1),
                   fontWeight: FontWeight.bold,
@@ -507,8 +491,8 @@ class _DropdownButton2SectionState extends State<DropdownButton2Section> {
               const SizedBox(
                 height: 10,
               ),
-              const Text(
-                "الدرجة الوظيفية",
+              Text(
+                "job grade in Arabic".tr(),
                 style: TextStyle(
                   color: Color.fromRGBO(26, 86, 83, 1),
                   fontWeight: FontWeight.bold,
@@ -538,15 +522,15 @@ class _DropdownButton2SectionState extends State<DropdownButton2Section> {
   String _translateIndexToArabic(int index) {
     switch (index) {
       case 1:
-        return 'اول';
+        return "first".tr();
       case 2:
-        return 'ثاني';
+        return "second".tr();
       case 3:
-        return 'ثالث';
+        return "third".tr();
       case 4:
-        return 'رابع';
+        return "fourth".tr();
       case 5:
-        return 'خامس';
+        return "fifth".tr();
       default:
         return '';
     }

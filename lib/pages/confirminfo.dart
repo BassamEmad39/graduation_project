@@ -39,7 +39,6 @@ class _ConfirmInformationState extends State<ConfirmInformation> {
                 color: Colors.grey[300],
               ),
               width: 340.w,
-              height: 800.h,
               child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -64,6 +63,22 @@ class _ConfirmInformationState extends State<ConfirmInformation> {
                       height: 20,
                     ),
                     Text("name".tr(),
+                        style: TextStyle(
+                            color: Color.fromRGBO(26, 86, 83, 1),
+                            fontWeight: FontWeight.bold,
+                            fontSize: 13)),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    MyTextField(
+                      isPassword: false,
+                      maxLiness: 1,
+                      isPhone: false,
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Text("name in english".tr(),
                         style: TextStyle(
                             color: Color.fromRGBO(26, 86, 83, 1),
                             fontWeight: FontWeight.bold,
@@ -111,7 +126,7 @@ class _ConfirmInformationState extends State<ConfirmInformation> {
                     SizedBox(
                       height: 10,
                     ),
-                    Text("degree".tr(),
+                    Text("degree2".tr(),
                         style: TextStyle(
                             color: Color.fromRGBO(26, 86, 83, 1),
                             fontWeight: FontWeight.bold,
@@ -127,7 +142,7 @@ class _ConfirmInformationState extends State<ConfirmInformation> {
                     SizedBox(
                       height: 10,
                     ),
-                    Text("address".tr(),
+                    Text("address2".tr(),
                         style: TextStyle(
                             color: Color.fromRGBO(26, 86, 83, 1),
                             fontWeight: FontWeight.bold,
@@ -159,7 +174,7 @@ class _ConfirmInformationState extends State<ConfirmInformation> {
                     SizedBox(
                       height: 10,
                     ),
-                    Text("section".tr(),
+                    Text("section2".tr(),
                         style: TextStyle(
                             color: Color.fromRGBO(26, 86, 83, 1),
                             fontWeight: FontWeight.bold,
@@ -240,10 +255,10 @@ class _ConfirmInformationState extends State<ConfirmInformation> {
                   color: Colors.white,
                   child: MaterialButton(
                       onPressed: () {},
-                      child: const Row(
+                      child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text("card photo",
+                            Text("card photo".tr(),
                                 style: TextStyle(
                                   fontSize: 12,
                                   fontWeight: FontWeight.w700,
