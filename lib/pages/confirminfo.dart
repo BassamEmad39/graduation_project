@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -39,12 +40,12 @@ class _ConfirmInformationState extends State<ConfirmInformation> {
               ),
               width: 340.w,
               height: 800.h,
-              child: const Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
+              child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Center(
                       child: Text(
-                        "لتأكيد بياناتك",
+                        "confirm your data".tr(),
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 25,
@@ -62,7 +63,7 @@ class _ConfirmInformationState extends State<ConfirmInformation> {
                     SizedBox(
                       height: 20,
                     ),
-                    Text("الاسم",
+                    Text("name".tr(),
                         style: TextStyle(
                             color: Color.fromRGBO(26, 86, 83, 1),
                             fontWeight: FontWeight.bold,
@@ -70,11 +71,15 @@ class _ConfirmInformationState extends State<ConfirmInformation> {
                     SizedBox(
                       height: 5,
                     ),
-                    MyTextField(isPassword: false, maxLiness: 1,isPhone: false,),
+                    MyTextField(
+                      isPassword: false,
+                      maxLiness: 1,
+                      isPhone: false,
+                    ),
                     SizedBox(
                       height: 10,
                     ),
-                    Text("الرقم",
+                    Text("phone".tr(),
                         style: TextStyle(
                             color: Color.fromRGBO(26, 86, 83, 1),
                             fontWeight: FontWeight.bold,
@@ -82,11 +87,15 @@ class _ConfirmInformationState extends State<ConfirmInformation> {
                     SizedBox(
                       height: 5,
                     ),
-                    MyTextField(isPassword: false, maxLiness: 1,isPhone: true,),
+                    MyTextField(
+                      isPassword: false,
+                      maxLiness: 1,
+                      isPhone: true,
+                    ),
                     SizedBox(
                       height: 10,
                     ),
-                    Text("الرقم القومي",
+                    Text("national ID".tr(),
                         style: TextStyle(
                             color: Color.fromRGBO(26, 86, 83, 1),
                             fontWeight: FontWeight.bold,
@@ -94,11 +103,15 @@ class _ConfirmInformationState extends State<ConfirmInformation> {
                     SizedBox(
                       height: 5,
                     ),
-                    MyTextField(isPassword: false, maxLiness: 1,isPhone: true,),
+                    MyTextField(
+                      isPassword: false,
+                      maxLiness: 1,
+                      isPhone: true,
+                    ),
                     SizedBox(
                       height: 10,
                     ),
-                    Text("الدرجة العلمية",
+                    Text("degree".tr(),
                         style: TextStyle(
                             color: Color.fromRGBO(26, 86, 83, 1),
                             fontWeight: FontWeight.bold,
@@ -106,11 +119,15 @@ class _ConfirmInformationState extends State<ConfirmInformation> {
                     SizedBox(
                       height: 5,
                     ),
-                    MyTextField(isPassword: false, maxLiness: 1,isPhone: false,),
+                    MyTextField(
+                      isPassword: false,
+                      maxLiness: 1,
+                      isPhone: false,
+                    ),
                     SizedBox(
                       height: 10,
                     ),
-                    Text("العنوان",
+                    Text("address".tr(),
                         style: TextStyle(
                             color: Color.fromRGBO(26, 86, 83, 1),
                             fontWeight: FontWeight.bold,
@@ -118,11 +135,15 @@ class _ConfirmInformationState extends State<ConfirmInformation> {
                     SizedBox(
                       height: 5,
                     ),
-                    MyTextField(isPassword: false, maxLiness: 1,isPhone: false,),
+                    MyTextField(
+                      isPassword: false,
+                      maxLiness: 1,
+                      isPhone: false,
+                    ),
                     SizedBox(
                       height: 10,
                     ),
-                    Text("الكلية",
+                    Text("faculty".tr(),
                         style: TextStyle(
                             color: Color.fromRGBO(26, 86, 83, 1),
                             fontWeight: FontWeight.bold,
@@ -130,11 +151,15 @@ class _ConfirmInformationState extends State<ConfirmInformation> {
                     SizedBox(
                       height: 5,
                     ),
-                    MyTextField(isPassword: false, maxLiness: 1,isPhone: false,),
+                    MyTextField(
+                      isPassword: false,
+                      maxLiness: 1,
+                      isPhone: false,
+                    ),
                     SizedBox(
                       height: 10,
                     ),
-                    Text("القسم",
+                    Text("section".tr(),
                         style: TextStyle(
                             color: Color.fromRGBO(26, 86, 83, 1),
                             fontWeight: FontWeight.bold,
@@ -142,11 +167,15 @@ class _ConfirmInformationState extends State<ConfirmInformation> {
                     SizedBox(
                       height: 5,
                     ),
-                    MyTextField(isPassword: false, maxLiness: 1,isPhone: false,),
+                    MyTextField(
+                      isPassword: false,
+                      maxLiness: 1,
+                      isPhone: false,
+                    ),
                     SizedBox(
                       height: 10,
                     ),
-                    Text("الرقم البريدي",
+                    Text("post number".tr(),
                         style: TextStyle(
                             color: Color.fromRGBO(26, 86, 83, 1),
                             fontWeight: FontWeight.bold,
@@ -154,7 +183,11 @@ class _ConfirmInformationState extends State<ConfirmInformation> {
                     SizedBox(
                       height: 5,
                     ),
-                    MyTextField(isPassword: false, maxLiness: 1,isPhone: true,),
+                    MyTextField(
+                      isPassword: false,
+                      maxLiness: 1,
+                      isPhone: true,
+                    ),
                     SizedBox(
                       height: 10,
                     ),
@@ -183,8 +216,8 @@ class _ConfirmInformationState extends State<ConfirmInformation> {
                 SizedBox(
                   height: 5,
                 ),
-                const Text(
-                  "قم برفع صورة البطاقة هنا",
+                Text(
+                  "upload the card image here".tr(),
                   style: TextStyle(
                       fontWeight: FontWeight.w700,
                       fontSize: 13,
@@ -210,7 +243,7 @@ class _ConfirmInformationState extends State<ConfirmInformation> {
                       child: const Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text("صورة البطاقة",
+                            Text("card photo",
                                 style: TextStyle(
                                   fontSize: 12,
                                   fontWeight: FontWeight.w700,
@@ -230,7 +263,7 @@ class _ConfirmInformationState extends State<ConfirmInformation> {
           ),
           Center(
             child: CustomButton(
-              title: "التالي",
+              title: "next".tr(),
               onPressed: () {
                 Navigator.of(context).push(MaterialPageRoute(
                   builder: (BuildContext context) => const SearchInfo(),

@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:graduation_project/custom/appbar.dart';
@@ -49,11 +50,11 @@ class _NewPasswordState extends State<NewPassword> {
                   width: 340.w,
                   height: 390.h,
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Center(
+                      Center(
                         child: Text(
-                          " تغير كلمة السر",
+                          "changepassword".tr(),
                           style: TextStyle(
                               fontWeight: FontWeight.w700,
                               fontSize: 20,
@@ -71,7 +72,7 @@ class _NewPasswordState extends State<NewPassword> {
                       const SizedBox(
                         height: 20,
                       ),
-                      const Text(" كلمة السر الجديدة",
+                      Text("newpassword".tr(),
                           style: TextStyle(
                               color: Color.fromRGBO(26, 86, 83, 1),
                               fontWeight: FontWeight.w500,
@@ -79,11 +80,15 @@ class _NewPasswordState extends State<NewPassword> {
                       const SizedBox(
                         height: 10,
                       ),
-                      MyTextField(isPassword: true, maxLiness: 1,isPhone: false,),
+                      MyTextField(
+                        isPassword: true,
+                        maxLiness: 1,
+                        isPhone: false,
+                      ),
                       const SizedBox(
                         height: 20,
                       ),
-                      const Text(" تأكيد كلمة السر",
+                      Text("confirmpassword".tr(),
                           style: TextStyle(
                               color: Color.fromRGBO(26, 86, 83, 1),
                               fontWeight: FontWeight.w500,
@@ -91,19 +96,23 @@ class _NewPasswordState extends State<NewPassword> {
                       const SizedBox(
                         height: 10,
                       ),
-                      MyTextField(isPassword: true, maxLiness: 1,isPhone: false,),
+                      MyTextField(
+                        isPassword: true,
+                        maxLiness: 1,
+                        isPhone: false,
+                      ),
                       const SizedBox(
                         height: 20,
                       ),
                       Center(
                         child: CustomButton(
-                            title: "التالي",
+                            title: "next".tr(),
                             onPressed: () {
                               showDialog(
                                   context: context,
                                   builder: (context) {
-                                    return const MyDialog(
-                                      title: "تم تغير كلمة السر بنجاح",
+                                    return MyDialog(
+                                      title: "passwordsuccess".tr(),
                                     );
                                   });
                             }),

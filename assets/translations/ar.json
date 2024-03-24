@@ -35,7 +35,23 @@
     "main":"الرئيسية",
     "apply":"للتقديم",
     "contactus":"إتصل بنا",
-    "logout":"تسجيل الخروج"
+    "logout":"تسجيل الخروج",
+    "changepassword":"تغير كلمة السر",
+    "textchangepassword":"ادخل الكود الذي ارسل الي",
+    "resend":"ارسل الكود مرة اخري",
+    "newpassword":"كلمة السر الجديدة",
+    "passwordsuccess":"تم تغير كلمة السر بنجاح",
+    "confirm your data":"لتأكيد بياناتك",
+    "national ID":"الرقم القومي",
+    "faculty":"الكلية",
+    "post number":"الرقم البريدي",
+    "upload the card image here":"قم برفع صورة البطاقة هنا",
+    "card photo":"صورة البطاقة"
+
+
+
+
+    
 
 
 
