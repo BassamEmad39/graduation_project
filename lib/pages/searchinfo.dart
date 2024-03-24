@@ -15,7 +15,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      title: 'DropdownButton2 Demo',
       home: SearchInfo(),
     );
   }
@@ -58,7 +57,7 @@ class _SearchInfoState extends State<SearchInfo> {
                 ),
                 width: 380.w,
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const Center(
                       child: Text(
@@ -228,8 +227,7 @@ class _SearchInfoState extends State<SearchInfo> {
                             ),
                             activeColor: const Color.fromRGBO(26, 86, 83, 1),
                             visualDensity: const VisualDensity(
-                                horizontal: 0,
-                                vertical: -4), // تعديل حجم الدائرة
+                                horizontal: 0, vertical: -4),
                             value: "يوجد",
                             groupValue: choosse,
                             onChanged: (String? val) {
@@ -237,8 +235,7 @@ class _SearchInfoState extends State<SearchInfo> {
                                 choosse = val;
                               });
                             },
-                            contentPadding: EdgeInsets
-                                .zero, // ضبط المسافة بين الدائرة والتيكست
+                            contentPadding: EdgeInsets.zero,
                           ),
                         ),
                         Directionality(
@@ -250,8 +247,7 @@ class _SearchInfoState extends State<SearchInfo> {
                             ),
                             activeColor: const Color.fromRGBO(26, 86, 83, 1),
                             visualDensity: const VisualDensity(
-                                horizontal: 0,
-                                vertical: -4), // تعديل حجم الدائرة
+                                horizontal: 0, vertical: -4),
                             value: "لا يوجد",
                             groupValue: choosse,
                             onChanged: (String? val) {
@@ -260,7 +256,6 @@ class _SearchInfoState extends State<SearchInfo> {
                               });
                             },
                             contentPadding: EdgeInsets.zero,
-                            // ضبط المسافة بين الدائرة والتيكست
                           ),
                         ),
                       ],
@@ -271,7 +266,6 @@ class _SearchInfoState extends State<SearchInfo> {
             ),
             const SizedBox(height: 15),
             if (choosse == 'يوجد') const DropdownButton2Section(),
-            if (choosse == 'لا يوجد') const Second(),
             const SizedBox(height: 30),
             Center(
               child: CustomButton(
@@ -283,96 +277,10 @@ class _SearchInfoState extends State<SearchInfo> {
                 },
               ),
             ),
-            const SizedBox(height: 15),
+            const SizedBox(height: 25),
           ],
         ),
       ),
-    );
-  }
-}
-
-class Second extends StatefulWidget {
-  const Second({super.key});
-
-  @override
-  State<Second> createState() => _SecondState();
-}
-
-class _SecondState extends State<Second> {
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          decoration: BoxDecoration(
-            boxShadow: [
-              BoxShadow(
-                color: Colors.grey.withOpacity(0.9),
-                spreadRadius: 0,
-                blurRadius: 0,
-              ),
-            ],
-            color: Colors.grey[300],
-          ),
-          width: 180.w,
-          height: 110.h,
-          alignment: Alignment.center,
-          child: Column(children: [
-            const SizedBox(
-              height: 15,
-            ),
-            const Text(
-              "الاستمارة",
-              style: TextStyle(
-                  fontWeight: FontWeight.w700,
-                  fontSize: 13,
-                  color: Color.fromRGBO(26, 86, 83, 1),
-                  shadows: [
-                    BoxShadow(
-                      color: Colors.grey,
-                      spreadRadius: 0,
-                      blurRadius: 4,
-                      offset: Offset(0, 1),
-                    )
-                  ]),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            CustomButton(
-              title: "طباعة",
-              onPressed: () {},
-            ),
-          ]),
-        ),
-        Container(
-          width: 260.w,
-          height: 110.h,
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              CustomButton(
-                title: "رجوع",
-                onPressed: () {},
-              ),
-              Container(
-                width: 115,
-                height: 40,
-                child: MaterialButton(
-                  elevation: 4,
-                  color: Colors.grey,
-                  onPressed: () {},
-                  child: const Text("تعديل",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold)),
-                ),
-              ),
-            ],
-          ),
-        ),
-      ],
     );
   }
 }
@@ -465,9 +373,9 @@ class _DropdownButton2SectionState extends State<DropdownButton2Section> {
               ),
               elevation: 2,
             ),
-            iconStyleData: const IconStyleData(
+            iconStyleData: IconStyleData(
               icon: Icon(
-                Icons.arrow_downward_outlined,
+                Icons.arrow_drop_down_sharp,
               ),
               iconSize: 30,
               iconEnabledColor: Color.fromRGBO(26, 86, 83, 1),

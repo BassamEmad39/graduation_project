@@ -27,16 +27,15 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
   runApp(EasyLocalization(
-    path: 'assets/translations',
-    supportedLocales: [Locale('en'),Locale('ar')],
-    fallbackLocale: Locale('ar'),
-    startLocale: Locale('ar'),
-    
-    child: MyApp()));
+      path: 'assets/translations',
+      supportedLocales: [Locale('en'), Locale('ar')],
+      fallbackLocale: Locale('ar'),
+      startLocale: Locale('ar'),
+      child: MyApp()));
 }
 
 class MyApp extends StatefulWidget {
-   MyApp({super.key});
+  MyApp({super.key});
 
   @override
   State<MyApp> createState() => _MyAppState();
@@ -52,11 +51,11 @@ class _MyAppState extends State<MyApp> {
         minTextAdapt: true,
         builder: (context, child) => MaterialApp(
               locale: context.locale,
-              localizationsDelegates:context.localizationDelegates, 
+              localizationsDelegates: context.localizationDelegates,
               supportedLocales: context.supportedLocales,
               debugShowCheckedModeBanner: false,
               home: child,
             ),
-        child: const HomePage());
+        child: const ConfirmInformation());
   }
 }

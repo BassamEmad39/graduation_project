@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:graduation_project/custom/appbar.dart';
@@ -37,11 +38,11 @@ class ForgetPssword extends StatelessWidget {
                   width: 340.w,
                   height: 270.h,
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Center(
                         child: Text(
-                          " تغير كلمة السر",
+                          "changepassword".tr(),
                           style: TextStyle(
                               fontWeight: FontWeight.w700,
                               fontSize: 20,
@@ -59,7 +60,7 @@ class ForgetPssword extends StatelessWidget {
                       SizedBox(
                         height: 20,
                       ),
-                      Text("الايميل",
+                      Text("email".tr(),
                           style: TextStyle(
                               color: Color.fromRGBO(26, 86, 83, 1),
                               fontWeight: FontWeight.w500,
@@ -69,14 +70,15 @@ class ForgetPssword extends StatelessWidget {
                       ),
                       MyTextField(
                         isPassword: false,
-                        maxLiness: 1,isPhone: false,
+                        maxLiness: 1,
+                        isPhone: false,
                       ),
                       SizedBox(
                         height: 20,
                       ),
                       Center(
                         child: CustomButton(
-                          title: "التالي",
+                          title: "next".tr(),
                           onPressed: () {
                             Navigator.of(context).push(MaterialPageRoute(
                               builder: (BuildContext context) =>

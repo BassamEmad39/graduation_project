@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -39,9 +40,9 @@ class Verificationn extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
-                      const Center(
+                      Center(
                         child: Text(
-                          "تغير كلمة السر",
+                          "changepassword".tr(),
                           style: TextStyle(
                               fontWeight: FontWeight.w700,
                               fontSize: 24,
@@ -61,7 +62,7 @@ class Verificationn extends StatelessWidget {
                       ),
                       Center(
                           child: Text(
-                        "ادخل الكود الذي ارسل الي",
+                        "textchangepassword".tr(),
                         style: TextStyle(fontSize: 15, color: Colors.grey[600]),
                       )),
                       const SizedBox(
@@ -72,7 +73,6 @@ class Verificationn extends StatelessWidget {
                         borderColor: Colors.black,
                         fieldWidth: 50,
                         keyboardType: TextInputType.number,
-                      
                         enabled: true,
                         fillColor: Colors.white,
                         cursorColor: const Color.fromRGBO(26, 86, 83, 1),
@@ -86,7 +86,7 @@ class Verificationn extends StatelessWidget {
                       ),
                       Center(
                         child: CustomButton(
-                          title: "التالي",
+                          title: "next".tr(),
                           onPressed: () {
                             Navigator.of(context).push(MaterialPageRoute(
                               builder: (BuildContext context) =>
@@ -101,7 +101,7 @@ class Verificationn extends StatelessWidget {
                       Center(
                         child: MaterialButton(
                           onPressed: () {},
-                          child: const Text("ارسل الكود مرة اخري",
+                          child: Text("resend".tr(),
                               style: TextStyle(
                                   fontSize: 18,
                                   color: Color.fromARGB(
