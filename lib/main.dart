@@ -28,6 +28,7 @@ Future<void> main() async {
   await EasyLocalization.ensureInitialized();
   runApp(EasyLocalization(
       path: 'assets/translations',
+      saveLocale: false,
       supportedLocales: [Locale('en'), Locale('ar')],
       fallbackLocale: Locale('ar'),
       startLocale: Locale('ar'),
