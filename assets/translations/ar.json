@@ -71,5 +71,18 @@
     "third": "المشارك الثالث",
     "fourth": "المشارك الرابع",
     "fifth": " المشارك الخامس",
-    "name in english": "الاسم باللغة الانجليزيـة"
+    "name in english": "الاسم باللغة الانجليزيـة",
+    "search conditions": "شروط البحث:",
+    "the submitted research must be in PDF format": "- يجب ان يكون البحث المقدم في صورة pdf.",
+    "research under publication or accepted for publication will not be accepted" : "- لا تقبل البحوث تحت النشر أو المقبولة للنشر.",
+    "it is not permissible to submit research to obtain another university award" : "- لا يجوز التقدم بالبحث للحصول على جائزة أخري من جوائز الجامعة.",
+    "research papers not listed with the name of Kafr El-Sheikh University will be excluded": "- تستبعد البحوث غير المدون عليها اسم جامعة كفر الشيخ.",
+    "all submitted research must have been published within three calendar years from the date of the end of the application.": "- أن تكون جميع الابحاث المقدمة قد تم نشرها خلال ثلاثة أعوام ميلادية من تاريخ نهاية التقدم.",
+    "in the event that the journal’s impact factor is discontinued, the research published in it will be approved, provided that it is published in the same year of discontinuation and not after it.": "- في حالة توقف معامل التأثير للمجلة، يتم الموافقة على الابحاث المنشورة بها، على أن تكون منشورة في نفس سنة التوقف وليس بعدها.",
+    "research published in a scientific journal with a Q1 scale is accepted on the Scopus database.": "- تقبل الابحاث المنشورة في مجلة علمية ذات مقياس رباعي Q1 ، على قاعدة بيانات Scopus.",
+    "articles and scientific papers published under the following titles will not be accepted:": "- لا تقبل المقالات والاوراق العلمية المنشورة بالمسميات الآتية:",
+    "or any new names that do not meet the conditions and rules of scientific research": "  أو أية مسميات جديدة لا تتوافر فيها شروط وقواعد الابحاث العلمية",
+    "upload your search here": "قم برفع البحث هنا",
+    "upload your search": "ارفع البحث"
+
 }

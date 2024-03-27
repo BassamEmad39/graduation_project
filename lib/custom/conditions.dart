@@ -11,7 +11,7 @@ class MyText extends StatelessWidget {
       text,
       style: const TextStyle(
           color: Color.fromRGBO(75, 74, 74, 1),
-          fontSize: 11,
+          fontSize: 15,
           fontWeight: FontWeight.w500),
     );
   }
