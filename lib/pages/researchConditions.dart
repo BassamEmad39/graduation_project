@@ -1,11 +1,23 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:graduation_project/custom/appbar.dart';
 import 'package:graduation_project/custom/conditions.dart';
 
-class ResearchConditions extends StatelessWidget {
+class ResearchConditions extends StatefulWidget {
   const ResearchConditions({super.key});
+
+  @override
+  State<ResearchConditions> createState() => _ResearchConditionsState();
+}
+
+class _ResearchConditionsState extends State<ResearchConditions> {
+  void onPress() {
+    String currentLang = context.locale.languageCode;
+    context.setLocale(Locale(currentLang == 'en' ? 'ar' : 'en'));
+    setState(() {});
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +26,7 @@ class ResearchConditions extends StatelessWidget {
         body: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 45),
             child: ListView(children: [
-              Column(crossAxisAlignment: CrossAxisAlignment.end, children: [
+              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                 SizedBox(
                   height: 10.h,
                 ),
@@ -28,8 +40,8 @@ class ResearchConditions extends StatelessWidget {
                 SizedBox(
                   height: 35.h,
                 ),
-                const Text(
-                  ":شروط البحث",
+                Text(
+                  "search conditions".tr(),
                   style: TextStyle(
                       color: Color.fromRGBO(26, 86, 83, 1),
                       fontSize: 18,
@@ -38,102 +50,74 @@ class ResearchConditions extends StatelessWidget {
                 SizedBox(
                   height: 6.h,
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    const MyText(text: ".pdf يجب ان يكون البحث المقدم في صورة"),
-                    SizedBox(width: 7.w),
-                    const DotListItem(),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    const MyText(
-                        text: ".لا تقبل البحوث تحت النشر أو المقبولة للنشر"),
-                    SizedBox(width: 7.w),
-                    const DotListItem(),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    const MyText(
-                        text:
-                            ".لا يجوز التقدم بالبحث للحصول على جائزة أخري من جوائز الجامعة"),
-                    SizedBox(width: 7.w),
-                    const DotListItem(),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    const MyText(
-                        text:
-                            ".تستبعد البحوث غير المدون عليها اسم جامعة كفر الشيخ"),
-                    SizedBox(width: 7.w),
-                    const DotListItem(),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    const MyText(
-                        text:
-                            "أن تكون جميع الابحاث المقدمة قد تم نشرها خلال ثلاثة أعوام ميلادية"),
-                    SizedBox(width: 7.w),
-                    const DotListItem(),
-                  ],
-                ),
-                const MyText(text: ".من تاريخ نهاية التقدم      "),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    const MyText(
-                        text:
-                            ",في حالة توقف معامل التأثير للمجلة، يتم الموافقة على الابحاث المنشورة بها "),
-                    SizedBox(width: 7.w),
-                    const DotListItem(),
-                  ],
-                ),
-                const MyText(
-                    text: ".منشورة في نفس سنة التوقف وليس بعدها       "),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    const MyText(
-                        text:
-                            ".Scopus على قاعدة بيانات , Q1 تقبل الابحاث المنشورة في مجلة علمية ذات مقياس رباعي"),
-                    SizedBox(width: 7.w),
-                    const DotListItem(),
-                  ],
-                ),
-                Row(mainAxisAlignment: MainAxisAlignment.end, children: [
-                  const MyText(
-                      text:
-                          ":لا تقبل المقالات والاوراق العلمية المنشورة بالمسميات الآتية "),
-                  SizedBox(width: 7.w),
-                  const DotListItem(),
-                ]),
-                const MyText(text: "Review, Letter to editor،      "),
-                const MyText(
-                    text:
-                        "أو أية مسميات جديدة لا تتوافر فيها شروط وقواعد الابحاث العلمية      "),
+                Text("the submitted research must be in PDF format".tr()),
                 SizedBox(
-                  height: 40.h,
+                  height: 5.h,
                 ),
-                Center(
-                    child: Container(
+                Text(
+                    "research under publication or accepted for publication will not be accepted"
+                        .tr()),
+                SizedBox(
+                  height: 5.h,
+                ),
+                Text(
+                    "it is not permissible to submit research to obtain another university award"
+                        .tr()),
+                SizedBox(
+                  height: 5.h,
+                ),
+                Text(
+                    "research papers not listed with the name of Kafr El-Sheikh University will be excluded."
+                        .tr()),
+                SizedBox(
+                  height: 5.h,
+                ),
+                Text(
+                    "all submitted research must have been published within three calendar years from the date of the end of the application."
+                        .tr()),
+                SizedBox(
+                  height: 5.h,
+                ),
+                Text(
+                    "in the event that the journal’s impact factor is discontinued, the research published in it will be approved, provided that it is published in the same year of discontinuation and not after it."
+                        .tr()),
+                SizedBox(
+                  height: 5.h,
+                ),
+                MyText(
+                    text:
+                        "research published in a scientific journal with a Q1 scale is accepted on the Scopus database."
+                            .tr()),
+                SizedBox(
+                  height: 5.h,
+                ),
+              ]),
+              Text(
+                  "articles and scientific papers published under the following titles will not be accepted:"
+                      .tr()),
+              SizedBox(
+                height: 2.h,
+              ),
+              Text("  Review, Letter to editor،"),
+              Text(
+                  "or any new names that do not meet the conditions and rules of scientific research"
+                      .tr()),
+              SizedBox(
+                height: 40.h,
+              ),
+              Center(
+                  child: Expanded(
+                child: Container(
                   padding: EdgeInsets.symmetric(horizontal: 25),
                   color: Colors.grey[300],
-                  width: 190.w,
-                  height: 90.h,
+                  width: 250.w,
+                  height: 100.h,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Text(
-                        "قم برفع البحث هنا",
+                        "upload your search here".tr(),
                         style: TextStyle(
                             color: Color.fromRGBO(26, 86, 83, 1),
                             fontSize: 15,
@@ -150,7 +134,7 @@ class ResearchConditions extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text(
-                                  "ارفع البحث",
+                                  "upload your search".tr(),
                                   style: TextStyle(
                                       color: Color.fromRGBO(105, 105, 105, 1),
                                       fontWeight: FontWeight.w700),
@@ -166,25 +150,8 @@ class ResearchConditions extends StatelessWidget {
                       )
                     ],
                   ),
-                ))
-              ])
+                ),
+              ))
             ])));
-  }
-}
-
-class DotListItem extends StatelessWidget {
-  const DotListItem({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(top: 3),
-      width: 10,
-      height: 6,
-      decoration: const BoxDecoration(
-        color: Color.fromRGBO(126, 126, 126, 1),
-        shape: BoxShape.circle,
-      ),
-    );
   }
 }

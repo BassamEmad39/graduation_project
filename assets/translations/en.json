@@ -72,5 +72,18 @@
     "third": "Third Participant",
     "fourth": "Fourth Participant",
     "fifth": "Fifth Participant",
-    "name in english":"Name in Einglish"
+    "name in english":"Name in English",
+    "search conditions": "Search Conditions:",
+    "the submitted research must be in PDF format": "- The submitted research must be in PDF format.",
+    "research under publication or accepted for publication will not be accepted": "- Research under publication or accepted for publication will not be accepted.",
+    "It is not permissible to submit research to obtain another university award": "- It is not permissible to submit research to obtain another university award.",
+    "research papers not listed with the name of Kafr El-Sheikh University will be excluded.": "- Research papers not listed with the name of Kafr El-Sheikh University will be excluded.",
+    "all submitted research must have been published within three calendar years from the date of the end of the application.": "- All submitted research must have been published within three calendar years from the date of the end of the application.",
+    "in the event that the journal’s impact factor is discontinued, the research published in it will be approved, provided that it is published in the same year of discontinuation and not after it.": "- In the event that the journal’s impact factor is discontinued, the research published in it will be approved, provided that it is published in the same year of discontinuation and not after it.",
+    "research published in a scientific journal with a Q1 scale is accepted on the Scopus database.": "- Research published in a scientific journal with a Q1 scale is accepted on the Scopus database.",
+    "articles and scientific papers published under the following titles will not be accepted:": "- Articles and scientific papers published under the following titles will not be accepted:",
+    "or any new names that do not meet the conditions and rules of scientific research": "  Or any new names that do not meet the conditions and rules of scientific research",
+    "upload your search here": "Upload your search here",
+    "upload your search": "Upload your search"
+
 }
