@@ -2,7 +2,6 @@
 
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:graduation_project/generated/l10n.dart';
 import 'package:graduation_project/pages/confirminfo.dart';
@@ -16,6 +15,7 @@ import 'package:graduation_project/pages/profilepage_1.dart';
 import 'package:graduation_project/pages/profilepage_2.dart';
 import 'package:graduation_project/pages/profilepage_3.dart';
 import 'package:graduation_project/pages/researchConditions.dart';
+import 'package:graduation_project/pages/researchConditions2.dart';
 import 'package:graduation_project/pages/searchinfo.dart';
 import 'package:graduation_project/pages/signup1.dart';
 import 'package:graduation_project/pages/signup2.dart';
@@ -57,6 +57,6 @@ class _MyAppState extends State<MyApp> {
               debugShowCheckedModeBanner: false,
               home: child,
             ),
-        child: const ConfirmInformation());
+        child: const ResearchConditions2());
   }
 }
