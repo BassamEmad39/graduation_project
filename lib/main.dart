@@ -43,7 +43,6 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  String language = 'ar';
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
@@ -58,7 +57,7 @@ class _MyAppState extends State<MyApp> {
               home: child,
             ),
 
-        child: const ResearchConditions2());
+        child: const LoadingPage());
 
   }
 }

@@ -1,5 +1,4 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:graduation_project/custom/appbar.dart';
@@ -58,7 +57,7 @@ class _ContactUsPageState extends State<ContactUsPage> {
                                 height: 10,
                               ),
                               Text(
-                                "إتصل بنا",
+                                "contactus".tr(),
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     color: Color(0xff696969),
@@ -101,13 +100,13 @@ class _ContactUsPageState extends State<ContactUsPage> {
                                               children: [
                                                 Column(
                                                   crossAxisAlignment:
-                                                      CrossAxisAlignment.end,
+                                                      CrossAxisAlignment.start,
                                                   children: [
                                                     SizedBox(
                                                       height: 15,
                                                     ),
                                                     Text(
-                                                      'الإسم',
+                                                      "name".tr(),
                                                       style: TextStyle(
                                                           color:
                                                               Color(0xff696969),
@@ -127,13 +126,13 @@ class _ContactUsPageState extends State<ContactUsPage> {
                                                 ),
                                                 Column(
                                                   crossAxisAlignment:
-                                                      CrossAxisAlignment.end,
+                                                      CrossAxisAlignment.start,
                                                   children: [
                                                     SizedBox(
                                                       height: 15,
                                                     ),
                                                     Text(
-                                                      'البريد الالكتروني',
+                                                      "mail".tr(),
                                                       style: TextStyle(
                                                           color:
                                                               Color(0xff696969),
@@ -153,13 +152,13 @@ class _ContactUsPageState extends State<ContactUsPage> {
                                                 ),
                                                 Column(
                                                   crossAxisAlignment:
-                                                      CrossAxisAlignment.end,
+                                                      CrossAxisAlignment.start,
                                                   children: [
                                                     SizedBox(
                                                       height: 15,
                                                     ),
                                                     Text(
-                                                      'الرسالة',
+                                                      "message".tr(),
                                                       style: TextStyle(
                                                           color:
                                                               Color(0xff696969),
@@ -195,7 +194,7 @@ class _ContactUsPageState extends State<ContactUsPage> {
                                                             width: 5,
                                                           ),
                                                           Text(
-                                                            'إرسال',
+                                                            "send".tr(),
                                                             style: TextStyle(
                                                                 color: Colors
                                                                     .white),
@@ -275,7 +274,7 @@ class _ContactUsPageState extends State<ContactUsPage> {
                                 height: 5,
                               ),
                               Text(
-                                "العنوان",
+                                "address".tr(),
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     color: Color(0xff696969),
@@ -286,13 +285,13 @@ class _ContactUsPageState extends State<ContactUsPage> {
                               ),
                               Center(
                                 child: Text(
-                                  " ، جامعة كفر الشيخ مصر ",
+                                  "addresss1".tr(),
                                   style: TextStyle(
                                       fontSize: 8, color: Color(0xff696969)),
                                 ),
                               ),
                               Text(
-                                'كفر الشيخ',
+                                "addresss2".tr(),
                                 style: TextStyle(
                                     fontSize: 8, color: Color(0xff696969)),
                               ),

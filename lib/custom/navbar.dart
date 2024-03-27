@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:graduation_project/pages/contact_us.dart';
 import 'package:graduation_project/pages/login.dart';
 import 'package:graduation_project/pages/profilepage_1.dart';
+import 'package:graduation_project/pages/researchConditions.dart';
 import 'package:graduation_project/pages/signup1.dart';
 
 class NavBar extends StatelessWidget {
@@ -41,7 +42,11 @@ class NavBar extends StatelessWidget {
                 "apply".tr(),
                 style: TextStyle(color: Colors.white),
               ),
-              onTap: () {},
+              onTap: () {
+                 Navigator.of(context).push(MaterialPageRoute(
+                  builder: (BuildContext context) => const ResearchConditions(),
+                ));
+              },
             ),
             ListTile(
               title: Text(

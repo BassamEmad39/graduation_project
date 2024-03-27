@@ -96,7 +96,7 @@ class Verificationn extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(
-                        height: 15,
+                        height: 10,
                       ),
                       Center(
                         child: MaterialButton(

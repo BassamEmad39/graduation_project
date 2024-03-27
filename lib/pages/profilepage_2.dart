@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:graduation_project/custom/appbar.dart';
@@ -54,7 +55,7 @@ class ProfilePage2 extends StatelessWidget {
                           width: 10,
                         ),
                         Text(
-                          'الخصوصية',
+                          "privacy".tr(),
                           style: TextStyle(
                               color: Color(0xff1A5653),
                               fontSize: 16,
@@ -77,7 +78,7 @@ class ProfilePage2 extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('الإسم'),
+                      Text("name".tr()),
                       SizedBox(
                         height: 10,
                       ),
@@ -89,7 +90,7 @@ class ProfilePage2 extends StatelessWidget {
                       SizedBox(
                         height: 10,
                       ),
-                      Text('الرقم'),
+                      Text("phone".tr()),
                       SizedBox(
                         height: 10,
                       ),
@@ -101,7 +102,7 @@ class ProfilePage2 extends StatelessWidget {
                       SizedBox(
                         height: 10,
                       ),
-                      Text('الرقم القومي'),
+                      Text("nationalid".tr()),
                       SizedBox(
                         height: 10,
                       ),
@@ -114,7 +115,7 @@ class ProfilePage2 extends StatelessWidget {
                         height: 10,
                       ),
                       Text(
-                        'الدرجة العلمية',
+                        "degree".tr(),
                       ),
                       SizedBox(
                         height: 10,
@@ -127,7 +128,7 @@ class ProfilePage2 extends StatelessWidget {
                       SizedBox(
                         height: 10,
                       ),
-                      Text('العنوان'),
+                      Text("address".tr()),
                       SizedBox(
                         height: 10,
                       ),
@@ -139,7 +140,7 @@ class ProfilePage2 extends StatelessWidget {
                       SizedBox(
                         height: 10,
                       ),
-                      Text('الكلية'),
+                      Text("faculty".tr()),
                       SizedBox(
                         height: 10,
                       ),
@@ -151,7 +152,7 @@ class ProfilePage2 extends StatelessWidget {
                       SizedBox(
                         height: 10,
                       ),
-                      Text('الفسم'),
+                      Text("section".tr()),
                       SizedBox(
                         height: 10,
                       ),
@@ -163,7 +164,7 @@ class ProfilePage2 extends StatelessWidget {
                       SizedBox(
                         height: 10,
                       ),
-                      Text('الرقم البريدي'),
+                      Text("post number".tr()),
                       SizedBox(
                         height: 10,
                       ),
@@ -185,13 +186,13 @@ class ProfilePage2 extends StatelessWidget {
                                 showDialog(
                                     context: context,
                                     builder: (context) {
-                                      return const MyDialog(
-                                        title: "تم تعديل البيانات بنجاح",
+                                      return  MyDialog(
+                                        title: "modified".tr(),
                                       );
                                     });
                               },
                               child: Text(
-                                'تعديل',
+                                "edit".tr(),
                                 style: TextStyle(color: Colors.white),
                               ),
                             ),
@@ -209,7 +210,7 @@ class ProfilePage2 extends StatelessWidget {
                           ));
                               },
                               child: Text(
-                                'رجوع',
+                                "back".tr(),
                                 style: TextStyle(color: Colors.white),
                               ),
                             ),

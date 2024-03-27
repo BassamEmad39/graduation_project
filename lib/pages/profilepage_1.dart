@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -83,7 +84,7 @@ class ProfilePage1 extends StatelessWidget {
                             width: 5,
                           ),
                           Text(
-                            'إضافة بحث جديد',
+                            "newsearch".tr(),
                             style: TextStyle(color: Colors.white),
                           ),
                           
@@ -105,7 +106,7 @@ class ProfilePage1 extends StatelessWidget {
                           ));
                   },
                   child: Text(
-                    'الشروط والأحكام',
+                    "terms".tr(),
                     style: TextStyle(
                         fontWeight: FontWeight.bold, color: Color(0xff696969)),
                   ))

@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:graduation_project/pages/homepage.dart';
@@ -45,7 +46,7 @@ class _LoadingPageState extends State<LoadingPage> {
               height: 20,
             ),
             Text(
-              '..جاري التحميل',
+              "loading".tr(),
               style: TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
