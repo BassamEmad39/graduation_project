@@ -1,7 +1,12 @@
 import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:graduation_project/custom/navbar.dart';
+import 'dart:ui' as ui;
+
+import 'package:graduation_project/pages/researchConditions.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -16,13 +21,12 @@ class _HomePageState extends State<HomePage> {
     context.setLocale(Locale(currentLang == 'en' ? 'ar' : 'en'));
     setState(() {});
   }
-  
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: NavBar(),
-      appBar: MainAppBar(onPressed:onPress),
+      appBar: MainAppBar(onPressed: onPress),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: ListView(
@@ -43,15 +47,54 @@ class _HomePageState extends State<HomePage> {
                   height: 10,
                 ),
                 Text("scientific1".tr()),
-                 Text(
-                  "scientific2".tr()
-                   ),
+                Text("scientific2".tr()),
                 SizedBox(
-                  height: 6.h,
+                  height: 35,
                 ),
-                Center(child: Image.asset('images/200pound.gif')),
+                Stack(
+                  alignment: Alignment.centerRight,
+                  children: [
+                    _blurredImage(),
+                    Center(
+                      child: Column(
+                        children: [
+                          Text(
+                            "applyresearch".tr(),
+                            style: TextStyle(
+                              color: Color(0xffFFFFFF),
+                              fontWeight: FontWeight.bold,
+                              fontSize: 25,
+                            ),
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          MaterialButton(
+                            height: 50,
+                            minWidth: 100,
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                builder: (BuildContext context) =>
+                                    const ResearchConditions(),
+                              ));
+                            },
+                            child: Text(
+                              "clickhere".tr(),
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 15,
+                              ),
+                            ),
+                            color: Color(0xff107869),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
                 SizedBox(
-                  height: 6.h,
+                  height: 35,
                 ),
                 Text(
                   "importantinstructions".tr(),
@@ -59,30 +102,22 @@ class _HomePageState extends State<HomePage> {
                       fontWeight: FontWeight.bold, color: Color(0xff1A5653)),
                 ),
                 Text(
-                "instructionline".tr(),
+                  "instructionline".tr(),
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
                 SizedBox(
                   height: 5.h,
                 ),
-                Text(
-                  "instruction1".tr()
-                   ),
-                Text(
-                  "instruction2".tr()
-                   ),
-                Text(
-                  "instruction3".tr()
-                   ),
+                Text("instruction1".tr()),
+                Text("instruction2".tr()),
+                Text("instruction3".tr()),
                 SizedBox(
                   height: 40.h,
                 ),
                 Center(
                   child: Column(
                     children: [
-                      Text(
-                        "homepageline1".tr()
-                      ),
+                      Text("homepageline1".tr()),
                       Text("homepageline2".tr()),
                     ],
                   ),
@@ -119,7 +154,7 @@ class _HomePageState extends State<HomePage> {
                             children: [
                               Text('100'),
                               Text(
-                                 "homepagebottom1".tr(),
+                                "homepagebottom1".tr(),
                                 style: TextStyle(fontSize: 10),
                               ),
                             ],
@@ -211,7 +246,7 @@ class _HomePageState extends State<HomePage> {
 
 // ignore: must_be_immutable
 class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
-   MainAppBar({super.key, required this.onPressed});
+  MainAppBar({super.key, required this.onPressed});
 
   String buttonText = 'EN';
 
@@ -260,7 +295,6 @@ class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Size get preferredSize => Size.fromHeight(60.h);
-  
 }
 
 class LanguageButton extends StatelessWidget {
@@ -270,4 +304,15 @@ class LanguageButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Placeholder();
   }
+}
+
+Widget _blurredImage() {
+  return ImageFiltered(
+    imageFilter: ui.ImageFilter.blur(sigmaX: 5, sigmaY: 5),
+    child: Image.asset(
+      "images/200pound.gif",
+      fit: BoxFit.cover,
+      width: double.infinity,
+    ),
+  );
 }
