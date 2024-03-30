@@ -57,7 +57,7 @@ class _MyAppState extends State<MyApp> {
               home: child,
             ),
 
-        child: const LoadingPage());
+        child: const HomePage());
 
   }
 }

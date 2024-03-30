@@ -27,107 +27,164 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       drawer: NavBar(),
       appBar: MainAppBar(onPressed: onPress),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: ListView(
-          children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(
-                  height: 10.h,
+      body: ListView(
+        children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                height: 10.h,
+              ),
+              Center(
+                child: CircleAvatar(
+                  radius: 100.r,
+                  backgroundImage: AssetImage('images/suits.jpg'),
                 ),
-                Center(
-                  child: CircleAvatar(
-                    radius: 100.r,
-                    backgroundImage: AssetImage('images/suits.jpg'),
-                  ),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Text("scientific1".tr()),
-                Text("scientific2".tr()),
-                SizedBox(
-                  height: 35,
-                ),
-                Stack(
-                  alignment: Alignment.centerRight,
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
                   children: [
-                    _blurredImage(),
-                    Center(
-                      child: Column(
-                        children: [
-                          Text(
-                            "applyresearch".tr(),
-                            style: TextStyle(
-                              color: Color(0xffFFFFFF),
-                              fontWeight: FontWeight.bold,
-                              fontSize: 25,
-                            ),
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          MaterialButton(
-                            height: 50,
-                            minWidth: 100,
-                            onPressed: () {
-                              Navigator.of(context).push(MaterialPageRoute(
-                                builder: (BuildContext context) =>
-                                    const ResearchConditions(),
-                              ));
-                            },
-                            child: Text(
-                              "clickhere".tr(),
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 15,
-                              ),
-                            ),
-                            color: Color(0xff107869),
-                          ),
-                        ],
-                      ),
-                    ),
+                    Text("scientific1".tr()),
+                    Text("scientific2".tr()),
                   ],
                 ),
-                SizedBox(
-                  height: 35,
-                ),
-                Text(
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Stack(
+                alignment: Alignment.centerRight,
+                children: [
+                  _blurredImage(),
+                  Center(
+                    child: Column(
+                      children: [
+                        Text(
+                          "applyresearch".tr(),
+                          style: TextStyle(
+                            color: Color(0xffFFFFFF),
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                          ),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        MaterialButton(
+                          height: 40,
+                          minWidth: 100,
+                          onPressed: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                              builder: (BuildContext context) =>
+                                  const ResearchConditions(),
+                            ));
+                          },
+                          child: Text(
+                            "clickhere".tr(),
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15,
+                            ),
+                          ),
+                          color: Color(0xff107869),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 35,
+              ),
+              Column(
+                children: [],
+              ),
+              Padding(
+                padding: const EdgeInsets.all(2.0),
+                child: Text(
                   "importantinstructions".tr(),
                   style: TextStyle(
                       fontWeight: FontWeight.bold, color: Color(0xff1A5653)),
                 ),
-                Text(
+              ),
+              Padding(
+                padding: const EdgeInsets.all(2.0),
+                child: Text(
                   "instructionline".tr(),
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
-                SizedBox(
-                  height: 5.h,
+              ),
+              SizedBox(
+                height: 5.h,
+              ),
+              Padding(
+                padding: const EdgeInsets.all(2.0),
+                child: Column(
+                  children: [
+                    Text("instruction1".tr()),
+                    Text("instruction2".tr()),
+                    Text("instruction3".tr()),
+                  ],
                 ),
-                Text("instruction1".tr()),
-                Text("instruction2".tr()),
-                Text("instruction3".tr()),
-                SizedBox(
-                  height: 40.h,
+              ),
+              SizedBox(
+                height: 40.h,
+              ),
+              Center(
+                child: Column(
+                  children: [
+                    Text("homepageline1".tr()),
+                    Text("homepageline2".tr()),
+                  ],
                 ),
-                Center(
-                  child: Column(
+              ),
+              SizedBox(
+                height: 5,
+              ),
+              Row(
+                children: [
+                  Column(
                     children: [
-                      Text("homepageline1".tr()),
-                      Text("homepageline2".tr()),
+                      Align(
+                        alignment: AlignmentDirectional.topCenter,
+                        child: CircleAvatar(
+                          radius: 10,
+                          backgroundColor: Color(0xff1A5653),
+                          foregroundColor: Colors.white,
+                          child: Container(
+                            child: Image.asset(
+                              'images/group.png',
+                              color: Colors.white,
+                              height: 20,
+                              width: 20,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Container(
+                        padding: EdgeInsets.only(top: 6),
+                        height: 55.h,
+                        width: 90.w,
+                        color: Color(0xff999999),
+                        child: Column(
+                          children: [
+                            Text('100'),
+                            Text(
+                              "homepagebottom1".tr(),
+                              style: TextStyle(fontSize: 10),
+                            ),
+                          ],
+                        ),
+                      ),
                     ],
                   ),
-                ),
-                SizedBox(
-                  height: 5,
-                ),
-                Row(
-                  children: [
-                    Column(
+                  Expanded(
+                    child: Column(
                       children: [
                         Align(
                           alignment: AlignmentDirectional.topCenter,
@@ -137,10 +194,8 @@ class _HomePageState extends State<HomePage> {
                             foregroundColor: Colors.white,
                             child: Container(
                               child: Image.asset(
-                                'images/group.png',
+                                'images/contact.png',
                                 color: Colors.white,
-                                height: 20,
-                                width: 20,
                               ),
                             ),
                           ),
@@ -152,9 +207,9 @@ class _HomePageState extends State<HomePage> {
                           color: Color(0xff999999),
                           child: Column(
                             children: [
-                              Text('100'),
+                              Text('1700'),
                               Text(
-                                "homepagebottom1".tr(),
+                                "homepagebottom2".tr(),
                                 style: TextStyle(fontSize: 10),
                               ),
                             ],
@@ -162,83 +217,48 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ],
                     ),
-                    Expanded(
-                      child: Column(
-                        children: [
-                          Align(
-                            alignment: AlignmentDirectional.topCenter,
-                            child: CircleAvatar(
-                              radius: 10,
-                              backgroundColor: Color(0xff1A5653),
-                              foregroundColor: Colors.white,
-                              child: Container(
-                                child: Image.asset(
-                                  'images/contact.png',
-                                  color: Colors.white,
-                                ),
-                              ),
+                  ),
+                  Column(
+                    children: [
+                      Align(
+                        alignment: AlignmentDirectional.topCenter,
+                        child: CircleAvatar(
+                          radius: 10,
+                          backgroundColor: Color(0xff1A5653),
+                          foregroundColor: Colors.white,
+                          child: Container(
+                            child: Image.asset(
+                              'images/dollar.png',
+                              color: Colors.white,
                             ),
                           ),
-                          Container(
-                            padding: EdgeInsets.only(top: 6),
-                            height: 55.h,
-                            width: 90.w,
-                            color: Color(0xff999999),
-                            child: Column(
-                              children: [
-                                Text('1700'),
-                                Text(
-                                  "homepagebottom2".tr(),
-                                  style: TextStyle(fontSize: 10),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
+                        ),
                       ),
-                    ),
-                    Column(
-                      children: [
-                        Align(
-                          alignment: AlignmentDirectional.topCenter,
-                          child: CircleAvatar(
-                            radius: 10,
-                            backgroundColor: Color(0xff1A5653),
-                            foregroundColor: Colors.white,
-                            child: Container(
-                              child: Image.asset(
-                                'images/dollar.png',
-                                color: Colors.white,
-                              ),
+                      Container(
+                        padding: EdgeInsets.only(top: 6),
+                        height: 55.h,
+                        width: 90.w,
+                        color: Color(0xff999999),
+                        child: Column(
+                          children: [
+                            Text('2000000'),
+                            Text(
+                              "homepagebottom3".tr(),
+                              style: TextStyle(fontSize: 9),
                             ),
-                          ),
+                          ],
                         ),
-                        Container(
-                          padding: EdgeInsets.only(top: 6),
-                          height: 55.h,
-                          width: 90.w,
-                          color: Color(0xff999999),
-                          child: Column(
-                            children: [
-                              Text('2000000'),
-                              Text(
-                                "homepagebottom3".tr(),
-                                style: TextStyle(fontSize: 9),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 50,
-                )
-              ],
-            ),
-          ],
-        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 50,
+              )
+            ],
+          ),
+        ],
       ),
     );
   }
@@ -313,6 +333,7 @@ Widget _blurredImage() {
       "images/200pound.gif",
       fit: BoxFit.cover,
       width: double.infinity,
+      height: 180,
     ),
   );
 }
