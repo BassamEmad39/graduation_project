@@ -1,4 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:graduation_project/custom/appbar.dart';
@@ -17,6 +18,7 @@ class LoginPage extends StatefulWidget {
 String text = '';
 
 class _LoginPageState extends State<LoginPage> {
+  final formKey = GlobalKey<FormState>();
   bool isPasswordVisible = false;
   bool states = false;
   Widget build(BuildContext context) {
@@ -38,8 +40,7 @@ class _LoginPageState extends State<LoginPage> {
                           color: Colors.grey.withOpacity(0.9),
                           spreadRadius: 0,
                           blurRadius: 4,
-                          offset:
-                              const Offset(0, 3), 
+                          offset: const Offset(0, 3),
                         ),
                       ],
                       color: Colors.grey[300],
@@ -51,7 +52,7 @@ class _LoginPageState extends State<LoginPage> {
                       children: [
                         Center(
                           child: Text(
-                          "login".tr(),
+                            "login".tr(),
                             style: TextStyle(
                                 fontSize: 25,
                                 fontWeight: FontWeight.bold,
@@ -67,7 +68,7 @@ class _LoginPageState extends State<LoginPage> {
                           height: 20,
                         ),
                         Text(
-                      "email".tr(),
+                          "email".tr(),
                           style: TextStyle(
                               fontSize: 20,
                               color: Color.fromARGB(
@@ -80,7 +81,20 @@ class _LoginPageState extends State<LoginPage> {
                         SizedBox(
                           height: 10,
                         ),
-                        MyTextField(isPassword: false, maxLiness: 1,isPhone: false,),
+                        Form(
+                          key: formKey,
+                          child: MyTextField(
+                            validator: (value) {
+                              if (value!.isEmpty){
+                                return "This field is required.";
+                              }
+                              return null;
+                            },
+                            isPassword: false,
+                            maxLiness: 1,
+                            isPhone: false,
+                          ),
+                        ),
                         SizedBox(
                           height: 10,
                         ),
@@ -109,7 +123,9 @@ class _LoginPageState extends State<LoginPage> {
                         Center(
                             child: CustomButton(
                           title: "login".tr(),
-                          onPressed: () {},
+                          onPressed: () {
+                            formKey.currentState!.validate();
+                          },
                         )),
                         SizedBox(
                           height: 5,
