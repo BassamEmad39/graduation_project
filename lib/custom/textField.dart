@@ -5,8 +5,10 @@ class MyTextField extends StatefulWidget {
   final bool isPassword,isPhone;
   final int maxLiness;
   final FormFieldValidator? validator;
+  final TextEditingController? controller;
 
-  const MyTextField({super.key,required this.isPassword, required this.maxLiness,required this.isPhone, this.validator, });
+
+  const MyTextField({super.key,required this.isPassword, required this.maxLiness,required this.isPhone, this.validator, this.controller, });
 
   @override
   State<MyTextField> createState() => _MyTextFieldState();
