@@ -142,6 +142,9 @@ class _SignUpPage2State extends State<SignUpPage2> {
                             maxLiness: 1,
                             isPhone: true,
                             validator: (value) {
+                              if(value!.isEmpty) {
+                                return "field is required".tr();
+                              }
                               if (value.length == 11) {
                                 return null;
                               } else {
