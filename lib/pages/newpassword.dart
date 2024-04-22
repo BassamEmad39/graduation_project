@@ -21,6 +21,7 @@ class _NewPasswordState extends State<NewPassword> {
   bool isPasswordVisible2 = false;
 
   bool states2 = false;
+  final formKey = GlobalKey<FormState>();
 
   Widget build(BuildContext context) {
     return Scaffold(
@@ -108,13 +109,15 @@ class _NewPasswordState extends State<NewPassword> {
                         child: CustomButton(
                             title: "next".tr(),
                             onPressed: () {
-                              showDialog(
-                                  context: context,
-                                  builder: (context) {
-                                    return MyDialog(
-                                      title: "passwordsuccess".tr(),
-                                    );
-                                  });
+                              if (formKey.currentState!.validate()) {
+                                showDialog(
+                                    context: context,
+                                    builder: (context) {
+                                      return MyDialog(
+                                        title: "passwordsuccess".tr(),
+                                      );
+                                    });
+                              }
                             }),
                       )
                     ],

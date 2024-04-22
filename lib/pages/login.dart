@@ -6,6 +6,7 @@ import 'package:graduation_project/custom/appbar.dart';
 import 'package:graduation_project/custom/buttons.dart';
 import 'package:graduation_project/custom/textField.dart';
 import 'package:graduation_project/pages/forgetpassword.dart';
+import 'package:graduation_project/pages/homepage.dart';
 import 'package:graduation_project/pages/signup1.dart';
 
 class LoginPage extends StatefulWidget {
@@ -24,10 +25,11 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: MyAppBar(),
-      body: ListView(
-        padding: EdgeInsets.only(top: 150.h),
-        children: [
-          Column(
+      body: Form(
+        key: formKey,
+        child: SingleChildScrollView(
+          padding: EdgeInsets.only(top: 150.h),
+          child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Center(
@@ -46,7 +48,6 @@ class _LoginPageState extends State<LoginPage> {
                       color: Colors.grey[300],
                     ),
                     width: 340.w,
-                    height: 510.h,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -81,19 +82,16 @@ class _LoginPageState extends State<LoginPage> {
                         SizedBox(
                           height: 10,
                         ),
-                        Form(
-                          key: formKey,
-                          child: MyTextField(
-                            validator: (value) {
-                              if (value!.isEmpty){
-                                return "This field is required.";
-                              }
-                              return null;
-                            },
-                            isPassword: false,
-                            maxLiness: 1,
-                            isPhone: false,
-                          ),
+                        MyTextField(
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return "field is required".tr();
+                            }
+                            
+                          },
+                          isPassword: false,
+                          maxLiness: 1,
+                          isPhone: false,
                         ),
                         SizedBox(
                           height: 10,
@@ -113,6 +111,12 @@ class _LoginPageState extends State<LoginPage> {
                           height: 10,
                         ),
                         MyTextField(
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return "field is required".tr();
+                            }
+                            return null;
+                          },
                           isPassword: true,
                           maxLiness: 1,
                           isPhone: false,
@@ -124,7 +128,13 @@ class _LoginPageState extends State<LoginPage> {
                             child: CustomButton(
                           title: "login".tr(),
                           onPressed: () {
-                            formKey.currentState!.validate();
+                            if (formKey.currentState!.validate()) {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                builder: (BuildContext context) =>
+                                    const HomePage(),
+                              ));
+                            }
+                            ;
                           },
                         )),
                         SizedBox(
@@ -161,7 +171,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ],
           ),
-        ],
+        ),
       ),
     );
   }

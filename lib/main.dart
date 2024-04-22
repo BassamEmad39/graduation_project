@@ -11,6 +11,7 @@ import 'package:graduation_project/pages/homepage.dart';
 import 'package:graduation_project/pages/loading_page.dart';
 import 'package:graduation_project/pages/login.dart';
 import 'package:graduation_project/pages/manage_profile.dart';
+import 'package:graduation_project/pages/newpassword.dart';
 import 'package:graduation_project/pages/profilepage_1.dart';
 import 'package:graduation_project/pages/profilepage_2.dart';
 import 'package:graduation_project/pages/profilepage_3.dart';
@@ -57,7 +58,7 @@ class _MyAppState extends State<MyApp> {
               home: child,
             ),
 
-        child: const HomePage());
+        child: const ForgetPssword());
 
   }
 }
