@@ -24,6 +24,8 @@ String text = '';
 
 class _SignUpPage4State extends State<SignUpPage4> {
   final formKey = GlobalKey<FormState>();
+  final passwordController = TextEditingController();
+  final confirmPasswordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -85,11 +87,14 @@ class _SignUpPage4State extends State<SignUpPage4> {
                         height: 5.h,
                       ),
                       MyTextField(
+                        controller: passwordController,
                         isPassword: true,
                         maxLiness: 1,
                         isPhone: false,
-                        validator: (value) {
-                          if (value!.length > 8) {
+                        validator: (passwordController) {
+                          if (passwordController!.isEmpty) {
+                            return "field is required".tr();
+                          } else if (passwordController!.length > 8) {
                             return null;
                           } else {
                             return "password should be".tr();
@@ -108,10 +113,19 @@ class _SignUpPage4State extends State<SignUpPage4> {
                         height: 5.h,
                       ),
                       MyTextField(
-                        isPassword: true,
-                        maxLiness: 1,
-                        isPhone: false,
-                      ),
+                          controller: confirmPasswordController,
+                          isPassword: true,
+                          maxLiness: 1,
+                          isPhone: false,
+                          validator: (confirmPasswordController) {
+                            if (confirmPasswordController!.isEmpty) {
+                              return "field is required".tr();
+                            } else if (confirmPasswordController !=
+                                passwordController) {
+                              return "not match".tr();
+                            }
+                            return null;
+                          }),
                       SizedBox(
                         height: 20.h,
                       ),
