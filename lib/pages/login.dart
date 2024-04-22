@@ -87,6 +87,7 @@ class _LoginPageState extends State<LoginPage> {
                             if (value!.isEmpty) {
                               return "field is required".tr();
                             }
+                            return null;
                             
                           },
                           isPassword: false,

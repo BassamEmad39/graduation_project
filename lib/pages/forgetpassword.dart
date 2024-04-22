@@ -78,6 +78,7 @@ class _ForgetPsswordState extends State<ForgetPssword> {
                           if (value!.isEmpty) {
                             return "field is required".tr();
                           }
+                          return null;
                         },
                         isPassword: false,
                         maxLiness: 1,

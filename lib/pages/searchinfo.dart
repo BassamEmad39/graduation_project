@@ -6,21 +6,6 @@ import 'package:graduation_project/custom/buttons.dart';
 import 'package:graduation_project/custom/textField.dart';
 import 'package:easy_localization/easy_localization.dart';
 
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: SearchInfo(),
-    );
-  }
-}
-
 class SearchInfo extends StatefulWidget {
   const SearchInfo({Key? key}) : super(key: key);
 
@@ -29,6 +14,7 @@ class SearchInfo extends StatefulWidget {
 }
 
 class _SearchInfoState extends State<SearchInfo> {
+  final formKey = GlobalKey<FormState>();
   String? choosse;
   String? choosse2;
 
@@ -36,235 +22,283 @@ class _SearchInfoState extends State<SearchInfo> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: MyAppBar(),
-      body: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const SizedBox(height: 25),
-            Center(
-              child: Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 13, vertical: 37),
-                decoration: BoxDecoration(
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.9),
-                      spreadRadius: 0,
-                      blurRadius: 4,
-                      offset: const Offset(0, 3), // changes position of shadow
-                    ),
-                  ],
-                  color: Colors.grey[300],
-                ),
-                width: 380.w,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Center(
-                      child: Text(
-                        "research data".tr(),
+      body: Form(
+        key: formKey,
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const SizedBox(height: 25),
+              Center(
+                child: Container(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 13, vertical: 37),
+                  decoration: BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.9),
+                        spreadRadius: 0,
+                        blurRadius: 4,
+                        offset:
+                            const Offset(0, 3), // changes position of shadow
+                      ),
+                    ],
+                    color: Colors.grey[300],
+                  ),
+                  width: 380.w,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Center(
+                        child: Text(
+                          "research data".tr(),
+                          style: TextStyle(
+                              fontWeight: FontWeight.w700,
+                              fontSize: 25,
+                              color: Color.fromRGBO(26, 86, 83, 1),
+                              shadows: [
+                                BoxShadow(
+                                  color: Colors.grey,
+                                  spreadRadius: 0,
+                                  blurRadius: 4,
+                                  offset: Offset(0, 1),
+                                )
+                              ]),
+                        ),
+                      ),
+                      const SizedBox(height: 25),
+                      Text(
+                        "research title in English".tr(),
                         style: TextStyle(
-                            fontWeight: FontWeight.w700,
-                            fontSize: 25,
-                            color: Color.fromRGBO(26, 86, 83, 1),
-                            shadows: [
-                              BoxShadow(
-                                color: Colors.grey,
-                                spreadRadius: 0,
-                                blurRadius: 4,
-                                offset: Offset(0, 1),
-                              )
-                            ]),
+                          color: Color.fromRGBO(26, 86, 83, 1),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 13,
+                        ),
                       ),
-                    ),
-                    const SizedBox(height: 25),
-                    Text(
-                      "research title in English".tr(),
-                      style: TextStyle(
-                        color: Color.fromRGBO(26, 86, 83, 1),
-                        fontWeight: FontWeight.bold,
-                        fontSize: 13,
+                      const SizedBox(height: 5),
+                      MyTextField(
+                        isPassword: false,
+                        maxLiness: 1,
+                        isPhone: false,
+                        validator: (value) {
+                          if (value!.isEmpty) {
+                            return "field is required.".tr();
+                          }
+                          return null;
+                        },
                       ),
-                    ),
-                    const SizedBox(height: 5),
-                    const MyTextField(
-                      isPassword: false,
-                      maxLiness: 1,
-                      isPhone: false,
-                    ),
-                    const SizedBox(height: 10),
-                    Text(
-                      "date of publication of the research".tr(),
-                      style: TextStyle(
-                        color: Color.fromRGBO(26, 86, 83, 1),
-                        fontWeight: FontWeight.bold,
-                        fontSize: 13,
+                      const SizedBox(height: 10),
+                      Text(
+                        "date of publication of the research".tr(),
+                        style: TextStyle(
+                          color: Color.fromRGBO(26, 86, 83, 1),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 13,
+                        ),
                       ),
-                    ),
-                    const SizedBox(height: 5),
-                    const MyTextField(
-                      isPassword: false,
-                      maxLiness: 1,
-                      isPhone: false,
-                    ),
-                    const SizedBox(height: 10),
-                    Text(
-                      "where to conduct the search in Arabic".tr(),
-                      style: TextStyle(
-                        color: Color.fromRGBO(26, 86, 83, 1),
-                        fontWeight: FontWeight.bold,
-                        fontSize: 13,
+                      const SizedBox(height: 5),
+                      const MyTextField(
+                        isPassword: false,
+                        maxLiness: 1,
+                        isPhone: false,
                       ),
-                    ),
-                    const SizedBox(height: 5),
-                    const MyTextField(
-                      isPassword: false,
-                      maxLiness: 1,
-                      isPhone: false,
-                    ),
-                    const SizedBox(height: 10),
-                    Text(
-                      "your search link".tr(),
-                      style: TextStyle(
-                        color: Color.fromRGBO(26, 86, 83, 1),
-                        fontWeight: FontWeight.bold,
-                        fontSize: 13,
+                      const SizedBox(height: 10),
+                      Text(
+                        "where to conduct the search in Arabic".tr(),
+                        style: TextStyle(
+                          color: Color.fromRGBO(26, 86, 83, 1),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 13,
+                        ),
                       ),
-                    ),
-                    const SizedBox(height: 5),
-                    const MyTextField(
-                      isPassword: false,
-                      maxLiness: 1,
-                      isPhone: false,
-                    ),
-                    const SizedBox(height: 10),
-                    Text(
-                      "name of magazine in Arabic".tr(),
-                      style: TextStyle(
-                        color: Color.fromRGBO(26, 86, 83, 1),
-                        fontWeight: FontWeight.bold,
-                        fontSize: 13,
+                      const SizedBox(height: 5),
+                      MyTextField(
+                        isPassword: false,
+                        maxLiness: 1,
+                        isPhone: false,
+                        validator: (value) {
+                          if (value!.isEmpty) {
+                            return "field is required.".tr();
+                          }
+                          return null;
+                        },
                       ),
-                    ),
-                    const SizedBox(height: 5),
-                    const MyTextField(
-                      isPassword: false,
-                      maxLiness: 1,
-                      isPhone: false,
-                    ),
-                    const SizedBox(height: 10),
-                    Text(
-                      "the impact factor of a publishing journal".tr(),
-                      style: TextStyle(
-                        color: Color.fromRGBO(26, 86, 83, 1),
-                        fontWeight: FontWeight.bold,
-                        fontSize: 13,
+                      const SizedBox(height: 10),
+                      Text(
+                        "your search link".tr(),
+                        style: TextStyle(
+                          color: Color.fromRGBO(26, 86, 83, 1),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 13,
+                        ),
                       ),
-                    ),
-                    const SizedBox(height: 5),
-                    const MyTextField(
-                      isPassword: false,
-                      maxLiness: 1,
-                      isPhone: false,
-                    ),
-                    const SizedBox(height: 10),
-                    Text(
-                      "the standard serial number of the journal".tr(),
-                      style: TextStyle(
-                        color: Color.fromRGBO(26, 86, 83, 1),
-                        fontWeight: FontWeight.bold,
-                        fontSize: 13,
+                      const SizedBox(height: 5),
+                      MyTextField(
+                        isPassword: false,
+                        maxLiness: 1,
+                        isPhone: false,
+                        validator: (value) {
+                          if (value!.isEmpty) {
+                            return "field is required.".tr();
+                          }
+                          return null;
+                        },
                       ),
-                    ),
-                    const SizedBox(height: 5),
-                    const MyTextField(
-                      isPassword: false,
-                      maxLiness: 1,
-                      isPhone: false,
-                    ),
-                    const SizedBox(height: 10),
-                    Text(
-                      "the quadrant in which the journal is located (Q) for papers published on SCOUPS"
-                          .tr(),
-                      style: TextStyle(
-                        color: Color.fromRGBO(26, 86, 83, 1),
-                        fontWeight: FontWeight.bold,
-                        fontSize: 10,
+                      const SizedBox(height: 10),
+                      Text(
+                        "name of magazine in Arabic".tr(),
+                        style: TextStyle(
+                          color: Color.fromRGBO(26, 86, 83, 1),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 13,
+                        ),
                       ),
-                    ),
-                    const SizedBox(height: 5),
-                    const MyTextField(
-                      isPassword: false,
-                      maxLiness: 1,
-                      isPhone: false,
-                    ),
-                    const SizedBox(height: 10),
-                    Text(
-                      "are there faculty members at Kafrelsheikh University participating in the research?"
-                          .tr(),
-                      style: TextStyle(
-                        color: Color.fromRGBO(26, 86, 83, 1),
-                        fontWeight: FontWeight.bold,
-                        fontSize: 13,
+                      const SizedBox(height: 5),
+                      MyTextField(
+                        isPassword: false,
+                        maxLiness: 1,
+                        isPhone: false,
+                        validator: (value) {
+                          if (value!.isEmpty) {
+                            return "field is required.".tr();
+                          }
+                          return null;
+                        },
                       ),
-                    ),
-                    Column(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          RadioListTile(
-                            title: Text(
-                              "yes".tr(),
+                      const SizedBox(height: 10),
+                      Text(
+                        "the impact factor of a publishing journal".tr(),
+                        style: TextStyle(
+                          color: Color.fromRGBO(26, 86, 83, 1),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 13,
+                        ),
+                      ),
+                      const SizedBox(height: 5),
+                      MyTextField(
+                        isPassword: false,
+                        maxLiness: 1,
+                        isPhone: false,
+                        validator: (value) {
+                          if (value!.isEmpty) {
+                            return "field is required.".tr();
+                          }
+                          return null;
+                        },
+                      ),
+                      const SizedBox(height: 10),
+                      Text(
+                        "the standard serial number of the journal".tr(),
+                        style: TextStyle(
+                          color: Color.fromRGBO(26, 86, 83, 1),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 13,
+                        ),
+                      ),
+                      const SizedBox(height: 5),
+                      MyTextField(
+                        isPassword: false,
+                        maxLiness: 1,
+                        isPhone: false,
+                        validator: (value) {
+                          if (value!.isEmpty) {
+                            return "field is required.".tr();
+                          }
+                          return null;
+                        },
+                      ),
+                      const SizedBox(height: 10),
+                      Text(
+                        "the quadrant in which the journal is located (Q) for papers published on SCOUPS"
+                            .tr(),
+                        style: TextStyle(
+                          color: Color.fromRGBO(26, 86, 83, 1),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 10,
+                        ),
+                      ),
+                      const SizedBox(height: 5),
+                      MyTextField(
+                        isPassword: false,
+                        maxLiness: 1,
+                        isPhone: false,
+                        validator: (value) {
+                          if (value!.isEmpty) {
+                            return "field is required.".tr();
+                          }
+                          return null;
+                        },
+                      ),
+                      const SizedBox(height: 10),
+                      Text(
+                        "are there faculty members at Kafrelsheikh University participating in the research?"
+                            .tr(),
+                        style: TextStyle(
+                          color: Color.fromRGBO(26, 86, 83, 1),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 13,
+                        ),
+                      ),
+                      Column(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: [
+                            RadioListTile(
+                              title: Text(
+                                "yes".tr(),
+                              ),
+                              activeColor: const Color.fromRGBO(26, 86, 83, 1),
+                              visualDensity: const VisualDensity(
+                                  horizontal: 0, vertical: -4),
+                              value: "yes".tr(),
+                              groupValue: choosse,
+                              onChanged: (String? val) {
+                                setState(() {
+                                  choosse = val;
+                                });
+                              },
+                              contentPadding: EdgeInsets.zero,
                             ),
-                            activeColor: const Color.fromRGBO(26, 86, 83, 1),
-                            visualDensity: const VisualDensity(
-                                horizontal: 0, vertical: -4),
-                            value: "yes".tr(),
-                            groupValue: choosse,
-                            onChanged: (String? val) {
-                              setState(() {
-                                choosse = val;
-                              });
-                            },
-                            contentPadding: EdgeInsets.zero,
-                          ),
-                          RadioListTile(
-                            dense: false,
-                            title: Text(
-                              "no".tr(),
+                            RadioListTile(
+                              dense: false,
+                              title: Text(
+                                "no".tr(),
+                              ),
+                              activeColor: const Color.fromRGBO(26, 86, 83, 1),
+                              visualDensity: const VisualDensity(
+                                  horizontal: 0, vertical: -4),
+                              value: "no".tr(),
+                              groupValue: choosse,
+                              onChanged: (String? val) {
+                                setState(() {
+                                  choosse = val;
+                                });
+                              },
+                              contentPadding: EdgeInsets.zero,
                             ),
-                            activeColor: const Color.fromRGBO(26, 86, 83, 1),
-                            visualDensity: const VisualDensity(
-                                horizontal: 0, vertical: -4),
-                            value: "no".tr(),
-                            groupValue: choosse,
-                            onChanged: (String? val) {
-                              setState(() {
-                                choosse = val;
-                              });
-                            },
-                            contentPadding: EdgeInsets.zero,
-                          ),
-                        ]),
-                  ],
+                          ]),
+                    ],
+                  ),
                 ),
               ),
-            ),
-            const SizedBox(height: 15),
-            if (choosse == "yes".tr()) const DropdownButton2Section(),
-            const SizedBox(height: 30),
-            Center(
-              child: CustomButton(
-                title: "next".tr(),
-                onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                    builder: (BuildContext context) => const SearchInfo(),
-                  ));
-                },
+              const SizedBox(height: 15),
+              if (choosse == "yes".tr()) const DropdownButton2Section(),
+              const SizedBox(height: 30),
+              Center(
+                child: CustomButton(
+                  title: "next".tr(),
+                  onPressed: () {
+                    if (formKey.currentState!.validate()) {
+                      Navigator.of(context).push(MaterialPageRoute(
+                        builder: (BuildContext context) => const SearchInfo(),
+                      ));
+                    }
+                  },
+                ),
               ),
-            ),
-            const SizedBox(height: 25),
-          ],
+              const SizedBox(height: 25),
+            ],
+          ),
         ),
       ),
     );
@@ -464,6 +498,12 @@ class _DropdownButton2SectionState extends State<DropdownButton2Section> {
                   filled: true,
                   fillColor: Color.fromRGBO(255, 253, 253, 1),
                 ),
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    return "field is required.".tr();
+                  }
+                  return null;
+                },
               ),
               const SizedBox(
                 height: 10,
@@ -487,6 +527,12 @@ class _DropdownButton2SectionState extends State<DropdownButton2Section> {
                   filled: true,
                   fillColor: Color.fromRGBO(255, 253, 253, 1),
                 ),
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    return "field is required.".tr();
+                  }
+                  return null;
+                },
               ),
               const SizedBox(
                 height: 10,
@@ -510,6 +556,12 @@ class _DropdownButton2SectionState extends State<DropdownButton2Section> {
                   filled: true,
                   fillColor: Color.fromRGBO(255, 253, 253, 1),
                 ),
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    return "field is required.".tr();
+                  }
+                  return null;
+                },
               ),
             ],
           ),

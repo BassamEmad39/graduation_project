@@ -23,14 +23,17 @@ bool states2 = false;
 String text = '';
 
 class _SignUpPage4State extends State<SignUpPage4> {
+  final formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: MyAppBar(),
-        body: ListView(
-          padding: EdgeInsets.only(top: 200.h),
-          children: [
-            Column(
+        body: Form(
+          key: formKey,
+          child: SingleChildScrollView(
+            padding: EdgeInsets.only(top: 200.h),
+            child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Center(
@@ -49,12 +52,11 @@ class _SignUpPage4State extends State<SignUpPage4> {
                     ],
                     color: Colors.grey[300],
                   ),
-                  width: 335.h,
-                  height: 345.h,
+                  width: 335.w,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                       Center(
+                      Center(
                         child: Text(
                           "createaccount".tr(),
                           style: TextStyle(
@@ -74,7 +76,7 @@ class _SignUpPage4State extends State<SignUpPage4> {
                       SizedBox(
                         height: 7.h,
                       ),
-                       Text("password".tr(),
+                      Text("password".tr(),
                           style: TextStyle(
                               color: Color.fromRGBO(26, 86, 83, 1),
                               fontWeight: FontWeight.w500,
@@ -82,11 +84,22 @@ class _SignUpPage4State extends State<SignUpPage4> {
                       SizedBox(
                         height: 5.h,
                       ),
-                      MyTextField(isPassword: true, maxLiness: 1,isPhone: false,),
+                      MyTextField(
+                        isPassword: true,
+                        maxLiness: 1,
+                        isPhone: false,
+                        validator: (value) {
+                          if (value!.length > 8) {
+                            return null;
+                          } else {
+                            return "password should be".tr();
+                          }
+                        },
+                      ),
                       SizedBox(
                         height: 15.h,
                       ),
-                       Text("confirmpassword".tr(),
+                      Text("confirmpassword".tr(),
                           style: TextStyle(
                               color: Color.fromRGBO(26, 86, 83, 1),
                               fontWeight: FontWeight.w500,
@@ -94,7 +107,11 @@ class _SignUpPage4State extends State<SignUpPage4> {
                       SizedBox(
                         height: 5.h,
                       ),
-                      MyTextField(isPassword: true, maxLiness: 1,isPhone: false,),
+                      MyTextField(
+                        isPassword: true,
+                        maxLiness: 1,
+                        isPhone: false,
+                      ),
                       SizedBox(
                         height: 20.h,
                       ),
@@ -102,13 +119,15 @@ class _SignUpPage4State extends State<SignUpPage4> {
                         child: CustomButton(
                           title: "create".tr(),
                           onPressed: () {
-                            showDialog(
-                                context: context,
-                                builder: (context) {
-                                  return  MyDialog(
-                                    title: "accountcreated".tr(),
-                                  );
-                                });
+                            if (formKey.currentState!.validate()) {
+                              showDialog(
+                                  context: context,
+                                  builder: (context) {
+                                    return MyDialog(
+                                      title: "accountcreated".tr(),
+                                    );
+                                  });
+                            }
                           },
                         ),
                       )
@@ -160,7 +179,7 @@ class _SignUpPage4State extends State<SignUpPage4> {
                 ),
               ],
             ),
-          ],
+          ),
         ));
   }
 }

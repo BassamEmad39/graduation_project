@@ -6,7 +6,7 @@ class MyTextField extends StatefulWidget {
   final int maxLiness;
   final FormFieldValidator? validator;
 
-  const MyTextField({super.key,required this.isPassword, required this.maxLiness,required this.isPhone, this.validator});
+  const MyTextField({super.key,required this.isPassword, required this.maxLiness,required this.isPhone, this.validator, });
 
   @override
   State<MyTextField> createState() => _MyTextFieldState();

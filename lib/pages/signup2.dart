@@ -14,14 +14,16 @@ class SignUpPage2 extends StatefulWidget {
 }
 
 class _SignUpPage2State extends State<SignUpPage2> {
+  final formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: MyAppBar(),
-      body: ListView(
-        padding: EdgeInsets.only(top: 50.h),
-        children: [
-          Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+      body: Form(
+        key: formKey,
+        child: SingleChildScrollView(
+          padding: EdgeInsets.only(top: 50.h),
+          child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
             Center(
                 child: Container(
                     padding: const EdgeInsets.symmetric(
@@ -32,18 +34,16 @@ class _SignUpPage2State extends State<SignUpPage2> {
                           color: Colors.grey.withOpacity(0.9),
                           spreadRadius: 0,
                           blurRadius: 4,
-                          offset:
-                              const Offset(0, 3), // changes position of shadow
+                          offset: const Offset(0, 3),
                         ),
                       ],
                       color: Colors.grey[300],
                     ),
                     width: 340.w,
-                    height: 590.h,
                     child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                           Center(
+                          Center(
                             child: Text(
                               "createaccount".tr(),
                               style: TextStyle(
@@ -63,7 +63,7 @@ class _SignUpPage2State extends State<SignUpPage2> {
                           SizedBox(
                             height: 25.h,
                           ),
-                           Text("name".tr(),
+                          Text("name".tr(),
                               style: TextStyle(
                                   color: Color.fromRGBO(26, 86, 83, 1),
                                   fontWeight: FontWeight.w500,
@@ -71,11 +71,21 @@ class _SignUpPage2State extends State<SignUpPage2> {
                           SizedBox(
                             height: 5.h,
                           ),
-                          MyTextField(isPassword: false, maxLiness: 1,isPhone: false,),
+                          MyTextField(
+                            isPassword: false,
+                            maxLiness: 1,
+                            isPhone: false,
+                            validator: (value) {
+                              if (value!.isEmpty) {
+                                return "field is required".tr();
+                              }
+                              return null;
+                            },
+                          ),
                           SizedBox(
                             height: 31.h,
                           ),
-                           Text("namediff".tr(),
+                          Text("namediff".tr(),
                               style: TextStyle(
                                   color: Color.fromRGBO(26, 86, 83, 1),
                                   fontWeight: FontWeight.w500,
@@ -83,11 +93,21 @@ class _SignUpPage2State extends State<SignUpPage2> {
                           SizedBox(
                             height: 5.h,
                           ),
-                          MyTextField(isPassword: false, maxLiness: 1,isPhone: false,),
+                          MyTextField(
+                            isPassword: false,
+                            maxLiness: 1,
+                            isPhone: false,
+                            validator: (value) {
+                              if (value!.isEmpty) {
+                                return "field is required".tr();
+                              }
+                              return null;
+                            },
+                          ),
                           SizedBox(
                             height: 31.h,
                           ),
-                           Text("address".tr(),
+                          Text("address".tr(),
                               style: TextStyle(
                                   color: Color.fromRGBO(26, 86, 83, 1),
                                   fontWeight: FontWeight.w500,
@@ -95,11 +115,21 @@ class _SignUpPage2State extends State<SignUpPage2> {
                           SizedBox(
                             height: 5.h,
                           ),
-                          MyTextField(isPassword: false, maxLiness: 1,isPhone: false,),
+                          MyTextField(
+                            isPassword: false,
+                            maxLiness: 1,
+                            isPhone: false,
+                            validator: (value) {
+                              if (value!.isEmpty) {
+                                return "field is required".tr();
+                              }
+                              return null;
+                            },
+                          ),
                           SizedBox(
                             height: 31.h,
                           ),
-                           Text("phone".tr(),
+                          Text("phone".tr(),
                               style: TextStyle(
                                   color: Color.fromRGBO(26, 86, 83, 1),
                                   fontWeight: FontWeight.w500,
@@ -107,7 +137,18 @@ class _SignUpPage2State extends State<SignUpPage2> {
                           SizedBox(
                             height: 5.h,
                           ),
-                          MyTextField(isPassword: false, maxLiness: 1,isPhone: true,),
+                          MyTextField(
+                            isPassword: false,
+                            maxLiness: 1,
+                            isPhone: true,
+                            validator: (value) {
+                              if (value.length == 11) {
+                                return null;
+                              } else {
+                                return "phone number".tr();
+                              }
+                            },
+                          ),
                           SizedBox(
                             height: 25.h,
                           ),
@@ -115,10 +156,12 @@ class _SignUpPage2State extends State<SignUpPage2> {
                             child: CustomButton(
                               title: "next".tr(),
                               onPressed: () {
-                                Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (BuildContext context) =>
-                                      const SignUpPage3(),
-                                ));
+                                if (formKey.currentState!.validate()) {
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (BuildContext context) =>
+                                        const SignUpPage3(),
+                                  ));
+                                }
                               },
                             ),
                           )
@@ -166,7 +209,7 @@ class _SignUpPage2State extends State<SignUpPage2> {
               ),
             ),
           ]),
-        ],
+        ),
       ),
     );
   }

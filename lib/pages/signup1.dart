@@ -14,14 +14,17 @@ class SignUpPage1 extends StatefulWidget {
 }
 
 class _SignUpPage1State extends State<SignUpPage1> {
+  final formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: MyAppBar(),
-      body: ListView(
-        padding: EdgeInsets.only(top: 150.h),
-        children: [
-          Column(
+      body: Form(
+        key: formKey,
+        child: SingleChildScrollView(
+          padding: EdgeInsets.only(top: 150.h),
+          child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Center(
@@ -40,11 +43,10 @@ class _SignUpPage1State extends State<SignUpPage1> {
                   color: Colors.grey[300],
                 ),
                 width: 290.w,
-                height: 380.h,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                     Center(
+                    Center(
                       child: Text(
                         "createaccount".tr(),
                         style: TextStyle(
@@ -64,7 +66,7 @@ class _SignUpPage1State extends State<SignUpPage1> {
                     SizedBox(
                       height: 25.h,
                     ),
-                     Text("email".tr(),
+                    Text("email".tr(),
                         style: TextStyle(
                             color: Color.fromRGBO(26, 86, 83, 1),
                             fontWeight: FontWeight.w500,
@@ -72,11 +74,26 @@ class _SignUpPage1State extends State<SignUpPage1> {
                     SizedBox(
                       height: 5.h,
                     ),
-                    MyTextField(isPassword: false, maxLiness: 1,isPhone: false,),
+                    MyTextField(
+                      isPassword: false,
+                      maxLiness: 1,
+                      isPhone: false,
+                      validator: (value) {
+                        if (value!.isEmpty) {
+                          return "field is required".tr();
+                        }
+                        else if (value!.contains("@")) {
+                        } else {
+                          return "contain @".tr();
+                        }
+                          return null;
+
+                      },
+                    ),
                     SizedBox(
                       height: 31.h,
                     ),
-                     Text("nationalid".tr(),
+                    Text("nationalid".tr(),
                         style: TextStyle(
                             color: Color.fromRGBO(26, 86, 83, 1),
                             fontWeight: FontWeight.w500,
@@ -84,7 +101,17 @@ class _SignUpPage1State extends State<SignUpPage1> {
                     SizedBox(
                       height: 5.h,
                     ),
-                    MyTextField(isPassword: false, maxLiness: 1,isPhone: true,),
+                    MyTextField(
+                      isPassword: false,
+                      maxLiness: 1,
+                      isPhone: true,
+                      validator: (value) {
+                        if (value!.isEmpty) {
+                          return "field is required".tr();
+                        }
+                        return null;
+                      },
+                    ),
                     SizedBox(
                       height: 25.h,
                     ),
@@ -92,10 +119,12 @@ class _SignUpPage1State extends State<SignUpPage1> {
                       child: CustomButton(
                         title: "next".tr(),
                         onPressed: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                            builder: (BuildContext context) =>
-                                const SignUpPage2(),
-                          ));
+                          if (formKey.currentState!.validate()) {
+                            Navigator.of(context).push(MaterialPageRoute(
+                              builder: (BuildContext context) =>
+                                  const SignUpPage2(),
+                            ));
+                          }
                         },
                       ),
                     )
@@ -146,7 +175,7 @@ class _SignUpPage1State extends State<SignUpPage1> {
               ),
             ],
           ),
-        ],
+        ),
       ),
     );
   }

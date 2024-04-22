@@ -14,14 +14,17 @@ class SignUpPage3 extends StatefulWidget {
 }
 
 class _SignUpPage3State extends State<SignUpPage3> {
+  final formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: MyAppBar(),
-      body: ListView(
-        padding: EdgeInsets.only(top: 125.h),
-        children: [
-          Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+      body: Form(
+        key: formKey,
+        child: SingleChildScrollView(
+          padding: EdgeInsets.only(top: 125.h),
+          child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
             Center(
                 child: Container(
                     padding: const EdgeInsets.symmetric(
@@ -39,11 +42,10 @@ class _SignUpPage3State extends State<SignUpPage3> {
                       color: Colors.grey[300],
                     ),
                     width: 320.w,
-                    height: 490.h,
                     child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                           Center(
+                          Center(
                             child: Text(
                               "createaccount".tr(),
                               style: TextStyle(
@@ -63,7 +65,7 @@ class _SignUpPage3State extends State<SignUpPage3> {
                           SizedBox(
                             height: 25.h,
                           ),
-                           Text("college".tr(),
+                          Text("college".tr(),
                               style: TextStyle(
                                   color: Color.fromRGBO(26, 86, 83, 1),
                                   fontWeight: FontWeight.w500,
@@ -71,11 +73,21 @@ class _SignUpPage3State extends State<SignUpPage3> {
                           SizedBox(
                             height: 5.h,
                           ),
-                          MyTextField(isPassword: false, maxLiness: 1,isPhone: false,),
+                          MyTextField(
+                            isPassword: false,
+                            maxLiness: 1,
+                            isPhone: false,
+                            validator: (value) {
+                              if (value!.isEmpty) {
+                                return "field is required".tr();
+                              }
+                              return null;
+                            },
+                          ),
                           SizedBox(
                             height: 31.h,
                           ),
-                           Text("section".tr(),
+                          Text("section".tr(),
                               style: TextStyle(
                                   color: Color.fromRGBO(26, 86, 83, 1),
                                   fontWeight: FontWeight.w500,
@@ -83,11 +95,21 @@ class _SignUpPage3State extends State<SignUpPage3> {
                           SizedBox(
                             height: 5.h,
                           ),
-                          MyTextField(isPassword: false, maxLiness: 1,isPhone: false,),
+                          MyTextField(
+                            isPassword: false,
+                            maxLiness: 1,
+                            isPhone: false,
+                            validator: (value) {
+                              if (value!.isEmpty) {
+                                return "field is required".tr();
+                              }
+                              return null;
+                            },
+                          ),
                           SizedBox(
                             height: 31.h,
                           ),
-                           Text("degree".tr(),
+                          Text("degree".tr(),
                               style: TextStyle(
                                   color: Color.fromRGBO(26, 86, 83, 1),
                                   fontWeight: FontWeight.w500,
@@ -95,7 +117,17 @@ class _SignUpPage3State extends State<SignUpPage3> {
                           SizedBox(
                             height: 5.h,
                           ),
-                          MyTextField(isPassword: false, maxLiness: 1,isPhone: false,),
+                          MyTextField(
+                            isPassword: false,
+                            maxLiness: 1,
+                            isPhone: false,
+                            validator: (value) {
+                              if (value!.isEmpty) {
+                                return "field is required".tr();
+                              }
+                              return null;
+                            },
+                          ),
                           SizedBox(
                             height: 31.h,
                           ),
@@ -103,10 +135,12 @@ class _SignUpPage3State extends State<SignUpPage3> {
                             child: CustomButton(
                               title: "next".tr(),
                               onPressed: () {
-                                Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (BuildContext context) =>
-                                      const SignUpPage4(),
-                                ));
+                                if (formKey.currentState!.validate()) {
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (BuildContext context) =>
+                                        const SignUpPage4(),
+                                  ));
+                                }
                               },
                             ),
                           )
@@ -138,7 +172,7 @@ class _SignUpPage3State extends State<SignUpPage3> {
                             spreadRadius: 0,
                             blurRadius: 4,
                             offset: const Offset(
-                                0, 3), // changes position of shadow
+                                0, 3), 
                           ),
                         ],
                         shape: BoxShape.rectangle,
@@ -154,7 +188,7 @@ class _SignUpPage3State extends State<SignUpPage3> {
               ),
             ),
           ]),
-        ],
+        ),
       ),
     );
   }

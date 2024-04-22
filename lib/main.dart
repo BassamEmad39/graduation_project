@@ -58,7 +58,7 @@ class _MyAppState extends State<MyApp> {
               home: child,
             ),
 
-        child: const ForgetPssword());
+        child: const SignUpPage4());
 
   }
 }
