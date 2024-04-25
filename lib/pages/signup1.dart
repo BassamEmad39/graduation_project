@@ -81,13 +81,11 @@ class _SignUpPage1State extends State<SignUpPage1> {
                       validator: (value) {
                         if (value!.isEmpty) {
                           return "field is required".tr();
-                        }
-                        else if (value!.contains("@")) {
+                        } else if (value!.contains("@")) {
                         } else {
                           return "contain @".tr();
                         }
-                          return null;
-
+                        return null;
                       },
                     ),
                     SizedBox(
