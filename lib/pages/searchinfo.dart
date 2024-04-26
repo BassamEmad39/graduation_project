@@ -7,7 +7,7 @@ import 'package:graduation_project/custom/textField.dart';
 import 'package:easy_localization/easy_localization.dart';
 
 class SearchInfo extends StatefulWidget {
-  const SearchInfo({Key? key}) : super(key: key);
+  const SearchInfo({super.key});
 
   @override
   State<SearchInfo> createState() => _SearchInfoState();
