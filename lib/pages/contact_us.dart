@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:graduation_project/custom/appbar.dart';
 import 'package:graduation_project/custom/textField.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ContactUsPage extends StatefulWidget {
   const ContactUsPage({super.key});
@@ -13,10 +14,15 @@ class ContactUsPage extends StatefulWidget {
 
 class _ContactUsPageState extends State<ContactUsPage> {
   GlobalKey<ScaffoldState> scaffoldKey = GlobalKey();
-
+  final Uri _url=Uri.parse('https://maps.app.goo.gl/qwqayjuVric6etjy8');
   Color color = Color(0xffEEEEEE);
   Color iconColor = Color(0xFF107869);
   Color fontColor = Color(0xff696969);
+  Future<void> _launchUrl() async {
+  if (!await launchUrl(_url)) {
+    throw Exception('Could not launch $_url');
+  }
+}
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -254,7 +260,7 @@ class _ContactUsPageState extends State<ContactUsPage> {
                         width: 25,
                       ),
                       InkWell(
-                        onTap: () {},
+                        onTap: _launchUrl,
                         child: Ink(
                           height: 100.h,
                           width: 100.h,
