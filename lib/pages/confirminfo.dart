@@ -282,10 +282,10 @@ class _ConfirmInformationState extends State<ConfirmInformation> {
                                         },
                                         child: Ink(
                                           height: 50,
-                                          width: 50,
+                                          width: 70,
                                           child: Column(
                                             children: [
-                                              Icon(Icons.camera),
+                                              const Icon(Icons.camera),
                                               Text("camera".tr())
                                             ],
                                           ),
