@@ -32,7 +32,7 @@ Future<void> main() async {
       saveLocale: false,
       supportedLocales: [Locale('en'), Locale('ar')],
       fallbackLocale: Locale('ar'),
-      startLocale: Locale('ar'),
+      startLocale: Locale('en'),
       child: MyApp()));
 }
 
@@ -57,6 +57,6 @@ class _MyAppState extends State<MyApp> {
               debugShowCheckedModeBanner: false,
               home: child,
             ),
-        child: const ResearchConditions2());
+        child: const ConfirmInformation());
   }
 }

@@ -112,6 +112,10 @@ class _ResearchConditionsState extends State<ResearchConditions> {
             SizedBox(
               height: 40.h,
             ),
+            Text("searchMustBePDF".tr()),
+            SizedBox(
+              height: 40.h,
+            ),
             Center(
               child: Expanded(
                 child: Container(

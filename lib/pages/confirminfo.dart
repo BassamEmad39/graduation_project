@@ -1,11 +1,13 @@
+import 'dart:io';
+
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:graduation_project/custom/appbar.dart';
 import 'package:graduation_project/custom/buttons.dart';
 import 'package:graduation_project/custom/textField.dart';
 import 'package:graduation_project/pages/searchinfo.dart';
+import 'package:image_picker/image_picker.dart';
 
 class ConfirmInformation extends StatefulWidget {
   const ConfirmInformation({super.key});
@@ -15,6 +17,7 @@ class ConfirmInformation extends StatefulWidget {
 }
 
 class _ConfirmInformationState extends State<ConfirmInformation> {
+  String? imagePath;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -254,7 +257,74 @@ class _ConfirmInformationState extends State<ConfirmInformation> {
                   height: 30,
                   color: Colors.white,
                   child: MaterialButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        showModalBottomSheet(
+                          context: context,
+                          builder: (context) => Container(
+                            height: 150,
+                            color: Colors.white,
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Expanded(
+                                  child: Container(
+                                    child: Center(
+                                      child: InkWell(
+                                        onTap: () async {
+                                          // ignore: invalid_use_of_visible_for_testing_member
+                                          var file = await ImagePicker.platform
+                                              .getImageFromSource(
+                                                  source: ImageSource.camera);
+                                          if (file != null) {
+                                            imagePath = file.path;
+                                            setState(() {});
+                                          }
+                                        },
+                                        child: Ink(
+                                          height: 50,
+                                          width: 50,
+                                          child: Column(
+                                            children: [
+                                              Icon(Icons.camera),
+                                              Text("camera".tr())
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                Expanded(
+                                  child: Center(
+                                    child: InkWell(
+                                      onTap: () async {
+                                        // ignore: invalid_use_of_visible_for_testing_member
+                                        var file = await ImagePicker.platform
+                                            .getImageFromSource(
+                                                source: ImageSource.gallery);
+                                        if (file != null) {
+                                          imagePath = file.path;
+                                          setState(() {});
+                                        }
+                                      },
+                                      child: Ink(
+                                        height: 50,
+                                        width: 55,
+                                        child: Column(
+                                          children: [
+                                            Icon(Icons.image),
+                                            Text("gallery".tr())
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        );
+                      },
                       child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -274,6 +344,10 @@ class _ConfirmInformationState extends State<ConfirmInformation> {
             ),
           ),
           const SizedBox(
+            height: 30,
+          ),
+          if (imagePath != null) Image.file(File(imagePath!)),
+          SizedBox(
             height: 30,
           ),
           Center(
