@@ -23,6 +23,7 @@ class _MyTextFieldState extends State<MyTextField> {
     return AutoDirection(
       text: text,
       child: TextFormField(
+        controller: widget.controller,
         validator: widget.validator,
         keyboardType: widget.isPhone?TextInputType.phone:TextInputType.text,
         maxLines: widget.maxLiness,
