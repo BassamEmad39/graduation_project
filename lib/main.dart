@@ -12,6 +12,7 @@ import 'package:graduation_project/pages/loading_page.dart';
 import 'package:graduation_project/pages/login.dart';
 import 'package:graduation_project/pages/manage_profile.dart';
 import 'package:graduation_project/pages/newpassword.dart';
+import 'package:graduation_project/pages/pdfprint.dart';
 import 'package:graduation_project/pages/profilepage_1.dart';
 import 'package:graduation_project/pages/profilepage_2.dart';
 import 'package:graduation_project/pages/profilepage_3.dart';
@@ -32,7 +33,7 @@ Future<void> main() async {
       saveLocale: false,
       supportedLocales: [Locale('en'), Locale('ar')],
       fallbackLocale: Locale('ar'),
-      startLocale: Locale('en'),
+      startLocale: Locale('ar'),
       child: MyApp()));
 }
 
@@ -57,6 +58,6 @@ class _MyAppState extends State<MyApp> {
               debugShowCheckedModeBanner: false,
               home: child,
             ),
-        child: const ProfilePage3());
+        child: const PdfPrint());
   }
 }
