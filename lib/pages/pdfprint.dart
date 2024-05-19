@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:graduation_project/custom/appbar.dart';
+import 'package:graduation_project/custom/buttons.dart';
 
 class PdfPrint extends StatelessWidget {
-  const PdfPrint({super.key, this.columnWidths});
+  const PdfPrint({
+    super.key,
+    this.columnWidths,
+  });
+
   final Map<int, TableColumnWidth>? columnWidths;
+  final bool status = false;
 
   @override
   Widget build(BuildContext context) {
@@ -272,7 +277,20 @@ class PdfPrint extends StatelessWidget {
                           TableRow(children: [
                             Text(
                                 "المشاركون في البحث من اعضاء هيئة التدريس بجامعة كفر الشيخ"),
-                            Text(""),
+                            Table(
+                              children: [
+                                TableRow(children: [
+                                  CheckboxListTile(
+                                      title: Text("لا يوجد"),
+                                      value: status,
+                                      onChanged: (val) {}),
+                                  CheckboxListTile(
+                                      title: Text("يوجد"),
+                                      value: status,
+                                      onChanged: (val) {}),
+                                ])
+                              ],
+                            )
                           ]),
                         ],
                       ),
@@ -285,7 +303,9 @@ class PdfPrint extends StatelessWidget {
                         columnWidths: {1: FlexColumnWidth(3)},
                         children: [
                           TableRow(children: [
-                            Center(child: Text("أسماء المشاركون في البحث من جامعة كفر الشيخ")),
+                            Center(
+                                child: Text(
+                                    "أسماء المشاركون في البحث من جامعة كفر الشيخ")),
                             Padding(
                               padding: const EdgeInsets.all(8.0),
                               child: Table(
@@ -295,11 +315,13 @@ class PdfPrint extends StatelessWidget {
                                     children: [
                                       Padding(
                                         padding: const EdgeInsets.all(5.0),
-                                        child: Text("الإسم ثلاثي باللغة العريبة"),
+                                        child:
+                                            Text("الإسم ثلاثي باللغة العريبة"),
                                       ),
                                       Padding(
                                         padding: const EdgeInsets.all(5.0),
-                                        child: Text("الإسم العلمي المدون على اليحث"),
+                                        child: Text(
+                                            "الإسم العلمي المدون على اليحث"),
                                       ),
                                       Padding(
                                         padding: const EdgeInsets.all(5.0),
@@ -362,6 +384,25 @@ class PdfPrint extends StatelessWidget {
                       ),
                     ],
                   ),
+                ],
+              ),
+              SizedBox(height: 80,),
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  CustomButton(
+                          title: "Print",
+                          onPressed: () {
+                           
+                          },
+                        ),
+                        SizedBox(width: 15,),
+                        CustomButton(
+                          title: "Next",
+                          onPressed: () {
+                           
+                          },
+                        )
                 ],
               )
             ],
