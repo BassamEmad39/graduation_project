@@ -2,13 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:graduation_project/custom/appbar.dart';
 import 'package:graduation_project/custom/buttons.dart';
 
-class PdfPrint extends StatelessWidget {
+class PdfPrint extends StatefulWidget {
   const PdfPrint({
     super.key,
     this.columnWidths,
   });
 
   final Map<int, TableColumnWidth>? columnWidths;
+
+  @override
+  State<PdfPrint> createState() => _PdfPrintState();
+}
+
+class _PdfPrintState extends State<PdfPrint> {
+ 
+
   final bool status = false;
 
   @override
@@ -386,23 +394,108 @@ class PdfPrint extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 80,),
+              SizedBox(
+                height: 80,
+              ),
+              Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'شرط حصول البحث على جائزة:',
+                      style: TextStyle(
+                          color: Colors.red, fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Text(
+                        '1- يحصل على الجائزة المتقدم ببخث نتشةر في مجلة علمية عالمية متخصصة و ذات معامل تأثيري طبقا للمادة رقم 20 من اللائحة و فاعدة بيانات ISI أثناء التقدم بالبحث في التخصصات العملية في التخصصات الإنسانية و الإجتماعية و التربوية و الاقتصادية طبقا لآخر إصدار لمعامل التأثير.'),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Text('2- لا تقبل البحوث تخت النشر أو المقبولة للنشر'),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Text(
+                        '3- لا يجوز التقدم بالبحث للحصول على جائزة أخرى من جوائز الجامعة'),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Text(
+                        '4- تستبعد البحوث غير المدون عليها إسم جامعة كفر الشيخ'),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Text(
+                        '5- أن تكون جمي الأبحاث المقدمة قد تم نشرها خلال ثلاثة أعوام ميلادية من تاريخ نهاية التقدم'),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Text(
+                        '6- في حالة توقف معامل التأثير للمجلة يتم الموافقة على الأبحاث المنشورة بها على ان تكون منشورة في نفس سنة التوقف و ليس بعدها'),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Text(
+                        '7- تقبل الأبحاث المنشورة في مجلة علمية ذات مقياس رباعي Q1 على قاعدة بيانات Scopus.'),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Text(
+                        '8- لا تقبل المقالات و الأوراق العلمية المنشورة بالمسميات الآتية :'),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Text(
+                        'Review, Letter to Editor أو اية مسميات جديدة لا تتوافر فيها شروط و قواعد الابحاث العلمية.'),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Text(
+                      'متطلبات التقديم',
+                      style: TextStyle(
+                          color: Colors.red, fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Text('1- ان يتم استيفاء استمارة التقدم للحصول على المكافأة موقعة من السيد أ.د/رئيس القسم العلمي و السيد أ.د/ةميل المليى لشئون الدراسات العليا و البحوث ثم اعتمادها من السيد أ.د/ عميد الكلية.'),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Text('2- أن يرفع العضو المقدم نسخة البحث المنشور بصيغة pdf و لا تقبل النسخ الورقية للأبحاث.'),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Text('3- كتابة الإسم الثلاثي للمشاركين في البحث من جامعة كفر الشيخ باللغة العربية مع توضيح الدرجة الوظيفية و توقيع سيادتهم توقيع حي بالموافقة على تقديم بحث من قبل الباحث الرئيسي'),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Text('4- ترفع الاستمارة و الابحاث و المقدمة و صورة بطاقة الرقم القومي على اللينك المرسل.'),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 40,
+              ),
               Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   CustomButton(
-                          title: "Print",
-                          onPressed: () {
-                           
-                          },
-                        ),
-                        SizedBox(width: 15,),
-                        CustomButton(
-                          title: "Next",
-                          onPressed: () {
-                           
-                          },
-                        )
+                    title: "Print",
+                    onPressed: () {
+                    },
+                  ),
+                  SizedBox(
+                    width: 15,
+                  ),
+                  CustomButton(
+                    title: "Next",
+                    onPressed: () {},
+                  )
                 ],
               )
             ],
