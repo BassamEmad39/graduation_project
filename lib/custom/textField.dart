@@ -1,4 +1,3 @@
-import 'package:auto_direction/auto_direction.dart';
 import 'package:flutter/material.dart';
 
 class MyTextField extends StatefulWidget {
@@ -20,9 +19,7 @@ class _MyTextFieldState extends State<MyTextField> {
   bool isPasswordHidden = true;
   @override
   Widget build(BuildContext context) {
-    return AutoDirection(
-      text: text,
-      child: TextFormField(
+    return  TextFormField(
         controller: widget.controller,
         validator: widget.validator,
         keyboardType: widget.isPhone?TextInputType.phone:TextInputType.text,
@@ -49,7 +46,6 @@ class _MyTextFieldState extends State<MyTextField> {
          
             filled: true,
             fillColor: Color.fromRGBO(255, 253, 253, 1)),
-      ),
-    );
+      );
   }
 }

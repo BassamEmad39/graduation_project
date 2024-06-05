@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 
 class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   final VoidCallback? onBack;
-  MyAppBar({super.key, this.onBack});
+  const MyAppBar({super.key, this.onBack});
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: SizedBox.shrink(),
+      title: const SizedBox.shrink(),
       actions: [
         Padding(
           padding: const EdgeInsets.all(8.0),
@@ -22,5 +22,5 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => Size.fromHeight(kToolbarHeight);
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }
