@@ -18,6 +18,7 @@ import 'package:graduation_project/pages/profilepage_2.dart';
 import 'package:graduation_project/pages/profilepage_3.dart';
 import 'package:graduation_project/pages/researchConditions.dart';
 import 'package:graduation_project/pages/researchConditions2.dart';
+import 'package:graduation_project/pages/researchaccept.dart';
 import 'package:graduation_project/pages/searchinfo.dart';
 import 'package:graduation_project/pages/signup1.dart';
 import 'package:graduation_project/pages/signup2.dart';
@@ -58,6 +59,6 @@ class _MyAppState extends State<MyApp> {
               debugShowCheckedModeBanner: false,
               home: child,
             ),
-        child:  PdfPrint());
+        child:  Researchaccept());
   }
 }
