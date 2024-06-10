@@ -89,23 +89,25 @@ class _LoginPageState extends State<LoginPage> {
                                   25,
                                   124,
                                   101,
-                                )),
+                                ),
+                                shadows: [
+                                  BoxShadow(
+                                    color: Colors.grey,
+                                    spreadRadius: 0,
+                                    blurRadius: 4,
+                                    offset: Offset(0, 2),
+                                  )
+                                ]),
                           ),
                         ),
                         SizedBox(
                           height: 20,
                         ),
-                        Text(
-                          "email".tr(),
-                          style: TextStyle(
-                              fontSize: 20,
-                              color: Color.fromARGB(
-                                255,
-                                25,
-                                124,
-                                101,
-                              )),
-                        ),
+                        Text("email".tr(),
+                            style: const TextStyle(
+                                color: Color.fromRGBO(26, 86, 83, 1),
+                                fontWeight: FontWeight.w500,
+                                fontSize: 20)),
                         SizedBox(
                           height: 10,
                         ),
@@ -124,17 +126,11 @@ class _LoginPageState extends State<LoginPage> {
                         SizedBox(
                           height: 10,
                         ),
-                        Text(
-                          "password".tr(),
-                          style: TextStyle(
-                              fontSize: 20,
-                              color: Color.fromARGB(
-                                255,
-                                25,
-                                124,
-                                101,
-                              )),
-                        ),
+                        Text("password".tr(),
+                            style: const TextStyle(
+                                color: Color.fromRGBO(26, 86, 83, 1),
+                                fontWeight: FontWeight.w500,
+                                fontSize: 20)),
                         SizedBox(
                           height: 10,
                         ),
@@ -175,7 +171,7 @@ class _LoginPageState extends State<LoginPage> {
                             onPressed: () {
                               Navigator.of(context).push(MaterialPageRoute(
                                 builder: (BuildContext context) =>
-                                     SignUpPage1(),
+                                    SignUpPage1(),
                               ));
                             },
                             child: Text("noacc".tr(),
