@@ -6,23 +6,35 @@ import 'package:graduation_project/custom/buttons.dart';
 import 'package:graduation_project/custom/textField.dart';
 import 'package:graduation_project/pages/signup3.dart';
 
-class SignUpPage2 extends StatefulWidget {
-  const SignUpPage2({super.key});
+class SignUpPage2 extends StatelessWidget {
+  final String emailText;
+  final String idText;
+    final String nameText;
+  final String enNameText;
+  
 
-  @override
-  State<SignUpPage2> createState() => _SignUpPage2State();
-}
+   SignUpPage2({super.key, required this.emailText, required this.idText, required this.nameText, required this.enNameText});
+  
 
-class _SignUpPage2State extends State<SignUpPage2> {
   final formKey = GlobalKey<FormState>();
+
+  
+
+  final addressController = TextEditingController();
+
+  final phoneController = TextEditingController();
+  
+  final postCodeController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MyAppBar(),
+      resizeToAvoidBottomInset: false,
+      appBar: const MyAppBar(),
       body: Form(
         key: formKey,
         child: SingleChildScrollView(
-          padding: EdgeInsets.only(top: 50.h),
+          padding: EdgeInsets.only(top: 150.h),
           child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
             Center(
                 child: Container(
@@ -46,7 +58,7 @@ class _SignUpPage2State extends State<SignUpPage2> {
                           Center(
                             child: Text(
                               "createaccount".tr(),
-                              style: TextStyle(
+                              style: const TextStyle(
                                   fontWeight: FontWeight.w700,
                                   fontSize: 20,
                                   color: Color.fromRGBO(26, 86, 83, 1),
@@ -63,52 +75,19 @@ class _SignUpPage2State extends State<SignUpPage2> {
                           SizedBox(
                             height: 25.h,
                           ),
-                          Text("name".tr(),
-                              style: TextStyle(
-                                  color: Color.fromRGBO(26, 86, 83, 1),
-                                  fontWeight: FontWeight.w500,
-                                  fontSize: 13)),
-                          SizedBox(
-                            height: 5.h,
-                          ),
-                          MyTextField(
-                            isPassword: false,
-                            maxLiness: 1,
-                            isPhone: false,
-                            validator: (value) {
-                              if (value!.isEmpty) {
-                                return "field is required".tr();
-                              }
-                              return null;
-                            },
-                          ),
+                         
+                        
                           SizedBox(
                             height: 31.h,
                           ),
-                          Text("namediff".tr(),
-                              style: TextStyle(
-                                  color: Color.fromRGBO(26, 86, 83, 1),
-                                  fontWeight: FontWeight.w500,
-                                  fontSize: 13)),
-                          SizedBox(
-                            height: 5.h,
-                          ),
-                          MyTextField(
-                            isPassword: false,
-                            maxLiness: 1,
-                            isPhone: false,
-                            validator: (value) {
-                              if (value!.isEmpty) {
-                                return "field is required".tr();
-                              }
-                              return null;
-                            },
-                          ),
+                         
+                         
+                         
                           SizedBox(
                             height: 31.h,
                           ),
                           Text("address".tr(),
-                              style: TextStyle(
+                              style: const TextStyle(
                                   color: Color.fromRGBO(26, 86, 83, 1),
                                   fontWeight: FontWeight.w500,
                                   fontSize: 13)),
@@ -116,6 +95,7 @@ class _SignUpPage2State extends State<SignUpPage2> {
                             height: 5.h,
                           ),
                           MyTextField(
+                            controller: addressController,
                             isPassword: false,
                             maxLiness: 1,
                             isPhone: false,
@@ -130,7 +110,7 @@ class _SignUpPage2State extends State<SignUpPage2> {
                             height: 31.h,
                           ),
                           Text("phone".tr(),
-                              style: TextStyle(
+                              style: const TextStyle(
                                   color: Color.fromRGBO(26, 86, 83, 1),
                                   fontWeight: FontWeight.w500,
                                   fontSize: 13)),
@@ -138,6 +118,7 @@ class _SignUpPage2State extends State<SignUpPage2> {
                             height: 5.h,
                           ),
                           MyTextField(
+                            controller: phoneController,
                             isPassword: false,
                             maxLiness: 1,
                             isPhone: true,
@@ -145,10 +126,33 @@ class _SignUpPage2State extends State<SignUpPage2> {
                               if(value!.isEmpty) {
                                 return "field is required".tr();
                               }
-                              if (value.length == 11) {
+                              if (value.length >= 11) {
                                 return null;
                               } else {
                                 return "phone number".tr();
+                              }
+                            },
+                          ),
+                          const SizedBox(height: 31,),
+                          Text("postcode".tr(),
+                              style: const TextStyle(
+                                  color: Color.fromRGBO(26, 86, 83, 1),
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 13)),
+                          SizedBox(
+                            height: 5.h,
+                          ),
+                          MyTextField(
+                            controller: postCodeController,
+                            isPassword: false,
+                            maxLiness: 1,
+                            isPhone: true,
+                            validator: (value) {
+                              if(value!.isEmpty) {
+                                return "field is required".tr();
+                              }
+                               else {
+                                return null;
                               }
                             },
                           ),
@@ -162,7 +166,7 @@ class _SignUpPage2State extends State<SignUpPage2> {
                                 if (formKey.currentState!.validate()) {
                                   Navigator.of(context).push(MaterialPageRoute(
                                     builder: (BuildContext context) =>
-                                        const SignUpPage3(),
+                                         SignUpPage3(emailText: emailText, idText: idText, nameText: nameText, enNameText: enNameText, addressText: addressController.text, phoneText: phoneController.text, postCodeText: postCodeController.text,),
                                   ));
                                 }
                               },

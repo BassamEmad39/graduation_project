@@ -12,10 +12,10 @@ class CustomButton extends StatelessWidget {
       height: 40,
       child: MaterialButton(
         elevation: 4,
-        color: Color.fromARGB(255, 25, 124, 101),
+        color: const Color.fromARGB(255, 25, 124, 101),
         onPressed: onPressed,
         child: Text(title,
-            style: TextStyle(
+            style: const TextStyle(
                 color: Colors.white,
                 fontSize: 14,
                 fontWeight: FontWeight.bold)),

@@ -6,24 +6,26 @@ import 'package:graduation_project/custom/buttons.dart';
 import 'package:graduation_project/custom/textField.dart';
 import 'package:graduation_project/pages/signup2.dart';
 
-class SignUpPage1 extends StatefulWidget {
-  const SignUpPage1({super.key});
+class SignUpPage1 extends StatelessWidget {
+  SignUpPage1({super.key});
 
-  @override
-  State<SignUpPage1> createState() => _SignUpPage1State();
-}
-
-class _SignUpPage1State extends State<SignUpPage1> {
   final formKey = GlobalKey<FormState>();
+
+  final TextEditingController _emailController = TextEditingController();
+
+  final TextEditingController idController = TextEditingController();
+  final nameController = TextEditingController();
+
+  final enNameController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MyAppBar(),
+      appBar: const MyAppBar(),
       body: Form(
         key: formKey,
         child: SingleChildScrollView(
-          padding: EdgeInsets.only(top: 150.h),
+          padding: EdgeInsets.only(top: 100.h),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -49,7 +51,7 @@ class _SignUpPage1State extends State<SignUpPage1> {
                     Center(
                       child: Text(
                         "createaccount".tr(),
-                        style: TextStyle(
+                        style: const TextStyle(
                             fontWeight: FontWeight.w700,
                             fontSize: 20,
                             color: Color.fromRGBO(26, 86, 83, 1),
@@ -67,7 +69,7 @@ class _SignUpPage1State extends State<SignUpPage1> {
                       height: 25.h,
                     ),
                     Text("email".tr(),
-                        style: TextStyle(
+                        style: const TextStyle(
                             color: Color.fromRGBO(26, 86, 83, 1),
                             fontWeight: FontWeight.w500,
                             fontSize: 13)),
@@ -75,6 +77,7 @@ class _SignUpPage1State extends State<SignUpPage1> {
                       height: 5.h,
                     ),
                     MyTextField(
+                      controller: _emailController,
                       isPassword: false,
                       maxLiness: 1,
                       isPhone: false,
@@ -92,7 +95,7 @@ class _SignUpPage1State extends State<SignUpPage1> {
                       height: 31.h,
                     ),
                     Text("nationalid".tr(),
-                        style: TextStyle(
+                        style: const TextStyle(
                             color: Color.fromRGBO(26, 86, 83, 1),
                             fontWeight: FontWeight.w500,
                             fontSize: 13)),
@@ -100,9 +103,56 @@ class _SignUpPage1State extends State<SignUpPage1> {
                       height: 5.h,
                     ),
                     MyTextField(
+                      controller: idController,
                       isPassword: false,
                       maxLiness: 1,
                       isPhone: true,
+                      validator: (value) {
+                        if (value!.isEmpty) {
+                          return "field is required".tr();
+                        }
+                        return null;
+                      },
+                    ),
+                    const SizedBox(
+                      height: 31,
+                    ),
+                    Text("name".tr(),
+                        style: const TextStyle(
+                            color: Color.fromRGBO(26, 86, 83, 1),
+                            fontWeight: FontWeight.w500,
+                            fontSize: 13)),
+                    const SizedBox(
+                      height: 5,
+                    ),
+                    MyTextField(
+                      controller: enNameController,
+                      isPassword: false,
+                      maxLiness: 1,
+                      isPhone: false,
+                      validator: (value) {
+                        if (value!.isEmpty) {
+                          return "field is required".tr();
+                        }
+                        return null;
+                      },
+                    ),
+                    const SizedBox(
+                      height: 31,
+                    ),
+                    Text("namediff".tr(),
+                        style: const TextStyle(
+                            color: Color.fromRGBO(26, 86, 83, 1),
+                            fontWeight: FontWeight.w500,
+                            fontSize: 13)),
+                    const SizedBox(
+                      height: 5,
+                    ),
+                    MyTextField(
+                      controller: nameController,
+                      isPassword: false,
+                      maxLiness: 1,
+                      isPhone: false,
                       validator: (value) {
                         if (value!.isEmpty) {
                           return "field is required".tr();
@@ -119,8 +169,12 @@ class _SignUpPage1State extends State<SignUpPage1> {
                         onPressed: () {
                           if (formKey.currentState!.validate()) {
                             Navigator.of(context).push(MaterialPageRoute(
-                              builder: (BuildContext context) =>
-                                  const SignUpPage2(),
+                              builder: (BuildContext context) => SignUpPage2(
+                                emailText: _emailController.text,
+                                idText: idController.text,
+                                nameText: nameController.text,
+                                enNameText: enNameController.text,
+                              ),
                             ));
                           }
                         },

@@ -6,20 +6,28 @@ import 'package:graduation_project/custom/buttons.dart';
 import 'package:graduation_project/custom/textField.dart';
 import 'package:graduation_project/pages/signup4.dart';
 
-class SignUpPage3 extends StatefulWidget {
-  const SignUpPage3({super.key});
+class SignUpPage3 extends StatelessWidget {
+   SignUpPage3({super.key, required this.emailText, required this.idText, required this.nameText, required this.enNameText, required this.addressText, required this.phoneText, required this.postCodeText});
+  final String emailText;
+  final String idText;
+  final String nameText;
+  final String enNameText;
+  final String addressText;
+  final String phoneText;
+  final String postCodeText;
 
-  @override
-  State<SignUpPage3> createState() => _SignUpPage3State();
-}
-
-class _SignUpPage3State extends State<SignUpPage3> {
   final formKey = GlobalKey<FormState>();
+
+  final collegeController= TextEditingController();
+
+  final sectionController= TextEditingController();
+
+  final degreeController= TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MyAppBar(),
+      appBar:  const MyAppBar(),
       body: Form(
         key: formKey,
         child: SingleChildScrollView(
@@ -48,7 +56,7 @@ class _SignUpPage3State extends State<SignUpPage3> {
                           Center(
                             child: Text(
                               "createaccount".tr(),
-                              style: TextStyle(
+                              style: const TextStyle(
                                   fontWeight: FontWeight.w700,
                                   fontSize: 20,
                                   color: Color.fromRGBO(26, 86, 83, 1),
@@ -66,7 +74,7 @@ class _SignUpPage3State extends State<SignUpPage3> {
                             height: 25.h,
                           ),
                           Text("college".tr(),
-                              style: TextStyle(
+                              style: const TextStyle(
                                   color: Color.fromRGBO(26, 86, 83, 1),
                                   fontWeight: FontWeight.w500,
                                   fontSize: 13)),
@@ -74,6 +82,7 @@ class _SignUpPage3State extends State<SignUpPage3> {
                             height: 5.h,
                           ),
                           MyTextField(
+                            controller: collegeController,
                             isPassword: false,
                             maxLiness: 1,
                             isPhone: false,
@@ -88,7 +97,7 @@ class _SignUpPage3State extends State<SignUpPage3> {
                             height: 31.h,
                           ),
                           Text("section".tr(),
-                              style: TextStyle(
+                              style: const TextStyle(
                                   color: Color.fromRGBO(26, 86, 83, 1),
                                   fontWeight: FontWeight.w500,
                                   fontSize: 13)),
@@ -96,6 +105,7 @@ class _SignUpPage3State extends State<SignUpPage3> {
                             height: 5.h,
                           ),
                           MyTextField(
+                            controller: sectionController,
                             isPassword: false,
                             maxLiness: 1,
                             isPhone: false,
@@ -110,7 +120,7 @@ class _SignUpPage3State extends State<SignUpPage3> {
                             height: 31.h,
                           ),
                           Text("degree".tr(),
-                              style: TextStyle(
+                              style: const TextStyle(
                                   color: Color.fromRGBO(26, 86, 83, 1),
                                   fontWeight: FontWeight.w500,
                                   fontSize: 13)),
@@ -118,6 +128,7 @@ class _SignUpPage3State extends State<SignUpPage3> {
                             height: 5.h,
                           ),
                           MyTextField(
+                            controller: degreeController,
                             isPassword: false,
                             maxLiness: 1,
                             isPhone: false,
@@ -138,7 +149,7 @@ class _SignUpPage3State extends State<SignUpPage3> {
                                 if (formKey.currentState!.validate()) {
                                   Navigator.of(context).push(MaterialPageRoute(
                                     builder: (BuildContext context) =>
-                                        const SignUpPage4(),
+                                         SignUpPage4(emailText: emailText, idText: idText, nameText: nameText, enNameText: enNameText, addressText:addressText, phoneText: phoneText, collegeText: collegeController.text, sectionText:sectionController.text, degreeText: degreeController.text, postCodeText: postCodeText,),
                                   ));
                                 }
                               },

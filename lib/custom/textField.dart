@@ -15,8 +15,10 @@ class MyTextField extends StatefulWidget {
 
 String text = '';
 
+
 class _MyTextFieldState extends State<MyTextField> {
   bool isPasswordHidden = true;
+    
   @override
   Widget build(BuildContext context) {
     return  TextFormField(

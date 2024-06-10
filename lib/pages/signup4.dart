@@ -1,31 +1,47 @@
+import 'package:dio/dio.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:graduation_project/custom/appbar.dart';
 import 'package:graduation_project/custom/buttons.dart';
-import 'package:graduation_project/custom/dialog.dart';
 import 'package:graduation_project/custom/textField.dart';
 
 class SignUpPage4 extends StatefulWidget {
-  const SignUpPage4({super.key});
+  final String emailText;
+  final String idText;
+  final String nameText;
+  final String enNameText;
+  final String addressText;
+  final String phoneText;
+  final String collegeText;
+  final String sectionText;
+  final String degreeText;
+  final String postCodeText;
+
+  SignUpPage4(
+      {super.key,
+      required this.emailText,
+      required this.idText,
+      required this.nameText,
+      required this.enNameText,
+      required this.addressText,
+      required this.phoneText,
+      required this.collegeText,
+      required this.sectionText,
+      required this.degreeText,
+      required this.postCodeText});
 
   @override
   State<SignUpPage4> createState() => _SignUpPage4State();
 }
 
-bool isPasswordVisible = false;
-
-bool states = false;
-
-bool isPasswordVisible2 = false;
-
-bool states2 = false;
-String text = '';
-
 class _SignUpPage4State extends State<SignUpPage4> {
   final formKey = GlobalKey<FormState>();
+
   final passwordController = TextEditingController();
+
   final confirmPasswordController = TextEditingController();
+
 
   @override
   Widget build(BuildContext context) {
@@ -91,10 +107,10 @@ class _SignUpPage4State extends State<SignUpPage4> {
                         isPassword: true,
                         maxLiness: 1,
                         isPhone: false,
-                        validator: (passwordController) {
-                          if (passwordController!.isEmpty) {
+                        validator: (value) {
+                          if (value!.isEmpty) {
                             return "field is required".tr();
-                          } else if (passwordController!.length > 8) {
+                          } else if (value!.length > 8) {
                             return null;
                           } else {
                             return "password should be".tr();
@@ -117,11 +133,11 @@ class _SignUpPage4State extends State<SignUpPage4> {
                           isPassword: true,
                           maxLiness: 1,
                           isPhone: false,
-                          validator: (confirmPasswordController) {
-                            if (confirmPasswordController!.isEmpty) {
+                          validator: (value) {
+                            if (value!.isEmpty) {
                               return "field is required".tr();
-                            } else if (confirmPasswordController !=
-                                passwordController) {
+                            } else if (value !=
+                                passwordController.text) {
                               return "not match".tr();
                             }
                             return null;
@@ -134,13 +150,7 @@ class _SignUpPage4State extends State<SignUpPage4> {
                           title: "create".tr(),
                           onPressed: () {
                             if (formKey.currentState!.validate()) {
-                              showDialog(
-                                  context: context,
-                                  builder: (context) {
-                                    return MyDialog(
-                                      title: "accountcreated".tr(),
-                                    );
-                                  });
+                              register();
                             }
                           },
                         ),
@@ -196,4 +206,28 @@ class _SignUpPage4State extends State<SignUpPage4> {
           ),
         ));
   }
+
+  void register() async {
+   try {
+     final response = await Dio().post('https://walid28.bsite.net/api/doctorapi/register', data: {
+       "doc_nid": widget.idText,
+       "doc_name": widget.enNameText,
+       "doc_phoneno": widget.phoneText,
+       "doc_address": widget.addressText,
+       "doc_email": widget.emailText,
+       "doc_postcode": widget.postCodeText,
+       "doc_faculty": widget.collegeText,
+      "doc_dept": widget.sectionText,
+      "doc_pass": passwordController.text,
+       "ConfirmPassword": confirmPasswordController.text,
+       "sntf_degree": widget.degreeText
+     });
+      
+    print(response.data);
+  } on DioException catch (ex) {
+     print(ex.message);
+     print(ex.response?.data);
+  
+ }
+}
 }

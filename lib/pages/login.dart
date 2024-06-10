@@ -1,5 +1,5 @@
+import 'package:dio/dio.dart';
 import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:graduation_project/custom/appbar.dart';
@@ -10,21 +10,48 @@ import 'package:graduation_project/pages/homepage.dart';
 import 'package:graduation_project/pages/signup1.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+  const LoginPage({super.key});
 
   @override
   State<LoginPage> createState() => _LoginPageState();
 }
 
-String text = '';
-
 class _LoginPageState extends State<LoginPage> {
   final formKey = GlobalKey<FormState>();
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+
   bool isPasswordVisible = false;
-  bool states = false;
+  bool isLoading = false;
+
+  void login() async {
+    isLoading = true;
+    setState(() {});
+    try {
+      final response = await Dio().post(
+        "https://walid28.bsite.net/api/doctorapi/login",
+        data: {
+          "Email": emailController.text,
+          "Password": passwordController.text
+        },
+      );
+      print(response.data);
+      isLoading = false;
+      setState(() {});
+      Navigator.of(context).push(MaterialPageRoute(
+        builder: (BuildContext context) => const HomePage(),
+      ));
+    } on DioException catch (ex) {
+      isLoading = false;
+      print(ex.response?.data);
+      setState(() {});
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MyAppBar(),
+      appBar: const MyAppBar(),
       body: Form(
         key: formKey,
         child: SingleChildScrollView(
@@ -83,12 +110,12 @@ class _LoginPageState extends State<LoginPage> {
                           height: 10,
                         ),
                         MyTextField(
+                          controller: emailController,
                           validator: (value) {
                             if (value!.isEmpty) {
                               return "field is required".tr();
                             }
                             return null;
-                            
                           },
                           isPassword: false,
                           maxLiness: 1,
@@ -112,6 +139,7 @@ class _LoginPageState extends State<LoginPage> {
                           height: 10,
                         ),
                         MyTextField(
+                          controller: passwordController,
                           validator: (value) {
                             if (value!.isEmpty) {
                               return "field is required".tr();
@@ -126,18 +154,19 @@ class _LoginPageState extends State<LoginPage> {
                           height: 15,
                         ),
                         Center(
-                            child: CustomButton(
-                          title: "login".tr(),
-                          onPressed: () {
-                            if (formKey.currentState!.validate()) {
-                              Navigator.of(context).push(MaterialPageRoute(
-                                builder: (BuildContext context) =>
-                                    const HomePage(),
-                              ));
-                            }
-                            ;
-                          },
-                        )),
+                            child: isLoading
+                                ? Center(
+                                    child: CircularProgressIndicator(),
+                                  )
+                                : CustomButton(
+                                    title: "login".tr(),
+                                    onPressed: () {
+                                      if (formKey.currentState!.validate()) {
+                                        login();
+                                      }
+                                      ;
+                                    },
+                                  )),
                         SizedBox(
                           height: 5,
                         ),
@@ -146,7 +175,7 @@ class _LoginPageState extends State<LoginPage> {
                             onPressed: () {
                               Navigator.of(context).push(MaterialPageRoute(
                                 builder: (BuildContext context) =>
-                                    const SignUpPage1(),
+                                     SignUpPage1(),
                               ));
                             },
                             child: Text("noacc".tr(),

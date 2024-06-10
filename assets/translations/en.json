@@ -132,7 +132,9 @@
     "not match": "*password does not match.",
     "searchMustBePDF":"The reseach format must be PDF",
     "camera":"Camera",
-    "gallery":"Gallery"
+    "gallery":"Gallery",
+    "postcode":"Post Code"
+
 
 
 

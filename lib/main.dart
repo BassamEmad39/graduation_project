@@ -59,6 +59,6 @@ class _MyAppState extends State<MyApp> {
               debugShowCheckedModeBanner: false,
               home: child,
             ),
-        child:  Researchaccept());
+        child:  SignUpPage1());
   }
 }
