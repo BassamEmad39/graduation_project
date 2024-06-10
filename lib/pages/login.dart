@@ -24,6 +24,57 @@ class _LoginPageState extends State<LoginPage> {
   bool isPasswordVisible = false;
   bool isLoading = false;
 
+  void _showErrorDialog(String message) {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: Text("find_account_title".tr(),
+              style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
+          content: Text('find_account_message'
+              .tr(namedArgs: {'account': emailController.text})),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (BuildContext context) => const ForgetPssword(),
+                ));
+              },
+              child: Text(
+                "find_account_button".tr(),
+                style: TextStyle(
+                    fontSize: 15,
+                    color: Color.fromARGB(
+                      255,
+                      25,
+                      124,
+                      101,
+                    )),
+              ),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: Text(
+                "try_again_button".tr(),
+                style: TextStyle(
+                    fontSize: 15,
+                    color: Color.fromARGB(
+                      255,
+                      25,
+                      124,
+                      101,
+                    )),
+              ),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   void login() async {
     isLoading = true;
     setState(() {});
@@ -43,7 +94,7 @@ class _LoginPageState extends State<LoginPage> {
       ));
     } on DioException catch (ex) {
       isLoading = false;
-      print(ex.response?.data);
+      _showErrorDialog(ex.response?.data['message'] ?? 'An error occurred');
       setState(() {});
     }
   }
@@ -160,7 +211,6 @@ class _LoginPageState extends State<LoginPage> {
                                       if (formKey.currentState!.validate()) {
                                         login();
                                       }
-                                      ;
                                     },
                                   )),
                         SizedBox(
