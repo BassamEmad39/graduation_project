@@ -45,8 +45,7 @@ class _NewPasswordState extends State<NewPassword> {
                         color: Colors.grey.withOpacity(0.9),
                         spreadRadius: 0,
                         blurRadius: 4,
-                        offset:
-                            const Offset(0, 3), 
+                        offset: const Offset(0, 3),
                       ),
                     ],
                     color: Colors.grey[300],
@@ -90,10 +89,10 @@ class _NewPasswordState extends State<NewPassword> {
                         isPhone: false,
                         validator: (value) {
                           if (value.isEmpty) {
-                            return "كلمة المرور مطلوبة ";
+                            return "requiredpassword".tr();
                           }
-                           if (value.length < 8) {
-                            return "يجب ان تحتوي كلمة المرور على 8 ارقام على الأقل";
+                          if (value.length < 8) {
+                            return "password should be".tr();
                           }
                           return null;
                         },
@@ -115,12 +114,11 @@ class _NewPasswordState extends State<NewPassword> {
                         maxLiness: 1,
                         isPhone: false,
                         validator: (value) {
-                          if (value.isEmpty) 
-                            return "تأكيد كلمة المرور مطلوبة ";
-                          
-                           if (value != passwordController.text) 
-                            return "كلمتا المرور غير متطابقتين";
-                          
+                          if (value.isEmpty) return "not match".tr();
+
+                          if (value != passwordController.text)
+                            return "passwordmatch".tr();
+
                           return null;
                         },
                       ),
