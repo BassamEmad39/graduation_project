@@ -24,6 +24,56 @@ class _LoginPageState extends State<LoginPage> {
   bool isPasswordVisible = false;
   bool isLoading = false;
 
+  void _showErrorDialog(String message) {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: Text('Need help finding your account?',
+              style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
+          content: Text(message),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (BuildContext context) => const ForgetPssword(),
+                ));
+              },
+              child: Text(
+                'Find Account',
+                style: TextStyle(
+                    fontSize: 15,
+                    color: Color.fromARGB(
+                      255,
+                      25,
+                      124,
+                      101,
+                    )),
+              ),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: Text(
+                'Try again',
+                style: TextStyle(
+                    fontSize: 15,
+                    color: Color.fromARGB(
+                      255,
+                      25,
+                      124,
+                      101,
+                    )),
+              ),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   void login() async {
     isLoading = true;
     setState(() {});
@@ -43,7 +93,7 @@ class _LoginPageState extends State<LoginPage> {
       ));
     } on DioException catch (ex) {
       isLoading = false;
-      print(ex.response?.data);
+      _showErrorDialog(ex.response?.data['message'] ?? 'An error occurred');
       setState(() {});
     }
   }
@@ -164,7 +214,6 @@ class _LoginPageState extends State<LoginPage> {
                                       if (formKey.currentState!.validate()) {
                                         login();
                                       }
-                                      ;
                                     },
                                   )),
                         SizedBox(
@@ -175,7 +224,7 @@ class _LoginPageState extends State<LoginPage> {
                             onPressed: () {
                               Navigator.of(context).push(MaterialPageRoute(
                                 builder: (BuildContext context) =>
-                                     SignUpPage1(),
+                                    SignUpPage1(),
                               ));
                             },
                             child: Text("noacc".tr(),
