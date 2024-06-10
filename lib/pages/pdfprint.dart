@@ -7,16 +7,14 @@ import 'package:graduation_project/custom/buttons.dart';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 import 'package:printing/printing.dart';
-import 'package:screenshot/screenshot.dart';
 
 class PdfPrint extends StatelessWidget {
-  PdfPrint({
+  const PdfPrint({
     super.key,
     this.columnWidths,
   });
   final Map<int, TableColumnWidth>? columnWidths;
   final bool status = false;
-  final screenshotController = ScreenshotController();
 
   @override
   Widget build(BuildContext context) {
@@ -25,18 +23,18 @@ class PdfPrint extends StatelessWidget {
       body: SingleChildScrollView(
           child: Column(
         children: [
-          Center(
+          const Center(
               child: Text("إستمارة مكافأة النشر العلمي الدولي",
                   style: TextStyle(
                       color: Colors.red, fontWeight: FontWeight.bold))),
-          SizedBox(
+          const SizedBox(
             height: 5,
           ),
-          Center(
+          const Center(
               child: Text("(نموذج رقم 2)",
                   style: TextStyle(
                       color: Colors.red, fontWeight: FontWeight.bold))),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           Table(
@@ -180,233 +178,7 @@ class PdfPrint extends StatelessWidget {
           const SizedBox(
             height: 80,
           ),
-          Screenshot(
-            controller: screenshotController,
-            child: Table(
-              border: TableBorder.all(color: Colors.black),
-              children: [
-                TableRow(
-                  children: [
-                    Container(
-                      color: Colors.grey,
-                      child: const Center(
-                        child: Text(
-                          "بيانات خاصة بالبحث",
-                          style: TextStyle(color: Color(0xff090a4d)),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                TableRow(
-                  children: [
-                    Table(
-                      border: TableBorder.all(color: Colors.black),
-                      columnWidths: const {1: FlexColumnWidth(3)},
-                      children: const [
-                        TableRow(
-                          children: [
-                            Padding(
-                              padding: EdgeInsets.all(8.0),
-                              child: Text("عنوان البحث باللغة الإنجليزية"),
-                            ),
-                            Text(""),
-                            Padding(
-                              padding: EdgeInsets.all(8.0),
-                              child: Text("Title of the paper"),
-                            )
-                          ],
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-                TableRow(
-                  children: [
-                    Table(
-                      columnWidths: const {1: FlexColumnWidth(4)},
-                      border: TableBorder.all(color: Colors.black),
-                      children: const [
-                        TableRow(
-                          children: [
-                            Text("تاريخ نشر البحث"),
-                            Text(""),
-                          ],
-                        ),
-                        TableRow(
-                          children: [
-                            Text("مكان إجراء البحث"),
-                            Text(""),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-                TableRow(
-                  children: [
-                    Table(
-                      border: TableBorder.all(color: Colors.black),
-                      columnWidths: const {1: FlexColumnWidth(3)},
-                      children: const [
-                        TableRow(
-                          children: [
-                            Padding(
-                              padding: EdgeInsets.all(8.0),
-                              child: Text("اسم المجلة"),
-                            ),
-                            Text(""),
-                            Padding(
-                              padding: EdgeInsets.all(8.0),
-                              child: Text("Title of the journal"),
-                            )
-                          ],
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-                TableRow(
-                  children: [
-                    Table(
-                      columnWidths: const {1: FlexColumnWidth(3)},
-                      border: TableBorder.all(color: Colors.black),
-                      children: const [
-                        TableRow(
-                          children: [
-                            Text("الرقم المعياري التسلسلي للمجلة: (ISSN)"),
-                            Text(""),
-                          ],
-                        ),
-                        TableRow(
-                          children: [
-                            Text(
-                                "الربع الواقع به المجلة (Q) بالنسبة للأبحاث المنشورة على SCOPUS"),
-                            Text(""),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-                TableRow(
-                  children: [
-                    Table(
-                      border: TableBorder.all(color: Colors.black),
-                      columnWidths: const {1: FlexColumnWidth(3)},
-                      children: [
-                        TableRow(children: [
-                          const Text(
-                              "المشاركون في البحث من اعضاء هيئة التدريس بجامعة كفر الشيخ"),
-                          Table(
-                            children: [
-                              TableRow(children: [
-                                CheckboxListTile(
-                                    title: const Text("لا يوجد"),
-                                    value: false,
-                                    onChanged: (val) {}),
-                                CheckboxListTile(
-                                    title: const Text("يوجد"),
-                                    value: false,
-                                    onChanged: (val) {}),
-                              ])
-                            ],
-                          )
-                        ]),
-                      ],
-                    ),
-                  ],
-                ),
-                TableRow(
-                  children: [
-                    Table(
-                      border: TableBorder.all(color: Colors.black),
-                      columnWidths: const {1: FlexColumnWidth(3)},
-                      children: [
-                        TableRow(children: [
-                          const Center(
-                              child: Text(
-                                  "أسماء المشاركون في البحث من جامعة كفر الشيخ")),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Table(
-                              border: TableBorder.all(color: Colors.black),
-                              children: const [
-                                TableRow(
-                                  children: [
-                                    Padding(
-                                      padding: EdgeInsets.all(5.0),
-                                      child: Text("الإسم ثلاثي باللغة العريبة"),
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsets.all(5.0),
-                                      child:
-                                          Text("الإسم العلمي المدون على اليحث"),
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsets.all(5.0),
-                                      child: Text("الدرجة الوظيفية"),
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsets.all(5.0),
-                                      child: Text(
-                                        "اوافق على تقديم البحث من قبل الباحث المتقدم وأتعهد بعدم تقديمه مرة اخرى",
-                                        style: TextStyle(fontSize: 10),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                TableRow(
-                                  children: [
-                                    Text(""),
-                                    Text(""),
-                                    Text(""),
-                                    Text(""),
-                                  ],
-                                ),
-                                TableRow(
-                                  children: [
-                                    Text(""),
-                                    Text(""),
-                                    Text(""),
-                                    Text(""),
-                                  ],
-                                ),
-                                TableRow(
-                                  children: [
-                                    Text(""),
-                                    Text(""),
-                                    Text(""),
-                                    Text(""),
-                                  ],
-                                ),
-                                TableRow(
-                                  children: [
-                                    Text(""),
-                                    Text(""),
-                                    Text(""),
-                                    Text(""),
-                                  ],
-                                ),
-                                TableRow(
-                                  children: [
-                                    Text(""),
-                                    Text(""),
-                                    Text(""),
-                                    Text(""),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ),
-                        ]),
-                      ],
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          ),
+         
           const SizedBox(
             height: 80,
           ),
@@ -502,7 +274,7 @@ class PdfPrint extends StatelessWidget {
             children: [
               CustomButton(
                 title: "Print",
-                onPressed: _captureAndSaveScreenshot,
+                onPressed: (){},
               ),
               const SizedBox(
                 width: 15,
@@ -518,13 +290,7 @@ class PdfPrint extends StatelessWidget {
     );
   }
 
-  void _captureAndSaveScreenshot() async {
-    final image = await screenshotController.capture();
-
-    if (image != null) {
-      await _saveScreenshotAsPdf(image);
-    }
-  }
+ 
 
   Future<void> _saveScreenshotAsPdf(Uint8List image) async {
     final pdf = pw.Document();
