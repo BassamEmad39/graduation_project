@@ -10,7 +10,7 @@ import 'package:graduation_project/pages/searchinfo.dart';
 import 'package:image_picker/image_picker.dart';
 
 class ConfirmInformation extends StatefulWidget {
-  const ConfirmInformation({super.key});
+   ConfirmInformation({super.key});
 
   @override
   State<ConfirmInformation> createState() => _ConfirmInformationState();
@@ -18,6 +18,13 @@ class ConfirmInformation extends StatefulWidget {
 
 class _ConfirmInformationState extends State<ConfirmInformation> {
   String? imagePath;
+  final nameController = TextEditingController();
+  final enameController = TextEditingController();
+  final degreeController = TextEditingController();
+  final facultyController = TextEditingController();
+  final deptController = TextEditingController();
+  final phoneController = TextEditingController();
+  final emailController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -74,6 +81,7 @@ class _ConfirmInformationState extends State<ConfirmInformation> {
                       height: 5,
                     ),
                     MyTextField(
+                      controller: nameController,
                       isPassword: false,
                       maxLiness: 1,
                       isPhone: false,
@@ -90,6 +98,7 @@ class _ConfirmInformationState extends State<ConfirmInformation> {
                       height: 5,
                     ),
                     MyTextField(
+                      controller: enameController,
                       isPassword: false,
                       maxLiness: 1,
                       isPhone: false,
@@ -106,6 +115,7 @@ class _ConfirmInformationState extends State<ConfirmInformation> {
                       height: 5,
                     ),
                     MyTextField(
+                      controller: phoneController,
                       isPassword: false,
                       maxLiness: 1,
                       isPhone: true,
@@ -129,6 +139,23 @@ class _ConfirmInformationState extends State<ConfirmInformation> {
                     SizedBox(
                       height: 10,
                     ),
+                    Text("email".tr(),
+                        style: TextStyle(
+                            color: Color.fromRGBO(26, 86, 83, 1),
+                            fontWeight: FontWeight.bold,
+                            fontSize: 13)),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    MyTextField(
+                      controller: emailController,
+                      isPassword: false,
+                      maxLiness: 1,
+                      isPhone: true,
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
                     Text("degree2".tr(),
                         style: TextStyle(
                             color: Color.fromRGBO(26, 86, 83, 1),
@@ -138,6 +165,7 @@ class _ConfirmInformationState extends State<ConfirmInformation> {
                       height: 5,
                     ),
                     MyTextField(
+                      controller: degreeController,
                       isPassword: false,
                       maxLiness: 1,
                       isPhone: false,
@@ -170,6 +198,7 @@ class _ConfirmInformationState extends State<ConfirmInformation> {
                       height: 5,
                     ),
                     MyTextField(
+                      controller: facultyController,
                       isPassword: false,
                       maxLiness: 1,
                       isPhone: false,
@@ -186,6 +215,7 @@ class _ConfirmInformationState extends State<ConfirmInformation> {
                       height: 5,
                     ),
                     MyTextField(
+                      controller: deptController,
                       isPassword: false,
                       maxLiness: 1,
                       isPhone: false,
@@ -355,7 +385,15 @@ class _ConfirmInformationState extends State<ConfirmInformation> {
               title: "next".tr(),
               onPressed: () {
                 Navigator.of(context).push(MaterialPageRoute(
-                  builder: (BuildContext context) => const SearchInfo(),
+                  builder: (BuildContext context) => SearchInfo(
+                    nameText: nameController.text,
+                    enameText: enameController.text,
+                    degreeText: degreeController.text,
+                    facultyText: facultyController.text,
+                    deptText: deptController.text,
+                    phoneText: phoneController.text,
+                    emailText: emailController.text,
+                  ),
                 ));
               },
             ),

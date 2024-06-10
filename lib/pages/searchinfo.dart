@@ -5,9 +5,17 @@ import 'package:graduation_project/custom/appbar.dart';
 import 'package:graduation_project/custom/buttons.dart';
 import 'package:graduation_project/custom/textField.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:graduation_project/pages/researchConditions.dart';
 
 class SearchInfo extends StatefulWidget {
-  const SearchInfo({super.key});
+  final String nameText;
+  final String enameText;
+  final String degreeText;
+  final String facultyText;
+  final String deptText;
+  final String phoneText;
+  final String emailText;
+  const SearchInfo({super.key, required this.nameText, required this.enameText, required this.degreeText, required this.facultyText, required this.deptText, required this.phoneText, required this.emailText});
 
   @override
   State<SearchInfo> createState() => _SearchInfoState();
@@ -17,6 +25,13 @@ class _SearchInfoState extends State<SearchInfo> {
   final formKey = GlobalKey<FormState>();
   String? choosse;
   String? choosse2;
+  final enTitleController = TextEditingController();
+  final researchDateController = TextEditingController();
+  final researchLocationController = TextEditingController();
+  final magController = TextEditingController();
+  final labController = TextEditingController();
+  final issnController = TextEditingController();
+  final scopusController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -290,7 +305,7 @@ class _SearchInfoState extends State<SearchInfo> {
                   onPressed: () {
                     if (formKey.currentState!.validate()) {
                       Navigator.of(context).push(MaterialPageRoute(
-                        builder: (BuildContext context) => const SearchInfo(),
+                        builder: (BuildContext context) => const ResearchConditions(),
                       ));
                     }
                   },
