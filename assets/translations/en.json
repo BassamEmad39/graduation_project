@@ -135,5 +135,10 @@
     "gallery": "Gallery",
     "postcode": "Post Code",
     "passwordmatch": "The passwords do not match",
-    "requiredpassword":"Password is required" 
+    "requiredpassword":"Password is required" ,
+    "find_account_title": "Need help finding your account?",
+    "find_account_button": "Find Account",
+  "try_again_button": "Try again",
+  "find_account_message": "It looks like {account} isn't connected to an account but we can help you find your account and log in."
+
 }

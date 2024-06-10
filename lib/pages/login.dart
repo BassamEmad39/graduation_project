@@ -29,9 +29,10 @@ class _LoginPageState extends State<LoginPage> {
       context: context,
       builder: (context) {
         return AlertDialog(
-          title: Text('Need help finding your account?',
+          title: Text("find_account_title".tr(),
               style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
-          content: Text(message),
+          content: Text('find_account_message'
+              .tr(namedArgs: {'account': emailController.text})),
           actions: [
             TextButton(
               onPressed: () {
@@ -41,7 +42,7 @@ class _LoginPageState extends State<LoginPage> {
                 ));
               },
               child: Text(
-                'Find Account',
+                "find_account_button".tr(),
                 style: TextStyle(
                     fontSize: 15,
                     color: Color.fromARGB(
@@ -57,7 +58,7 @@ class _LoginPageState extends State<LoginPage> {
                 Navigator.of(context).pop();
               },
               child: Text(
-                'Try again',
+                "try_again_button".tr(),
                 style: TextStyle(
                     fontSize: 15,
                     color: Color.fromARGB(

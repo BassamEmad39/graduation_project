@@ -134,5 +134,9 @@
     "gallery": "الصور",
     "postcode": "الرقم البريدي",
     "passwordmatch": "كلمتا المرور غير متطابقتين",
-    "requiredpassword": "كلمة السر مطلوبة"
+    "requiredpassword": "كلمة السر مطلوبة",
+    "find_account_title": "هل تحتاج مساعدة في العثور على حسابك؟",
+  "find_account_message": "يبدو أن {account} غير مرتبط بحساب، لكن يمكننا مساعدتك في العثور على حسابك وتسجيل الدخول.",
+  "find_account_button": "البحث عن الحساب",
+  "try_again_button": "المحاولة مرة أخرى"
 }
