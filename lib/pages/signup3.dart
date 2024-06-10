@@ -6,7 +6,7 @@ import 'package:graduation_project/custom/buttons.dart';
 import 'package:graduation_project/custom/textField.dart';
 import 'package:graduation_project/pages/signup4.dart';
 
-class SignUpPage3 extends StatelessWidget {
+class SignUpPage3 extends StatefulWidget {
    SignUpPage3({super.key, required this.emailText, required this.idText, required this.nameText, required this.enNameText, required this.addressText, required this.phoneText, required this.postCodeText});
   final String emailText;
   final String idText;
@@ -16,6 +16,11 @@ class SignUpPage3 extends StatelessWidget {
   final String phoneText;
   final String postCodeText;
 
+  @override
+  State<SignUpPage3> createState() => _SignUpPage3State();
+}
+
+class _SignUpPage3State extends State<SignUpPage3> {
   final formKey = GlobalKey<FormState>();
 
   final collegeController= TextEditingController();
@@ -149,7 +154,7 @@ class SignUpPage3 extends StatelessWidget {
                                 if (formKey.currentState!.validate()) {
                                   Navigator.of(context).push(MaterialPageRoute(
                                     builder: (BuildContext context) =>
-                                         SignUpPage4(emailText: emailText, idText: idText, nameText: nameText, enNameText: enNameText, addressText:addressText, phoneText: phoneText, collegeText: collegeController.text, sectionText:sectionController.text, degreeText: degreeController.text, postCodeText: postCodeText,),
+                                         SignUpPage4(emailText: widget.emailText, idText: widget.idText, nameText: widget.nameText, enNameText: widget.enNameText, addressText:widget.addressText, phoneText: widget.phoneText, collegeText: collegeController.text, sectionText:sectionController.text, degreeText: degreeController.text, postCodeText: widget.postCodeText,),
                                   ));
                                 }
                               },

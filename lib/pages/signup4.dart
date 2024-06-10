@@ -42,7 +42,6 @@ class _SignUpPage4State extends State<SignUpPage4> {
 
   final confirmPasswordController = TextEditingController();
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
