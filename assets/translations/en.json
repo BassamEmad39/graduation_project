@@ -130,7 +130,7 @@
     "phone number": "*Phone number should be 11 numbers.",
     "password should be": "*Password should contain 8 characters or more.",
     "not match": "*password does not match.",
-    "award": "Go to university to collect your award"
+    "award": "Go to university to collect your award",
     "searchMustBePDF": "The reseach format must be PDF",
     "camera": "Camera",
     "gallery": "Gallery",

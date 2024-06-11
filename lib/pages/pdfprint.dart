@@ -1,13 +1,7 @@
-import 'dart:async';
-import 'dart:typed_data';
-
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:graduation_project/custom/appbar.dart';
 import 'package:graduation_project/custom/buttons.dart';
-import 'package:pdf/pdf.dart';
-import 'package:pdf/widgets.dart' as pw;
-import 'package:printing/printing.dart';
 
 class PdfPrint extends StatelessWidget {
   const PdfPrint({
@@ -291,26 +285,4 @@ class PdfPrint extends StatelessWidget {
     );
   }
 
- 
-
-  Future<void> _saveScreenshotAsPdf(Uint8List image) async {
-    final pdf = pw.Document();
-
-    final pdfImage = pw.MemoryImage(image);
-
-    pdf.addPage(
-      pw.Page(
-        build: (pw.Context context) {
-          return pw.Center(
-            child: pw.Image(pdfImage),
-          );
-        },
-      ),
-    );
-
-    // Save the PDF file
-    await Printing.layoutPdf(
-      onLayout: (PdfPageFormat format) async => pdf.save(),
-    );
-  }
 }
