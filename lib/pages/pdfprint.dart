@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:typed_data';
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:graduation_project/custom/appbar.dart';
 import 'package:graduation_project/custom/buttons.dart';
@@ -273,14 +274,14 @@ class PdfPrint extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               CustomButton(
-                title: "Print",
+                title: "print".tr(),
                 onPressed: (){},
               ),
               const SizedBox(
                 width: 15,
               ),
               CustomButton(
-                title: "Next",
+                title: "next".tr(),
                 onPressed: () {},
               )
             ],

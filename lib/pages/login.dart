@@ -114,6 +114,9 @@ class _LoginPageState extends State<LoginPage> {
                           validator: (value) {
                             if (value!.isEmpty) {
                               return "field is required".tr();
+                            } else if (value!.contains("@")) {
+                            } else {
+                              return "contain @".tr();
                             }
                             return null;
                           },
@@ -175,7 +178,7 @@ class _LoginPageState extends State<LoginPage> {
                             onPressed: () {
                               Navigator.of(context).push(MaterialPageRoute(
                                 builder: (BuildContext context) =>
-                                     SignUpPage1(),
+                                    SignUpPage1(),
                               ));
                             },
                             child: Text("noacc".tr(),
