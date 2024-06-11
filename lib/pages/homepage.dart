@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:graduation_project/custom/navbar.dart';
+import 'package:graduation_project/pages/confirminfo.dart';
 import 'dart:ui' as ui;
 
-import 'package:graduation_project/pages/researchConditions.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -80,7 +80,7 @@ class _HomePageState extends State<HomePage> {
                           onPressed: () {
                             Navigator.of(context).push(MaterialPageRoute(
                               builder: (BuildContext context) =>
-                                  const ResearchConditions(),
+                                   ConfirmInformation(),
                             ));
                           },
                           child: Text(

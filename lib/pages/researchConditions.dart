@@ -8,7 +8,17 @@ import 'package:graduation_project/custom/buttons.dart';
 import 'package:graduation_project/custom/conditions.dart';
 
 class ResearchConditions extends StatefulWidget {
-  const ResearchConditions({super.key});
+  final String nameText;
+  final String enameText;
+  final String degreeText;
+  final String facultyText;
+  final String deptText;
+  final String phoneText;
+  final String emailText;
+  final String scName1Text,scName2Text,scName3Text,scName4Text,scName5Text;
+  final String tripleNameText,tripleNameText2,tripleNameText3,tripleNameText4,tripleNameText5;
+  final String jobGradeText,jobGradeText2,jobGradeText3,jobGradeText4,jobGradeText5;
+  const ResearchConditions({super.key, required this.nameText, required this.enameText, required this.degreeText, required this.facultyText, required this.deptText, required this.phoneText, required this.emailText, required this.scName1Text, required this.scName2Text, required this.scName3Text, required this.scName4Text, required this.scName5Text, required this.tripleNameText, required this.tripleNameText2, required this.tripleNameText3, required this.tripleNameText4, required this.tripleNameText5, required this.jobGradeText, required this.jobGradeText2, required this.jobGradeText3, required this.jobGradeText4, required this.jobGradeText5});
 
   @override
   State<ResearchConditions> createState() => _ResearchConditionsState();

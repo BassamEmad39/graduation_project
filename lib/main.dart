@@ -64,6 +64,6 @@ class _MyAppState extends State<MyApp> {
                 home: child,
               ),
         ),
-        child: LoginPage());
+        child: ConfirmInformation());
   }
 }

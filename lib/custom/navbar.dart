@@ -1,10 +1,10 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:graduation_project/pages/confirminfo.dart';
 import 'package:graduation_project/pages/contact_us.dart';
 import 'package:graduation_project/pages/login.dart';
 import 'package:graduation_project/pages/profilepage_1.dart';
-import 'package:graduation_project/pages/researchConditions.dart';
 import 'package:graduation_project/pages/signup1.dart';
 
 class NavBar extends StatelessWidget {
@@ -44,7 +44,7 @@ class NavBar extends StatelessWidget {
               ),
               onTap: () {
                  Navigator.of(context).push(MaterialPageRoute(
-                  builder: (BuildContext context) => const ResearchConditions(),
+                  builder: (BuildContext context) =>  ConfirmInformation(),
                 ));
               },
             ),
