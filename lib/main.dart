@@ -2,7 +2,9 @@
 
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:graduation_project/cubits/useridcubit.dart';
 import 'package:graduation_project/generated/l10n.dart';
 import 'package:graduation_project/pages/confirminfo.dart';
 import 'package:graduation_project/pages/contact_us.dart';
@@ -52,13 +54,16 @@ class _MyAppState extends State<MyApp> {
         designSize: const Size(441, 886),
         splitScreenMode: true,
         minTextAdapt: true,
-        builder: (context, child) => MaterialApp(
-              locale: context.locale,
-              localizationsDelegates: context.localizationDelegates,
-              supportedLocales: context.supportedLocales,
-              debugShowCheckedModeBanner: false,
-              home: child,
-            ),
-        child:  ConfirmInformation());
+        builder: (context, child) => BlocProvider(create: (context) => UserIdCubit(),
+          child: MaterialApp(
+            
+                locale: context.locale,
+                localizationsDelegates: context.localizationDelegates,
+                supportedLocales: context.supportedLocales,
+                debugShowCheckedModeBanner: false,
+                home: child,
+              ),
+        ),
+        child: LoginPage());
   }
 }

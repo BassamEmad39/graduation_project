@@ -1,13 +1,38 @@
+import 'package:dio/dio.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:graduation_project/cubits/useridcubit.dart';
 import 'package:graduation_project/custom/appbar.dart';
 import 'package:graduation_project/pages/manage_profile.dart';
 import 'package:graduation_project/pages/profilepage_2.dart';
 
-class ProfilePage1 extends StatelessWidget {
+class ProfilePage1 extends StatefulWidget {
   const ProfilePage1({super.key});
+
+  @override
+  State<ProfilePage1> createState() => _ProfilePage1State();
+}
+
+class _ProfilePage1State extends State<ProfilePage1> {
+  String id = '';
+  late Future<String> _future;
+  @override
+  void initState() {
+    final userIdCubit = BlocProvider.of<UserIdCubit>(context);
+    if (userIdCubit.state is UserIdLoadedState) {
+      id = userIdCubit.id!;
+    }
+    _future = getDocName();
+    super.initState();
+  }
+
+  Future<String> getDocName() async {
+    final response = await Dio().get("https://walid28.bsite.net/api/doctorapi/getdoctordata/$id");
+    return response.data['doc_name'];
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -22,8 +47,12 @@ class ProfilePage1 extends StatelessWidget {
                 SizedBox(
                   height: 150,
                   child: CircleAvatar(
-                    child: Icon(Icons.person,size: 100,color: Colors.white,),
-                  backgroundColor: Color(0xffE0E0E0),
+                    child: Icon(
+                      Icons.person,
+                      size: 100,
+                      color: Colors.white,
+                    ),
+                    backgroundColor: Color(0xffE0E0E0),
                     radius: 100.r,
                   ),
                 ),
@@ -33,21 +62,30 @@ class ProfilePage1 extends StatelessWidget {
                 Container(
                   child: MaterialButton(
                     onPressed: () {
-                       Navigator.of(context).push(MaterialPageRoute(
-                              builder: (BuildContext context) =>
-                                  const ProfilePage2(),
-                            ));
+                      Navigator.of(context).push(MaterialPageRoute(
+                        builder: (BuildContext context) => const ProfilePage2(),
+                      ));
                     },
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Text(
-                          'د/محمد أحمد',
-                          style: TextStyle(
-                              color: Color(0xff1A5653),
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold),
+                        FutureBuilder(
+                          future: _future,
+                          builder: (context, snapshot) {
+                            if(snapshot.hasData){
+                              return Text(
+                            snapshot.data!,
+                            style: TextStyle(
+                                color: Color(0xff1A5653),
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold),
+                          );
+                            }else {
+                              return Text('');
+                            }
+                          },
+                          
                         ),
                         SizedBox(
                           width: 10,
@@ -88,8 +126,6 @@ class ProfilePage1 extends StatelessWidget {
                               "newsearch".tr(),
                               style: TextStyle(color: Colors.white),
                             ),
-                            
-                            
                           ],
                         ),
                       ),
@@ -101,16 +137,17 @@ class ProfilePage1 extends StatelessWidget {
                 ),
                 TextButton(
                     onPressed: () {
-                       Navigator.of(context).push(MaterialPageRoute(
-                              builder: (BuildContext context) =>
-                                  const ManageProfile(),
-                            ));
+                      Navigator.of(context).push(MaterialPageRoute(
+                        builder: (BuildContext context) =>
+                            const ManageProfile(),
+                      ));
                     },
                     child: Text(
                       "terms".tr(),
                       style: TextStyle(
-                          fontWeight: FontWeight.bold, color: Color(0xff696969)),
-                    ))
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xff696969)),
+                    )),
               ],
             ),
           ),

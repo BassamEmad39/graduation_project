@@ -1,7 +1,9 @@
 import 'package:dio/dio.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:graduation_project/cubits/useridcubit.dart';
 import 'package:graduation_project/custom/appbar.dart';
 import 'package:graduation_project/custom/buttons.dart';
 import 'package:graduation_project/custom/textField.dart';
@@ -24,7 +26,7 @@ class _LoginPageState extends State<LoginPage> {
   bool isPasswordVisible = false;
   bool isLoading = false;
 
-  void login() async {
+  void login(BuildContext context) async {
     isLoading = true;
     setState(() {});
     try {
@@ -35,6 +37,11 @@ class _LoginPageState extends State<LoginPage> {
           "Password": passwordController.text
         },
       );
+      if (context.mounted) {
+        final data = response.data as Map<String, dynamic>;
+        print(data['data']['doc_nid']);
+        BlocProvider.of<UserIdCubit>(context).setId(data["data"]["doc_nid"]);
+      }
       print(response.data);
       isLoading = false;
       setState(() {});
@@ -162,7 +169,7 @@ class _LoginPageState extends State<LoginPage> {
                                     title: "login".tr(),
                                     onPressed: () {
                                       if (formKey.currentState!.validate()) {
-                                        login();
+                                        login(context);
                                       }
                                       ;
                                     },
@@ -175,7 +182,7 @@ class _LoginPageState extends State<LoginPage> {
                             onPressed: () {
                               Navigator.of(context).push(MaterialPageRoute(
                                 builder: (BuildContext context) =>
-                                     SignUpPage1(),
+                                    SignUpPage1(),
                               ));
                             },
                             child: Text("noacc".tr(),
