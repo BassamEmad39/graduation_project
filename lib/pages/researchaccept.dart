@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:graduation_project/custom/appbar.dart';
 import 'package:graduation_project/custom/buttons.dart';
@@ -48,14 +49,30 @@ class _ResearchacceptState extends State<Researchaccept> {
             height: 100,
           ),
           Container(
-            color: Color.fromARGB(255, 25, 124, 101),
+            decoration: BoxDecoration(
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey,
+                  spreadRadius: 1,
+                  blurRadius: 4,
+                  offset: Offset(0, 2),
+                )
+              ],
+              color: Color.fromARGB(255, 25, 124, 101),
+            ),
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text('برجاء التوجه إلى الجامعة لإستلام جائزتك'),
-                  Text(formattedDate)
+                  Text(
+                    "award".tr(),
+                    style: TextStyle(
+                        color: Colors.white, fontWeight: FontWeight.bold),
+                  ),
+                  Text(formattedDate,
+                      style: TextStyle(
+                          color: Colors.white, fontWeight: FontWeight.bold))
                 ],
               ),
             ),
@@ -64,7 +81,7 @@ class _ResearchacceptState extends State<Researchaccept> {
             height: 100,
           ),
           CustomButton(
-            title: "Back",
+            title: "back".tr(),
             onPressed: () {},
           )
         ],

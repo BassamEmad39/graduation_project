@@ -9,11 +9,15 @@ import 'package:graduation_project/pages/signup3.dart';
 class SignUpPage2 extends StatefulWidget {
   final String emailText;
   final String idText;
-    final String nameText;
+  final String nameText;
   final String enNameText;
-  
 
-   SignUpPage2({super.key, required this.emailText, required this.idText, required this.nameText, required this.enNameText});
+  SignUpPage2(
+      {super.key,
+      required this.emailText,
+      required this.idText,
+      required this.nameText,
+      required this.enNameText});
 
   @override
   State<SignUpPage2> createState() => _SignUpPage2State();
@@ -77,17 +81,6 @@ class _SignUpPage2State extends State<SignUpPage2> {
                           SizedBox(
                             height: 25.h,
                           ),
-                         
-                        
-                          SizedBox(
-                            height: 31.h,
-                          ),
-                         
-                         
-                         
-                          SizedBox(
-                            height: 31.h,
-                          ),
                           Text("address".tr(),
                               style: const TextStyle(
                                   color: Color.fromRGBO(26, 86, 83, 1),
@@ -125,7 +118,7 @@ class _SignUpPage2State extends State<SignUpPage2> {
                             maxLiness: 1,
                             isPhone: true,
                             validator: (value) {
-                              if(value!.isEmpty) {
+                              if (value!.isEmpty) {
                                 return "field is required".tr();
                               }
                               if (value.length >= 11) {
@@ -135,7 +128,9 @@ class _SignUpPage2State extends State<SignUpPage2> {
                               }
                             },
                           ),
-                          const SizedBox(height: 31,),
+                          const SizedBox(
+                            height: 31,
+                          ),
                           Text("postcode".tr(),
                               style: const TextStyle(
                                   color: Color.fromRGBO(26, 86, 83, 1),
@@ -150,10 +145,9 @@ class _SignUpPage2State extends State<SignUpPage2> {
                             maxLiness: 1,
                             isPhone: true,
                             validator: (value) {
-                              if(value!.isEmpty) {
+                              if (value!.isEmpty) {
                                 return "field is required".tr();
-                              }
-                               else {
+                              } else {
                                 return null;
                               }
                             },
@@ -168,7 +162,15 @@ class _SignUpPage2State extends State<SignUpPage2> {
                                 if (formKey.currentState!.validate()) {
                                   Navigator.of(context).push(MaterialPageRoute(
                                     builder: (BuildContext context) =>
-                                         SignUpPage3(emailText: widget.emailText, idText: widget.idText, nameText: widget.nameText, enNameText: widget.enNameText, addressText: addressController.text, phoneText: phoneController.text, postCodeText: postCodeController.text,),
+                                        SignUpPage3(
+                                      emailText: widget.emailText,
+                                      idText: widget.idText,
+                                      nameText: widget.nameText,
+                                      enNameText: widget.enNameText,
+                                      addressText: addressController.text,
+                                      phoneText: phoneController.text,
+                                      postCodeText: postCodeController.text,
+                                    ),
                                   ));
                                 }
                               },
