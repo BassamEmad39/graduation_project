@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:graduation_project/pages/homepage.dart';
+import 'package:graduation_project/pages/login.dart';
 
 class LoadingPage extends StatefulWidget {
   const LoadingPage({super.key});
@@ -17,7 +17,7 @@ class _LoadingPageState extends State<LoadingPage> {
   void initState() {
     super.initState();
     Timer(Duration(seconds: 3), () {
-      Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage(),));
+      Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage(),));
     });
   }
   Widget build(BuildContext context) {
