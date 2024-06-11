@@ -135,8 +135,7 @@ class _SignUpPage4State extends State<SignUpPage4> {
                           validator: (value) {
                             if (value!.isEmpty) {
                               return "field is required".tr();
-                            } else if (value !=
-                                passwordController.text) {
+                            } else if (value != passwordController.text) {
                               return "not match".tr();
                             }
                             return null;
@@ -207,26 +206,26 @@ class _SignUpPage4State extends State<SignUpPage4> {
   }
 
   void register() async {
-   try {
-     final response = await Dio().post('https://walid28.bsite.net/api/doctorapi/register', data: {
-       "doc_nid": widget.idText,
-       "doc_name": widget.enNameText,
-       "doc_phoneno": widget.phoneText,
-       "doc_address": widget.addressText,
-       "doc_email": widget.emailText,
-       "doc_postcode": widget.postCodeText,
-       "doc_faculty": widget.collegeText,
-      "doc_dept": widget.sectionText,
-      "doc_pass": passwordController.text,
-       "ConfirmPassword": confirmPasswordController.text,
-       "sntf_degree": widget.degreeText
-     });
-      
-    print(response.data);
-  } on DioException catch (ex) {
-     print(ex.message);
-     print(ex.response?.data);
-  
- }
-}
+    try {
+      final response = await Dio()
+          .post('https://walid28.bsite.net/api/doctorapi/register', data: {
+        "doc_nid": widget.idText,
+        "doc_name": widget.enNameText,
+        "doc_phoneno": widget.phoneText,
+        "doc_address": widget.addressText,
+        "doc_email": widget.emailText,
+        "doc_postcode": widget.postCodeText,
+        "doc_faculty": widget.collegeText,
+        "doc_dept": widget.sectionText,
+        "doc_pass": passwordController.text,
+        "ConfirmPassword": confirmPasswordController.text,
+        "sntf_degree": widget.degreeText
+      });
+
+      print(response.data);
+    } on DioException catch (ex) {
+      print(ex.message);
+      print(ex.response?.data);
+    }
+  }
 }
