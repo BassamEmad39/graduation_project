@@ -130,6 +130,7 @@
     "phone number": "*Phone number should be 11 numbers.",
     "password should be": "*Password should contain 8 characters or more.",
     "not match": "*password does not match.",
+    "award": "Go to university to collect your award"
     "searchMustBePDF": "The reseach format must be PDF",
     "camera": "Camera",
     "gallery": "Gallery",
@@ -140,6 +141,5 @@
     "find_account_button": "Find Account",
   "try_again_button": "Try again",
   "find_account_message": "It looks like {account} isn't connected to an account but we can help you find your account and log in."
-
 }
 

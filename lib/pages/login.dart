@@ -167,6 +167,9 @@ class _LoginPageState extends State<LoginPage> {
                           validator: (value) {
                             if (value!.isEmpty) {
                               return "field is required".tr();
+                            } else if (value!.contains("@")) {
+                            } else {
+                              return "contain @".tr();
                             }
                             return null;
                           },
