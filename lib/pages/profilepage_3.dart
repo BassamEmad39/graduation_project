@@ -1,13 +1,40 @@
+import 'package:dio/dio.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:graduation_project/cubits/useridcubit.dart';
 import 'package:graduation_project/custom/appbar.dart';
 import 'package:graduation_project/custom/dialog.dart';
 import 'package:graduation_project/custom/textField.dart';
 import 'package:graduation_project/pages/profilepage_2.dart';
+import 'package:pinput/pinput.dart';
 
-class ProfilePage3 extends StatelessWidget {
+class ProfilePage3 extends StatefulWidget {
   const ProfilePage3({super.key});
+
+  @override
+  State<ProfilePage3> createState() => _ProfilePage3State();
+}
+
+class _ProfilePage3State extends State<ProfilePage3> {
+  String id='';
+  late Future<Map<String,dynamic>> _future;
+  @override
+  void initState(){
+    final userIdCubit=BlocProvider.of<UserIdCubit>(context);
+    if (userIdCubit.state is UserIdLoadedState){
+      id=userIdCubit.id!;
+    }
+    _future= getDocAuthData();
+    super.initState();
+  }
+  Future<Map<String,dynamic>> getDocAuthData()async{
+    final response = await Dio().get("https://walid28.bsite.net/api/doctorapi/getdoctordata/$id");
+    return response.data;
+  }
+    final emailController = TextEditingController();
+    final passController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -36,34 +63,46 @@ class ProfilePage3 extends StatelessWidget {
               height: 230.h,
               width: 450,
               color: Color(0xffE0E0E0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text("email".tr()),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  MyTextField(
-                    isPassword: false,
-                    maxLiness: 1,
-                    isPhone: false,
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Text("password".tr()),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  MyTextField(
-                    isPassword: true,
-                    maxLiness: 1,
-                    isPhone: false,
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                ],
+              child: FutureBuilder(
+                future: _future,
+                builder: (context, snapshot) {
+                  if(snapshot.hasData){
+                    emailController.setText(snapshot.data!["doc_email"]);
+                    passController.setText(snapshot.data!["doc_pass"]);
+                  }
+                  return Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text("email".tr()),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    MyTextField(
+                      controller: emailController,
+                      isPassword: false,
+                      maxLiness: 1,
+                      isPhone: false,
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Text("password".tr()),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    MyTextField(
+                      controller: passController,
+                      isPassword: true,
+                      maxLiness: 1,
+                      isPhone: false,
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                  ],
+                );
+                },
+                
               ),
             ),
             SizedBox(
