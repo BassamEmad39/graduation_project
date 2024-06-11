@@ -6,6 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:graduation_project/custom/appbar.dart';
 import 'package:graduation_project/custom/buttons.dart';
 import 'package:graduation_project/custom/conditions.dart';
+import 'package:graduation_project/pages/pdfprint.dart';
 
 class ResearchConditions extends StatefulWidget {
   final String nameText;
@@ -190,7 +191,11 @@ class _ResearchConditionsState extends State<ResearchConditions> {
               Center(
                 child: CustomButton(
                   title: "next".tr(),
-                  onPressed: () {},
+                  onPressed: () {
+                     Navigator.of(context).push(MaterialPageRoute(
+                        builder: (BuildContext context) =>  PdfPrint(nameText: widget.nameText, enameText:widget.enameText, degreeText: widget.degreeText, facultyText: widget.facultyText, deptText: widget.deptText, phoneText:widget.phoneText, emailText:widget.emailText, scName1Text: widget.scName1Text, scName2Text: widget.scName2Text, scName3Text: widget.scName3Text, scName4Text: widget.scName5Text, scName5Text: widget.scName5Text, tripleNameText: widget.tripleNameText, tripleNameText2: widget.tripleNameText2, tripleNameText3:widget.tripleNameText3, tripleNameText4: widget.tripleNameText4, tripleNameText5: widget.tripleNameText5, jobGradeText: widget.jobGradeText, jobGradeText2:widget.jobGradeText2, jobGradeText3: widget.jobGradeText3, jobGradeText4: widget.jobGradeText4, jobGradeText5: widget.jobGradeText5,),
+                      ));
+                  },
                 ),
               ),
           ],

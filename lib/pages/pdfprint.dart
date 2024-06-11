@@ -3,12 +3,28 @@ import 'package:flutter/material.dart';
 import 'package:graduation_project/custom/appbar.dart';
 import 'package:graduation_project/custom/buttons.dart';
 
-class PdfPrint extends StatelessWidget {
+class PdfPrint extends StatefulWidget {
+  final String nameText;
+  final String enameText;
+  final String degreeText;
+  final String facultyText;
+  final String deptText;
+  final String phoneText;
+  final String emailText;
+  final String scName1Text,scName2Text,scName3Text,scName4Text,scName5Text;
+  final String tripleNameText,tripleNameText2,tripleNameText3,tripleNameText4,tripleNameText5;
+  final String jobGradeText,jobGradeText2,jobGradeText3,jobGradeText4,jobGradeText5;
   const PdfPrint({
     super.key,
-    this.columnWidths,
+    this.columnWidths, required this.nameText, required this.enameText, required this.degreeText, required this.facultyText, required this.deptText, required this.phoneText, required this.emailText, required this.scName1Text, required this.scName2Text, required this.scName3Text, required this.scName4Text, required this.scName5Text, required this.tripleNameText, required this.tripleNameText2, required this.tripleNameText3, required this.tripleNameText4, required this.tripleNameText5, required this.jobGradeText, required this.jobGradeText2, required this.jobGradeText3, required this.jobGradeText4, required this.jobGradeText5,
   });
   final Map<int, TableColumnWidth>? columnWidths;
+
+  @override
+  State<PdfPrint> createState() => _PdfPrintState();
+}
+
+class _PdfPrintState extends State<PdfPrint> {
   final bool status = false;
 
   @override
@@ -109,7 +125,7 @@ class PdfPrint extends StatelessWidget {
                     border: TableBorder.all(
                       color: Colors.black,
                     ),
-                    children: const [
+                    children:  [
                       TableRow(children: [
                         Padding(
                           padding: EdgeInsets.all(8.0),
@@ -121,7 +137,10 @@ class PdfPrint extends StatelessWidget {
                             ),
                           ),
                         ),
-                        Text(''),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(widget.nameText),
+                        ),
                       ]),
                     ],
                   ),
@@ -133,9 +152,12 @@ class PdfPrint extends StatelessWidget {
                       1: FlexColumnWidth(1)
                     },
                     border: TableBorder.all(color: Colors.black),
-                    children: const [
+                    children:  [
                       TableRow(children: [
-                        Text(''),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(widget.enameText),
+                        ),
                         Center(
                             child: Padding(
                           padding: EdgeInsets.all(8.0),
@@ -158,7 +180,7 @@ class PdfPrint extends StatelessWidget {
                       1: FlexColumnWidth(4)
                     },
                     border: TableBorder.all(color: Colors.black),
-                    children: const [
+                    children:  [
                       TableRow(children: [
                         Padding(
                           padding: EdgeInsets.all(8.0),
@@ -170,7 +192,10 @@ class PdfPrint extends StatelessWidget {
                             ),
                           ),
                         ),
-                        Text(''),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(widget.degreeText),
+                        ),
                       ]),
                       TableRow(children: [
                         Padding(
@@ -183,7 +208,10 @@ class PdfPrint extends StatelessWidget {
                             ),
                           ),
                         ),
-                        Text(''),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(widget.facultyText),
+                        ),
                       ]),
                       TableRow(children: [
                         Padding(
@@ -196,7 +224,10 @@ class PdfPrint extends StatelessWidget {
                             ),
                           ),
                         ),
-                        Text(''),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(widget.deptText),
+                        ),
                       ]),
                       TableRow(children: [
                         Padding(
@@ -209,7 +240,10 @@ class PdfPrint extends StatelessWidget {
                             ),
                           ),
                         ),
-                        Text(''),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(widget.phoneText),
+                        ),
                       ]),
                       TableRow(children: [
                         Padding(
@@ -222,7 +256,13 @@ class PdfPrint extends StatelessWidget {
                             ),
                           ),
                         ),
-                        Text(''),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text(widget.emailText),
+                          ),
+                        ),
                       ]),
                     ],
                   ),
