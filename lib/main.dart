@@ -33,7 +33,7 @@ Future<void> main() async {
   await EasyLocalization.ensureInitialized();
   runApp(EasyLocalization(
       path: 'assets/translations',
-      saveLocale: false,
+      saveLocale: true,
       supportedLocales: [Locale('en'), Locale('ar')],
       fallbackLocale: Locale('ar'),
       startLocale: Locale('ar'),
@@ -54,9 +54,9 @@ class _MyAppState extends State<MyApp> {
         designSize: const Size(441, 886),
         splitScreenMode: true,
         minTextAdapt: true,
-        builder: (context, child) => BlocProvider(create: (context) => UserIdCubit(),
-          child: MaterialApp(
-            
+        builder: (context, child) => BlocProvider(
+              create: (context) => UserIdCubit(),
+              child: MaterialApp(
                 locale: context.locale,
                 localizationsDelegates: context.localizationDelegates,
                 supportedLocales: context.supportedLocales,
